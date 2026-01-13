@@ -1,0 +1,24 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+body{
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-size: 17px;
+    color: #3d3d3d;
+    font-weight: 400;
+    line-height: 1.5;
+}
+/* *(와일드카드)은 모든 태그를 의미함 */
+*{
+    margin: 0;
+}
+.wrapper{
+    width: 1260px;
+    margin: 0 auto; /* 위아래 여백은 없고 좌우여백은 알아서 반반 - 즉 가운데 */
+}
+h1{
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 99px 0 5px 0; /* 위-오른쪽-아래-왼쪽(시계방향) */ 
+}
+
+ 
