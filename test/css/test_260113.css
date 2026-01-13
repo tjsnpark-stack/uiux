@@ -21,18 +21,36 @@ h1, h2, h3, h4, h5, h6{
 strong{
     font-weight: inherit;
 }
-h2{
+.blue h2{
     font-size: 40px;
     font-weight: 700;
     color: #1d1d1d;
     margin: 102px 0 24px 0;
 }
-.sub_tit{
+.blue .sub_tit{
     font-size: 24px;
     font-weight: 700;
     color: #1d1d1d;
     margin: 0 0 13px 0;
 }
-strong{
+.blue .sub_tit strong{
     color: #003b83;
+}
+.red{
+    text-align: center;
+}
+.red h2{
+    font-size: 45px; 
+    font-weight: 800;
+    color: #d51811;
+    margin: 102px 0 24px 0;
+}
+.red .sub_tit{
+    font-size: 22px;
+    color: #1d1d1d;
+    margin: 0 0 13px 0;
+}
+.red .sub_tit strong{
+    font-weight: 800;
+    color: #d51811;
 }
