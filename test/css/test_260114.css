@@ -1,0 +1,164 @@
+/********************************************* 
+    start 태그 초기화  
+    inherit --> 브라우저가 주는 스타일 적용하지 말고
+                내가 준 스타일 상속 받아!! 
+*********************************************/
+h1, h2, h3, h4, h5, h6{
+    font-weight: initial;
+    font-size: initial;
+} 
+*{
+    margin: 0;
+    padding: 0;
+}
+/*********************** end 태그 초기화 **********************/
+/*********************** start - 웹폰트 정의*********************/
+@font-face {
+	font-family: 'pt';
+	font-weight: 900;
+	font-display: swap;
+	src: local('Pretendard Black'), 
+    url(../fonts/Pretendard-Black.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Black.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'pt';
+	font-weight: 800;
+	font-display: swap;
+	src: local('Pretendard ExtraBold'), 
+    url(../fonts/Pretendard-ExtraBold.woff2) format('woff2'), 
+    url(../fonts/Pretendard-ExtraBold.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'pt';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), 
+    url(../fonts/Pretendard-Bold.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'pt';
+	font-weight: 600;
+	font-display: swap;
+	src: local('Pretendard SemiBold'), 
+    url(../fonts/Pretendard-SemiBold.woff2) format('woff2'), 
+    url(../fonts/Pretendard-SemiBold.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'pt';
+	font-weight: 500;
+	font-display: swap;
+	src: local('Pretendard Medium'), 
+    url(../fonts/Pretendard-Medium.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Medium.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'pt';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), 
+    url(../fonts/Pretendard-Regular.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'pt';
+	font-weight: 300;
+	font-display: swap;
+	src: local('Pretendard Light'), 
+    url(../fonts/Pretendard-Light.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Light.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'pt';
+	font-weight: 200;
+	font-display: swap;
+	src: local('Pretendard ExtraLight'), 
+    url(../fonts/Pretendard-ExtraLight.woff2) format('woff2'), 
+    url(../fonts/Pretendard-ExtraLight.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'pt';
+	font-weight: 100;
+	font-display: swap;
+	src: local('Pretendard Thin'), 
+    url(../fonts/Pretendard-Thin.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Thin.woff) format('woff');
+}
+/*********************** end - 웹폰트 정의*********************/
+/*********************** start - 기본스타일*********************/
+body{
+    font-family: 'pt';
+    font-size: 17px; 
+    font-weight: 400;
+    line-height: 1.5;
+    color: #3d3d3d;
+}
+.wrapper{
+    width: 1260px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+/*********************** end - 기본스타일*********************/
+
+.visual{
+    background: url(../images/lh_visual2.jpg) no-repeat center center / cover;
+    height: 514px;
+    color: #ffffff;
+    margin: 127px 0 0 0;
+}
+.visual h2{
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+    padding: 166px 0 0 0;
+}
+
+.work .tit{
+    text-align: center;
+}
+.work .tit h2{
+    font-weight: 700;
+    color: #0067db;
+    margin: 127px 0 0 0;
+}
+.work .tit .sub_tit{
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 17px 0 18px 0;
+}
+.work h3{
+    font-size: 32px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 99px 0 7px 0;
+}
+.work .photo{
+    margin: 24px 0 0 0;
+}
+
+.esg{
+    background: #f4f4f4;
+    margin: 106px 0 150px 0;
+    height: 474px;
+    text-align: center;
+}
+.esg h2{
+    font-weight: 700;
+    color: #0067db;
+    padding: 144px 0 0 0;
+}
+.esg .sub_tit{
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 7px 0 18px 0;
+}
