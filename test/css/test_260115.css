@@ -1,0 +1,45 @@
+@import url(pretendard.css);
+/****************** start : 태그의 초기화 ********************/
+h1, h2, h3, h4, h5, h6{
+    font-weight: initial;
+    font-size: initial;
+} 
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: inherit;
+    text-decoration: none;/*밑줄삭제*/
+}
+/****************** end : 태그의 초기화 ********************/
+/****************** start : 기본스타일 ********************/
+body{
+    font-family: 'Pretendard';
+    font-size: 17px;
+    font-weight: 400;
+    color: #3d3d3d;
+    line-height: 1.5;
+}
+.wrapper{
+    width: 1260px;
+    margin: 0 auto;
+}
+/****************** end : 기본스타일 ********************/
+
+.share{
+    text-align: center;
+}
+.share h2{
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 100px 0 8px 0;
+}
+.share a{
+    background-color: #00664f;
+    color: #fff;
+    font-weight: 700;
+    width: 124px;
+    height: 37px;
+}
