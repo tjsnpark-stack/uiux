@@ -41,17 +41,12 @@ body{
     color: #00b900;
     margin: 0 0 6px 0;
 }
-
-.global P{
-    margin: 0px 0 30px 0;
-}
 .global a{
     border: 1px solid #00b900;
     color: #00b900;
     padding: 6px 33px;
-}
-.global .photo{
-    margin: 42px 0 0 0;
+    margin: 30px 0 42px 0;
+    display: inline-block;
 }
 
 .line{
@@ -66,14 +61,12 @@ body{
     font-weight: 700;
     padding: 115px 0 12px 0;
 }
-.line P{
-    margin: 0 0 40px 0;
-}
 .line a{
     border: 1px solid #fff;
     color: #fff;
     padding: 7px 26px 7px 23px;
+    margin: 30px 0 42px;
+    display: inline-block;
 }
 .line .photo{
-    margin: 42px 0 0 0;
 }
