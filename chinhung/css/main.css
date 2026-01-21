@@ -68,15 +68,50 @@
     font-size: 32px;
     line-height: 1.3;
     color: #1d1d1d;
-    margin: 17px 0 9px 0;
+    margin: 18px 0 8px 0;
 }
 .biz .list ul li .txt a{
     display: block;
     border: 1px solid #ccc;
-    margin: 14px 0 0 0;
-    padding: 4px 0 3px 0;
+    margin: 19px 0 0 0;
+    padding: 11px 0 10px 0;
+}
+
+.brand{
+    margin: 109px 0 0 0;
+    background: url(..//images/brand_bg.jpg) no-repeat center center /cover;
+    color: #fff;
+    text-align: center;
+    height: 932px;
+    padding: 362px 0 0 0; 
+}
+.brand h2{
+    font-weight: 700;
+    color: #C2E8FF;
+}
+.brand p{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 27px 0 25px 0;
+}
+.brand a{
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 8px 26px;
 }
 
 .footer{
-    margin: 200px;
+    background-color: #1d1d1d;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 90px 0 ;
+}
+.footer .f_nav ul{
+    display: flex; /* li를 좌우로 배치 */
+    gap: 0 45px; /* flex일때만 적용 - 위아래/좌우의 여백 */
+}
+.footer .f_info{
+    margin: 26px 0;
+    display: flex;
+    gap: 0 23px;
 }
