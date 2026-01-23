@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url(commom.css);
+
+.header{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 40px 0 50px;
+}
+.header .logo{
+    margin: 18px 0 0 0;
+}
+.header .gnb ul{
+    display: flex; /* li를 좌우로 배치 */
+}
+.header .gnb ul li a{
+    display: block;
+    line-height: 100px; /* header의 높이와 동일 */
+    font-size: 22px;
+    font-weight: 700;
+    color: #191E26;
+    padding: 0 27px;
+}
+/* a 에 마우스를 올렸을때 색 변함 */
+.header .gnb ul li a:hover{
+    color: #95020C;
+}
+
+.visual{
+    background: url(..//images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+    height: 800px;
+    margin: 0 40px;
+    border-radius: 30px;
+}
+.visual .wrapper{
+    padding: 0 0 0 40px;
+}
+.visual h2{
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.3;
+    padding: 433px 0 29px 0;
+}
+
+.biz{
+    margin: 159px 0 166px 0;
+}
+.biz .art{
+    margin: 110px 0 0 0;
+}
+/* music, art하고 모두에 스타일이 적용됨 */
+.biz .group{
+    display: flex; /* tit-photo */
+    justify-content: space-between;
+    align-items: center;
+}
+.biz .group .tit{
+    width: 511px;
+}
+.biz .group .tit h3{
+    line-height: 1.3;
+    color: #95020C;
+}
+.biz .group .tit .sub_tit{
+    font-size: 40px;
+    font-weight: 700;
+    margin: 22px 0;
+}
+.biz .group .tit .sub_tit strong{
+    color: #95020C;
+}
+.biz .group .tit .btn_wrap{
+    display: flex; /* a를 좌우배치 */
+    margin: 60px 0 0 0;
+    gap: 6px 6px; /* flex로 정렬된 a 사이의 여백 - 위아래여백 좌우의 여백 */
+    flex-wrap: wrap; /* flex로 정렬되는 a가 두줄로 정렬되는 것을 허락 */
+}
+.biz .group .tit .btn_wrap a{
+    display: block;
+    color: #95020C;
+    border: 1px solid #95020C;
+    padding: 17px 38px;
+    border-radius: 30px;
+}
+/* 
+    <a></a>
+    <a></a>
+    <a class="active"></a>
+
+    a.active라는 선택자는 a들중에서 active 클래스가 있는 a를 뜻함
+
+    a  .active 이렇게 띄어쓰기를 하면 
+    <a> <strong class="active"></strong> </a>
+    이런식으로 a안에 active 클래스가 별도로 있는 것을 이야기함
+*/
+.biz .group .tit .btn_wrap a.active{
+    background-color: #95020C;
+    color: #fff;    
+}
+.biz .group .tit .btn_wrap a:hover{
+    background-color: #EACCCE;
+    font-weight: 700;
+}
+.biz .group .tit .btn_wrap a.active:hover{
+    color: #95020C;
+}
+.biz .group .photo{
+    width: 618px;
+    height: 507px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.biz .group .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.community{
+    background: url(../images/communuty_bg.jpg) no-repeat center top ;
+    color: #fff;
+}
+.community .notice{
+    padding: 156px 0 531px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.community .notice .tit h3{
+    color: #FBC04C;
+    font-weight: 700;
+}
+.community .notice .tit p{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 8px 0 0 0;
+}
+.community .notice .list{
+    width: 791px;
+}
+.community .notice .list ul li{
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+/* li:first-child  li중에 첫번째 li를 선택함 */
+.community .notice .list ul li:first-child{
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+.community .notice .list ul li a{
+    display: flex; /* h4-span 좌우배치 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0 21px 0;
+}
+.community .notice .list ul li a h4{
+    font-size: 20px;
+    font-weight: 700;
+}
+.community .notice .list ul li a span{
+    color: rgba(255,255,255,0.8);
+}
+
+.footer{
+    margin: 0 0 300px 0;
+}
