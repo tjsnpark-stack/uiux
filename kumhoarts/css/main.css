@@ -146,6 +146,9 @@
 .community .notice .list ul li:first-child{
     border-top: 1px solid rgba(255,255,255,0.2);
 }
+.community .notice .list ul li a:hover{
+    color: #FBC04C;
+}
 .community .notice .list ul li a{
     display: flex; /* h4-span 좌우배치 */
     justify-content: space-between;
@@ -158,6 +161,9 @@
 }
 .community .notice .list ul li a span{
     color: rgba(255,255,255,0.8);
+}
+.community .notice .list ul li a:hover span{
+    color: #FBC04C;
 }
 
 .footer{
