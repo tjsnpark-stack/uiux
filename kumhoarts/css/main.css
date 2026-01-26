@@ -122,7 +122,7 @@
     color: #fff;
 }
 .community .notice{
-    padding: 156px 0 531px 0;
+    padding: 155px 0 157px 0;
     display: flex;
     justify-content: space-between;
 }
@@ -165,7 +165,65 @@
 .community .notice .list ul li a:hover span{
     color: #FBC04C;
 }
+.community .youtube .tit h3{
+    color: #FBC04C;
+    font-weight: 700;
+}
+.community .youtube .tit p{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 8px 0 0 0;
+}
+.community .youtube .list{
+    margin: 52px 0 52px 0;
+}
+.community .youtube .list ul{
+    display: flex; /* li를 좌우로 배치 */
+    justify-content: space-between;
+}
+.community .youtube .list ul li{
+    width: 404px;
+}
+.community .youtube .list ul li a{
+    display: block;
+    color: #191E26;
+}
+.community .youtube .list ul li a .photo{
+    height: 227px;
+    border-radius: 25px;
+    border: 2px solid #95020C;
+    overflow: hidden; /* photo에 꼭 주기!!!! */ 
+}
+.community .youtube .list ul li a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s; /* 마우스를 오버했을때 변경되는 값을 천천히 실행 */
+}
+.community .youtube .list ul li a:hover .photo img{
+    transform: scale3d(1.125, 1.125, 1);
+}
+.community .youtube .list ul li a h4{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #191E26;
+    margin: 23px 0 0 0;
+}
 
 .footer{
-    margin: 0 0 300px 0;
+    background-color: #191E26;
+    color: #A7AFBE;
+    margin: 104px 0 0 0;
+    padding: 52px 0;
+}
+.footer .f_nav ul{
+    display: flex;/* li 좌우로 배치 */
+    gap: 0 41px;
+}
+.footer .f_info{
+    margin: 26px 0;
+    display: flex;
+    gap: 0 21px;
 }
