@@ -1,3 +1,155 @@
-img{
+@import url(commom.css);
+@import url(pretendard.css);
+
+.biz{
+    margin: 100px 0;
+}
+.biz .group{
+    display: flex;/* tit-photo 좌우 배치 */
+    justify-content: space-between;
+}
+/* .group.art이라는 클래스명과 art라는 클래스명을 동시에 갖은 */
+.biz .group.art{
+    flex-direction: row-reverse;
+    margin: 101px 0 0 0;
+}
+.biz .group .tit{
+    width: 510px;
+}
+.biz .group .tit h2{
+    color: #95020C;
+}
+.biz .group .tit .sub_tit{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 24px 0 18px 0;
+}
+.biz .group .tit .sub_tit strong{
+    color: #95020C;
+}
+.biz .group .tit .btn_wrap{
+    margin: 50px 0 0 0;
+    display: flex;
+    gap: 6px 6px; /* a를 좌우로 배치 */
+    flex-wrap: wrap; /* 여러줄 허용 */
+}
+.biz .group .tit .btn_wrap a{
+    display: block;
+    border: 1px solid #95020C;
+    color: #95020C;
+    padding: 12px 35px;
+    border-radius: 30px;
+    white-space: nowrap; /* 줄바꿈 금지 */
+}
+/* a태그 중에서 active 클래스를 준 a */
+.biz .group .tit .btn_wrap a.active{
+    background-color: #95020C;
+    color: #fff;
+}
+.biz .group .photo{
+    overflow: hidden;
+    width: 618px;
+    height: 507px;
+    border-radius: 25px;
+}
+.biz .group .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width:768px){/* 브라우저 넓이가 768 이하일때 */
+                    .biz .group{
+                        display: block;/* flex 해제 */
+                        /* justify-content: space-between; -- flex 일때만 적용 block으로 바구면 적용x 그래서 나둬도 됨 */
+                    }
+                    .biz .group.art{
+                        /* flex-direction: row-reverse; -- flex 일때만 적용 block으로 바구면 적용x 그래서 나둬도 됨 */
+                        margin: 85px 0 0 0;
+                    }
+                    .biz .group .tit{
+                        width: auto;
+                    }
+                    .biz .group .tit .sub_tit{
+                        font-size: 28px;
+                        margin: 12px 0 12px 0;
+                    }
+                    .biz .group .tit .btn_wrap{
+                        margin: 48px 0 48px 0;
+                    }
+                    .biz .group .tit .btn_wrap a{
+                        padding: 12px 35px;
+                    }
+                    .biz .group .photo{
+                        width: auto;
+                        height: 206px;
+                        border-radius: 10px;
+                    }
+}/*@media*/
+
+.photo_wrap{
+    margin: 100px 0;
+}
+.photo_wrap h2{
+    margin: 50px 0 10px 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+.photo_wrap .photo_hfix{
+    height: 840px;
+    overflow: hidden;
+    border: 2px solid #95020C;
+    border-radius: 30px;
+}
+.photo_wrap .photo_hfix img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:768px){/* 브라우저 넓이가 768 이하일때 */
+    .photo_wrap .photo_hfix{
+        height: 300px;
+    }
+}/* @media */
+.photo_wrap .photo_resize{
+    overflow: hidden;
+    border: 2px solid #95020C;
+    border-radius: 30px;
+    height: 840px;
+}
+.photo_wrap .photo_resize img{
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width:768px){/* 브라우저 넓이가 768 이하일때 */
+    .photo_wrap .photo_resize{
+        height: 300px;
+    }
+}/* @media */
+.photo_wrap .photo_font{
+    overflow: hidden;
+    border: 2px solid #95020C;
+    border-radius: 30px;
+    font-size: 0;
+    line-height: 0;
+}
+.photo_wrap .photo_font img{
+    width: 100%;
+    /* 넓이나 높이만 주면 나머지는 비율에 맞게 따라옴 */
+}
+.photo_wrap .photo_all{
+    overflow: hidden;
+    border: 2px solid #95020C;
+    border-radius: 30px;
+}
+.photo_wrap .photo_all img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}
+
+.test img{
     width: 326px;
 }

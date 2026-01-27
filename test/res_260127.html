@@ -2,16 +2,65 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/res_260127.css">
     <title>반응형 테스트</title>
 </head>
 <body>
-    svg 저장글자<br>
-    <img src="images/res_txt01.svg" alt=""><br><br>
-    jpg 저장글자<br>
-    <img src="images/res_txt02.jpg" alt=""><br><br>
-    jpg 3배 저장글자<br>
-    <img src="images/res_txt03.jpg" alt=""><br><br>
+    <div id="wrap">
+        <div class="biz">
+            <div class="wrapper">
+                <!-- 하나의 요소에 class명은 여러개 가능
+                    music이라고 불러도 되고 group이라고 불러도 됨
+                    id는 무조건 하나만 줄 수 있음 -->
+                <div class="music group">
+                    <div class="tit">
+                        <h2>Musical Arts Projects</h2>
+                        <p class="sub_tit"><strong>아티스트</strong>의 꿈이 <br>무대 위에서 비상합니다</p>
+                        <p>금호문화재단은 매주 상설 공연을 통해 젊은 음악가들에게 무대 기회를 제공합니다. 영재부터 라이징 스타까지 이어지는 체계적인 플랫폼으로 아티스트의 성장을 돕고, 신진 예술가가 전문 연주자로 자립하는 건강한 생태계를 만듭니다.</p>
+                        <div class="btn_wrap">
+                            <a href="#n" class="active">음악영재발굴ㆍ지원</a>
+                            <a href="#n">문화예술교육</a>
+                            <a href="#n">클래식공연지원</a>
+                        </div>
+                    </div><!--//tit-->
+                    <div class="photo"><img src="images/biz01.jpg" alt=""></div><!--//photo-->
+                </div><!--//music-->
+                <div class="art group">
+                    <div class="tit">
+                        <h2>Visual Arts Projects </h2>
+                        <p class="sub_tit">내일의 한국 미술을 이끌 <br><strong>창의적 시선</strong>을 찾습니다</p>
+                        <p>‘금호창작스튜디오’와 ‘금호영아티스트’ 공모를 통해 유망한 신진 작가들을 발굴하고 창작 공간을 제공합니다. 젊은 예술가들이 안정적인 환경에서 실험적인 시도를 지속하며 거장으로 성장하도록 돕는 든든한 조력자가 되겠습니다.</p>
+                        <div class="btn_wrap">
+                            <a href="#n" class="active">미술작가지원사업</a>
+                            <a href="#n">공모사업ㆍ기획전시</a>
+                            <a href="#n">소장품수집및보존</a>
+                        </div>
+                    </div><!--//tit-->
+                    <div class="photo"><img src="images/biz02.jpg" alt=""></div><!--//photo-->
+                </div><!--//art-->
+            </div><!--//wrapper-->
+        </div><!--//biz-->
+        <div class="photo_wrap">
+            <div class="wrapper">
+                <h2>높이를 고정 - 이미지는 짤림 (비율에 맞게 조정)</h2>
+                <div class="photo_hfix"><img src="images/image.jpg" alt=""></div>
+                <h2>높이 고정 - 이미지 전체 다 나옴 (비율은 찌그러짐)</h2>
+                <div class="photo_resize"><img src="images/image.jpg" alt=""></div>
+                <h2>이미지가 짤리지 않고 전체가 다 비율에 맞게 나옴 (쓰면 안됨 - 접근성 위배)</h2>
+                <div class="photo_font"><img src="images/image.jpg" alt=""></div>
+                <h2>이미지가 짤리지 않고 전체가 다 비율에 맞게 나옴</h2>
+                <div class="photo_all"><img src="images/image.jpg" alt=""></div>
+            </div><!--//wrapper-->
+        </div><!--//photo_wrap-->
+    </div><!--//wrap-->
+    <div class="test">
+        svg 저장글자<br>
+        <img src="images/res_txt01.svg" alt=""><br><br>
+        jpg 저장글자<br>
+        <img src="images/res_txt02.jpg" alt=""><br><br>
+        jpg 3배 저장글자<br>
+        <img src="images/res_txt03.jpg" alt=""><br><br>
+    </div>
 </body>
 </html>

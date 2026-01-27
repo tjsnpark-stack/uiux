@@ -24,7 +24,7 @@ em,address{
 
 /*공통스타일*/
 body{
-    font-family: "Noto Sans KR", sans-serif;
+    font-family: "pretendard", sans-serif;
     font-weight: 400;
     font-size: 17px;
     color: #191e26;
@@ -36,8 +36,8 @@ body{
     margin: 0 auto;/* 화면에 가운데 정렬 */
 }
 #wrap{
-    /* 1260+40+00 = 1340 */
-    min-width: 1340px;
+    /* 1260+30+30 = 1320 */
+    min-width: 1320px;
 }
 
 /* html 표준 때문에 입력해야하는 태그이지만 홈페이지에 나오지 않는 태그에 주는 클래스 */
@@ -52,3 +52,16 @@ body{
     white-space: nowrap !important;
     border: 0 !important;
 }
+
+@media screen and (max-width:768px){/* 브라우저 넓이가 768 이하일때 */
+                        body{
+                            font-size: 16px;
+                        }
+                        .wrapper{
+                            width: auto;
+                            margin: 0 16px;
+                        }
+                        #wrap{
+                            min-width: 0;
+                        }
+}/*@media*/
