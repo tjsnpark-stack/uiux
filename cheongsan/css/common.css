@@ -1,0 +1,46 @@
+/*
+    common.css (layout.css라고도 함)
+    홈페이지 전체에 적용되는 공통스타일
+    프로젝트마다 변경됨 - 이 css에 있는 속성을 수정하면 프로젝트 전체가 바뀜
+*/
+body{
+    font-family: "Paperozi", sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: #3d3d3d;
+    line-height: 1.5;/* 배수(글자크기의 몇 배) */
+    word-break: keep-all;/* 단어 단위로 줄 바꿈 */
+}
+.wrapper{
+    width: 1260px;
+    margin: 0 auto;/* 화면에 가운데 정렬 */
+}
+#wrap{
+    /* 1260+100+100 = 1460 */
+    min-width: 1460px;
+}
+@media screen and (max-width:640px){/* 브라우저 넓이가 768이하일때 (768부터~) */
+                .body{
+                    font-size: 16px;
+                }
+                .wrapper{
+                    width: auto;
+                    margin: 0 16px;/* 화면에 가운데 정렬 */
+                }
+                #wrap{
+                    min-width: 0;
+                }
+}/*@media*/
+
+/* html 표준 때문에 입력해야하는 태그이지만 홈페이지에 나오지 않는 태그에 주는 클래스 */
+.sr-only, .skip, .blind {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}

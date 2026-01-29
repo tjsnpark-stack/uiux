@@ -1,0 +1,51 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+.visual{
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+    border-radius: 0 0 200px 0;
+    text-align: center;
+}
+.visual .wrapper{
+    height: 900px;
+    position: relative; /* picture 정렬의 기준 */
+}
+.visual h2{
+    padding: 289px 0 0 0;
+}
+.visual .picture{
+    display: block;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* 동그라미 */ 
+    background-color: #376B2B;
+    font-weight: 700;
+    padding: 92px 0 0 0;
+    position: absolute; /* wrapper를 기준으로 */
+    right: -90px; /* 높이 반 */
+    bottom: -90px; /* 넓이 반 */
+}
+.visual .picture::before{
+    content: " "; /*필수*/ 
+    position: absolute; /* picture를 기준으로 정렬 */
+    left: 0;
+    top: 43px;
+    width: 100%;
+    height: 42px;
+    /* 아이콘을 배경으로 줄때는 사이즈를 안주면 원래 사이즈대로 들어감 */
+    background: url(../images/visual_picture.svg) no-repeat center center;
+}
+.visual .picture:hover{
+    color: #EDE59D;
+    box-shadow: 5px 5px 10px 0 rgb(0, 0, 0, 0.1);
+}
+.visual .picture:hover::before{
+    background-image: url(../images/visual_picture_on.svg);
+    /* background-image로 선언하면 이미지만 교체되고 위치나 반복값은 그대로 상속됨 */
+}
+
+.footer{
+    margin: 500px 0 0 0;
+}
