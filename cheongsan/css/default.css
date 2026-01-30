@@ -20,6 +20,15 @@ strong{
 em,address{
     font-style: normal;/*기울어지 글자를 바르게*/
 }
+button{
+    border: none;
+    background: none;
+    font-family: inherit;
+    color: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    font-size: inherit;
+}
 *{
     margin: 0;
     padding: 0;
