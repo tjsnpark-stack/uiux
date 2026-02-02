@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/js_260202.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <title>javascript/jquery 연습</title>
+</head>
+<body>
+    <h1>글자</h1>
+    <div class="btn_wrap">
+        <button class="red">빨간버튼</button>
+        <button class="blue">파란버튼</button>
+    </div>
+    <script>
+        console.log('출력')
+        // $('h1').addClass('blue')
+        $('h1').on('mouseenter', function(){
+            console.log('마우스 올림')
+            $('h1').addClass('blue')
+        })
+        $('h1').on('mouseleave', function(){
+            console.log('마우스 내림')
+            $('h1').removeClass('blue')
+        })
+        $('.btn_wrap button.red').on('click', function(){
+            console.log('빨간버튼 클릭')
+            $('h1').removeClass()
+            //removeClass는 클래스명을 안주면 싹다 지워버림
+            $('h1').addClass('red')
+        })
+        $('.btn_wrap button.blue').on('click', function(){
+            console.log('파란버튼 클릭')
+            $('h1').removeClass()
+            $('h1').addClass('blue')
+        })
+    </script>
+</body>
+</html>

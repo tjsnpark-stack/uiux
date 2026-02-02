@@ -1,0 +1,32 @@
+@import url(pretendard.css);
+@import url(commom.css);
+
+h1{
+    font-size: 50px;
+    font-weight: 700;
+    color: #1d1d1d;
+    border: 1px solid #1d1d1d;
+}
+h1.red{
+    color: red;
+}
+h1.blue{
+    color: blue;
+}
+.btn_wrap{
+    display: flex;
+    justify-content: center;
+    gap: 0 24px;
+    margin: 50px 0;
+}
+.btn_wrap button{
+    padding: 15px 30px;
+    color: #fff;
+    font-weight: 700;
+}
+.btn_wrap button.red{
+    background-color: red;
+}
+.btn_wrap button.blue{
+    background-color: blue;
+}
