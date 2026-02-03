@@ -1,0 +1,23 @@
+@import url(pretendard.css);
+@import url(commom.css);
+
+.tour{
+    margin: 100px;
+}
+.tour .list ul{
+    display: flex;
+    justify-content: space-between;
+}
+.tour .list ul li{
+    width: 190px;
+}
+.tour .list ul li a{
+    height: 456px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+}
+.tour .list ul li:nth-child(1) a{
+    background-color: #113A58;
+}
