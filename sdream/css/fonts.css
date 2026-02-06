@@ -1,0 +1,17 @@
+
+@font-face {
+    font-family: "NanumSquareNeo";
+    font-weight: 400;
+    src: 
+    url(../fonts/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NanumSquareNeoTTF-bRg.woff2) format("woff2"),
+    url(../fonts/NanumSquareNeoTTF-bRg.woff) format("font-woff")
+}
+@font-face {
+    font-family: "NanumSquareNeo";
+    font-weight: 800;
+    src: 
+    url(../fonts/NanumSquareNeoTTF-dEb.eot#iefix) format("embedded-opentype"),
+    url(../fonts/NanumSquareNeoTTF-dEb.woff2) format("woff2"),
+    url(../fonts/NanumSquareNeoTTF-dEb.woff) format("font-woff")
+}
