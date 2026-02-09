@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 외부 라이브러리 파일을 먼저 불러야함 -->
+    <!-- 외부라이브러리 파일을 먼저 불러야 함 -->
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
@@ -15,34 +15,111 @@
 </head>
 <body>
     <div id="wrap">
-        <header class="header"></header>
+        <!-- 스크롤 내릴때 상단에 고정 : fixed 클래스 추가
+            header에 마우스를 올리면 배경이 흰색으로 바뀜 : over 클래스 추가 -->
+        <header class="header">
+            <div class="wrapper">
+                <h1 class="logo"><a href="index.html"><span class="sr-only">삼성꿈장학재단 Samsung Dream Scholarship Foundation</span></a></h1>
+                <nav class="gnb">
+                    <button class="gnb_open"><span class="sr-only">메뉴열기</span></button>
+                    <div class="gnb_wrap">
+                        <ul>
+                            <li><a href="#n">사업소개</a></li>
+                            <li><a href="#n">장학신청</a></li>
+                            <li><a href="#n">정보마당</a></li>
+                            <li><a href="#n">재단소개</a></li>
+                        </ul>
+                    </div>
+                    <button class="gnb_close"><span>메뉴닫기</span></button>
+                </nav>
+                <div class="util">
+                    <a href="#n" class="mypage"><span class="sr-only">마이페이지</span></a>
+                    <!-- 마이페이지는 누르면 페이지 이동. 그래서 a -->
+                    <div class="lang">
+                        <button class="lang_open"><span class="sr-only">언어선택 열기</span></button>
+                        <!-- 지구본을 클릭하면 언어 선택이 하단에 뜸... 페이지 이동X 이런건 버튼 -->
+                    </div>
+                </div>
+            </div>
+        </header>
         <main class="container">
             <section class="visual">
                 <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                     <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
-                        <li class="swiper-slide pop1">
+                        <li class="swiper-slide   pop1">
                             <div class="wrapper">
                                 <strong>Samsung Dream Scholarship Foundation</strong>
-                                <h2>받은 사랑이 꿈이 되고,<br>꿈이 세상의 빛이 됩니다.</h2>
+                                <h2>꿈에 날개를 달다, 희망에 길을 내다</h2>
                             </div>
                         </li>
-                        <li class="swiper-slide pop2">
+                        <li class="swiper-slide   pop2">
                             <div class="wrapper">
                                 <strong>Samsung Dream Scholarship Foundation</strong>
-                                <h2>어제의 설렘이 오늘의 도전으로,<br>내일의 눈부신 성장이 됩니다.</h2>
-                            </div>    
-                        </li> 
-                        <li class="swiper-slide pop3">
-                            <div class="wrapper">
-                                <strong>Samsung Dream Scholarship Foundation</strong>
-                                <h2>세상에서 가장 빛나는 이름,<br>당신의 꿈을 응원합니다.</h2>
+                                <h2>내일의 꿈을 응원하는 든든한 버팀목</h2>
                             </div>
-                        </li>  
+                        </li>
+                        <li class="swiper-slide   pop3">
+                            <div class="wrapper">
+                                <strong>Samsung Dream Scholarship Foundation</strong>
+                                <h2>함께 키우는 꿈, 함께 여는 미래</h2>
+                            </div>
+                        </li>
                     </ul>
                 </div>
-                <div class="scroll"><span>Scroll Down</span></div>
-            </section><!--//visual-->
-            <section class="biz"></section><!--//biz-->
+                <div class="scroll"><span>SCROLL DOWN</span></div>
+            </section><!--visual-->
+            <section class="biz">
+                <div class="wrapper">
+                    <div class="tit">
+                        <strong>Changing Tomorrow</strong>
+                        <h2>내일의 변화</h2>
+                    </div><!--//tit -->
+                    <div class="list">
+                        <ul>
+                            <li class="biz01">
+                                <a href="#n">
+                                    <div class="txt">
+                                        <h3>멘토링 꿈<br>장학사업</h3>
+                                        <p>멘토의 정서적 지지와 장학금을 통해 청소년의 꿈과 재능 개발을 지원합니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="biz02">
+                                <a href="#n">
+                                    <div class="txt">
+                                        <h3>배움터 교육<br>지원사업</h3>
+                                        <p>지역 교육 공동체와 협력하여 소외 계층을 위한 양질의 교육 안전망을 구축합니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="biz03">
+                                <a href="#n">
+                                    <div class="txt">
+                                        <h3>리더육성<br>장학사업</h3>
+                                        <p>우수 대학생을 선발하여 사회 각 분야의 리더로 성장하도록 맞춤 지원합니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="biz04">
+                                <a href="#n">
+                                    <div class="txt">
+                                        <h3>글로벌<br>장학사업</h3>
+                                        <p>해외 한인 후손과 개도국 인재를 지원하여 자국 발전을 이끌 리더로 양성합니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="biz05">
+                                <a href="#n">
+                                    <div class="txt">
+                                        <h3>청소년치아교정<br>지원사업</h3>
+                                        <p>가정형편이 어려운 장학생에게 무료 치아교정 기회를 제공하여 미소를 되찾아줍니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section><!--//biz-->
             <section class="news"></section><!--//news-->
             <section class="webzine"></section><!--//webzine-->
             <section class="service"></section><!--//service-->
