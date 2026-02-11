@@ -28,7 +28,7 @@ $(document).ready(function(){
 
     function header_fixed(){
         scrolling = $(window).scrollTop()
-        console.log(scrolling)
+        // console.log(scrolling)
         if(scrolling > 0){
             // console.log('0보다 큼')
             $('header').addClass('fixed')
@@ -68,5 +68,15 @@ $(document).ready(function(){
         },
     });
 
+    /************************************************
+     * top버튼을 클릭하면 상단으로(맨위로) 스크롤
+     * **********************************************/
+    $('.footer .top').on('click', function(){
+        console.log('클릭')
+        // $(Window).scrollTop(0)
+        $('html,body').animate({
+            scrollTop : 0
+        },500)
+    })
 
 })//$(document).ready

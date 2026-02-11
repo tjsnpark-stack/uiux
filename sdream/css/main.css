@@ -154,6 +154,7 @@
 }
 .visual .swiper-slide{
     height: 100dvh; /* 브라우저의 높이 */
+    min-height: 500px;
     background: url(../images/visual_bg01.jpg) no-repeat center center / cover;
     color: #fff;
     display: flex; /* wrapper를 아래로 정렬 */
@@ -858,34 +859,87 @@
                 }
                 .service .list ul li a{
                     padding: 27px 0 27px 20px;
-                    position: relative; /* 정렬의 기준 */ 
                 }
                 .service .list ul li a::after{
-                    content: "";
-                    position: absolute;
-                    right: 40px;
-                    top: 40px;
-                    width: 41px;
-                    height: 41px;
-                    border-radius: 50%;
-                    background: #4469AF url(../images/more_w.svg) no-repeat center center;
-                    transition: transform 1s;
-                }
-                .service .list ul li a:hover::after{
-                    background-color: #15366C;
-                    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
-                    transform: rotate(360deg);
+                    right: 25px;
+                    top: 25px;
+                    width: 25px;
+                    height: 25px;
+                    background-size: 11px;
                 }
                 .service .list ul li a strong{
-                    color: #4469AF;
+                    display: none;
                 }
                 .service .list ul li a h3{
-                    font-size: 20px;
-                    font-weight: 800;
-                    color: #15366C;
-                } 
+                    font-size: 16px;
+                }
 }/*@media*/
 
 .footer{
-    margin: 1000px 0 0 0;
+    background-color: #2E3138;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 78px 0 71px 0;
 }
+.footer .wrapper{
+    position: relative; /* top 정렬의 기준 */
+}
+.footer .top{
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #4469AF url(../images/arrow_w.svg) no-repeat center center ;
+}
+.footer .top:hover{
+    background-color: #fff;
+    background-image: url(../images/arrow.svg);
+}
+.footer .f_nav ul{
+    display: flex; /* li 좌우로 배치 */
+    gap: 6px 41px;
+    flex-wrap: wrap; /* 여러줄 허용 */
+}
+.footer .f_nav ul li{
+    position: relative; /* after 정렬의 기준 */
+}
+.footer .f_nav ul li.imp{
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 800;
+}
+.footer .f_nav ul li::after{
+    content: "";/* before/after 필수값 */
+    position: absolute;
+    right: -22px;
+    top: 5px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.footer .f_nav ul li:last-child::after{
+    display: none;
+}
+.footer .f_info{
+    margin: 26px 0 0 0;
+    display: flex;
+    flex-wrap: wrap; /* 여러줄 허용 */
+    gap: 6px 42px;
+}
+@media screen and (max-width:768px){
+                .footer{
+                    padding: 79px 0 93px 0;
+                }
+                .footer .top{
+                    top: -91px;
+                    width: 25px;
+                    height: 25px;
+                    background-image: url(../images/arrow_m_ios.svg);
+                }
+                .footer .top:hover{
+                    background-image: url(../images/arrow_s_ios.svg);
+                }
+                .footer .f_info{
+                    margin: 48px 0 0 0;
+                }
+}/*@media*/
