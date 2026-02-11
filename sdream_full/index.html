@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 외부라이브러리 파일을 먼저 불러야 함 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <!-- 내가 만든 파일은 나중에 부름 -->
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css?v=2602091731">
+    <!-- 주소뒤에 ?가 들어간 이후의 값은 주소가 x 
+         그 주소 에 전달하는 변수값
+         저희는 브라우저가 주소를 바꿨다고 일부러 오해하도록(그래야 새로 다운로드 해줌)
+         .css 주소 뒤에 ?를 추가하고나서 아무말이나 씀
+         그렇지만 너무 아무말이나 쓰면 창피하니까 v=날짜시간을 입력함 v는 version의 약자로 씀
+         내가 css를 바꾸거나 이미지를 교체해도 고객은 변경된 사항이 안보일 수도 있음
+         나도 안보임(ctrl+f5를 누를면 되지만 매번 그럴수 없으니까)
+         그래서 변경한 이미지 파일명 뒤 ..또는 css파일명 뒤에 ?v=날짜를 씀(js도 마찬가지) -->
+    <title>삼성꿈장학재단</title>
+</head>
+<body>
+    <div id="wrap">
+        <!-- 스크롤 내릴때 상단에 고정 : fixed 클래스 추가
+            header에 마우스를 올리면 배경이 흰색으로 바뀜 : over 클래스 추가 -->
+        <header class="header">
+            <div class="wrapper">
+                <h1 class="logo"><a href="index.html"><span class="sr-only">삼성꿈장학재단 Samsung Dream Scholarship Foundation</span></a></h1>
+                <nav class="gnb">
+                    <button class="gnb_open"><span class="sr-only">메뉴열기</span></button>
+                    <div class="gnb_wrap">
+                        <ul>
+                            <li><a href="#n">사업소개</a></li>
+                            <li><a href="#n">장학신청</a></li>
+                            <li><a href="#n">정보마당</a></li>
+                            <li><a href="#n">재단소개</a></li>
+                        </ul>
+                    </div>
+                    <button class="gnb_close"><span>메뉴닫기</span></button>
+                </nav>
+                <div class="util">
+                    <a href="#n" class="mypage"><span class="sr-only">마이페이지</span></a>
+                    <!-- 마이페이지는 누르면 페이지 이동. 그래서 a -->
+                    <div class="lang">
+                        <button class="lang_open"><span class="sr-only">언어선택 열기</span></button>
+                        <!-- 지구본을 클릭하면 언어 선택이 하단에 뜸... 페이지 이동X 이런건 버튼 -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="container">
+            <section class="visual">
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide   pop1">
+                            <div class="wrapper">
+                                <strong>Samsung Dream Scholarship Foundation</strong>
+                                <h2>꿈에 날개를 달다, 희망에 길을 내다</h2>
+                            </div>
+                        </li>
+                        <li class="swiper-slide   pop2">
+                            <div class="wrapper">
+                                <strong>Samsung Dream Scholarship Foundation</strong>
+                                <h2>내일의 꿈을 응원하는 든든한 버팀목</h2>
+                            </div>
+                        </li>
+                        <li class="swiper-slide   pop3">
+                            <div class="wrapper">
+                                <strong>Samsung Dream Scholarship Foundation</strong>
+                                <h2>함께 키우는 꿈, 함께 여는 미래</h2>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="scroll"><span>SCROLL DOWN</span></div>
+            </section><!--visual-->
+            <section class="biz">
+                <div class="wrapper">
+                    <div class="tit">
+                        <strong>Changing Tomorrow</strong>
+                        <h2>내일의 변화</h2>
+                    </div><!--//tit -->
+                    <div class="list">
+                        <ul>
+                            <li class="biz01">
+                                <a href="#n">
+                                    <div class="txt">
+                                        <h3>멘토링 꿈<br>장학사업</h3>
+                                        <p>멘토의 정서적 지지와 장학금을 통해 청소년의 꿈과 재능 개발을 지원합니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="biz02">
+                                <a href="#n">
+                                    <div class="txt">
+                                        <h3>배움터 교육<br>지원사업</h3>
+                                        <p>지역 교육 공동체와 협력하여 소외 계층을 위한 양질의 교육 안전망을 구축합니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="biz03">
+                                <a href="#n">
+                                    <div class="txt">
+                                        <h3>리더육성<br>장학사업</h3>
+                                        <p>우수 대학생을 선발하여 사회 각 분야의 리더로 성장하도록 맞춤 지원합니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="biz04">
+                                <a href="#n">
+                                    <div class="txt">
+                                        <h3>글로벌<br>장학사업</h3>
+                                        <p>해외 한인 후손과 개도국 인재를 지원하여 자국 발전을 이끌 리더로 양성합니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="biz05">
+                                <a href="#n">
+                                    <div class="txt">
+                                        <h3>청소년치아교정<br>지원사업</h3>
+                                        <p>가정형편이 어려운 장학생에게 무료 치아교정 기회를 제공하여 미소를 되찾아줍니다.</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section><!--//biz-->
+            <section class="news">
+                <div class="wrapper">
+                    <div class="tit">
+                        <strong>Today's Update</strong>
+                        <h2>오늘의 발걸음</h2>
+                    </div><!--//tit-->
+                    <div class="list">
+                        <ul>
+                            <!-- 장학만 li에 sch클래스 추가 -->
+                            <li>
+                                <a href="#n">
+                                    <strong>일반</strong>
+                                    <h3>[입찰공고] 삼성꿈장학재단 20주년 기념식 운영대행 용역</h3>
+                                    <span>2026-01-29</span>
+                                </a>
+                            </li>
+                            <li class="sch">
+                                <a href="#n">
+                                    <strong>장학</strong>
+                                    <h3>2026년 배움터 교육지원사업 공모</h3>
+                                    <span>2025-12-31</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <strong>일반</strong>
+                                    <h3>[입찰공고] 삼성꿈장학재단 기부금 모집 결과</h3>
+                                    <span>2025-12-02</span>
+                                </a>
+                            </li>
+                            <li class="sch">
+                                <a href="#n">
+                                    <strong>장학</strong>
+                                    <h3>2025년 글로벌 국외장학사업 공모</h3>
+                                    <span>2025-10-26</span>
+                                </a>
+                            </li>
+                            <li class="sch">
+                                <a href="#n">
+                                    <strong>장학</strong>
+                                    <h3>2025년 멘토와 함께하는 2차 꿈장학 공모</h3>
+                                    <span>2025-08-17</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div><!--//list-->
+                    <div class="more"><a href="#n"><span>more</span></a></div>
+                </div>
+            </section><!--//news-->
+            <section class="webzine">
+                <div class="wrapper">
+                    <div class="tit">
+                        <strong>Steps of Hope</strong>
+                        <h2>희망이 자라는 발걸음</h2>
+                    </div><!--//tit-->
+                    <div class="list">
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/webzine01.png" alt=""></div>
+                                        <div class="txt">
+                                            <strong>글로벌 희망장학사업</strong>
+                                            <h3>함께 밀어주고 끌어주며,더 넓은 세상을 향해!</h3>
+                                            <p>겨울 추위도 녹일 만큼 훈훈한 열기로 가득했던 그곳,
+                                                바로 ‘2025년 글로벌 희망장학생 졸업식 및 송년모임’ 현장이었다.
+                                                새로운 세상의 문을 열 준비를 마친 글로벌 희망장학생 졸업생들과
+                                                그들의 빛나는 앞날을 축하해주기 위해 모인 장학생들.
+                                                이들은 각자의 1년간 발자취를 되돌아보며 한 해를 마무리하고,
+                                                다시 한번 꿈을 향해 걸어갈 용기를 다졌다.</p>
+                                        </div>
+                                    </a>
+                                </li> 
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/webzine02.png" alt=""></div>
+                                        <div class="txt">
+                                            <strong>리더육성 장학사업</strong>
+                                            <h3>조물조물 사랑을 버무려 나누는따뜻한 마음</h3>
+                                            <p>겨울 초입의 차가운 공기가 코끝을 스치던 11월의 어느 날,
+                                                꿈아라 장학생들은 용산구의 한 복지관을 찾아 따뜻한 하루를 만들었다.
+                                                추운 겨울을 홀로 보내실 어르신들을 위해
+                                                정성스레 재료를 다듬고 양념에 채소를 버무리는
+                                                장학생들의 손끝에선 이웃을 향한 훈훈한 정이 피어났다.</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/webzine03.png" alt=""></div>
+                                        <div class="txt">
+                                            <strong>멘토링 꿈장학사업</strong>
+                                            <h3>따뜻한 위로와 공감을 선사한70개의 꿈 이야기</h3>
+                                            <p>삼성꿈장학재단은 꿈장학 멘토링의 다양한 경험과 사례를 발굴하고,
+                                                장학생들의 노력과 성취를 격려하기 위해 매년 꿈장학 공모전을 시행하고 있다.
+                                                올해 역시 장학생들의 성장 가능성을 알아보고 응원한 멘토 선생님들의 이야기와
+                                                꿈을 향해 노력하는 과정을 자신만의 개성으로 담아낸 장학생들의 작품
+                                                총 70편이 최종 수상작으로 선정됐다.
+                                                꿈을 향한 이야기로 모두에게 공감과 위로를 전한 수상자들이
+                                                한데 모여 이야기를 나눴던 꿈장학 공모전 시상식 현장으로 들어가 본다.</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/webzine04.png" alt=""></div>
+                                        <div class="txt">
+                                            <strong>배움터 교육지원사업</strong>
+                                            <h3>우리가 직접 써 내려간배움터 축제의 장!</h3>
+                                            <p>따사로운 햇볕 아래 기분 좋은 바람이 불어오던 가을의 어느 날,
+                                                배움터 장학생과 교사들이 직접 만들어가는 특별한 축제가 열렸다. 장학생들은 ‘1칸’ 부스, 봉사대회,
+                                                청소년 창작곡 밴드 페스티벌, ‘1장’ 포스터 발표 컨테스트, 수학을 부탁해! 컨테스트,
+                                                과학·SW-AI 프로젝트 결과발표회 등을 통해 서로의 눈부신 성장을 응원했다.
+                                                또한, 선생님들은 사례나눔과 워크숍을 통해 아이들을 향한 헌신과
+                                                열정을 나누며 서로 깊이 공감했다. 배움터 장학생들의 성장 과정과 그 결과를 온몸으로 체감할 수 있었던
+                                                ‘배움터 성장나눔Day’ 현장으로 들어가 보자.</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/webzine05.png" alt=""></div>
+                                        <div class="txt">
+                                            <strong>멘토링 꿈장학사업</strong>
+                                            <h3>꿈을 안고 선명하게 그려 보는내일의 나</h3>
+                                            <p>미래에 내가 되고 싶은 모습을 상상하는 일은
+                                                현재의 나를 발전시키고 성장하게 하는 원동력이 되어준다.
+                                                오래 간직해 온 꿈을 이루기 위해 자신만의 구체적인 진로 로드맵을
+                                                그려온 장학생들은 주체적인 고민을 통해 자신만의 정답을 찾아나가며
+                                                내일의 내 모습을 선명하게 그려나가고 있었다.
+                                                그 소중한 꿈과 장학생들의 미래의 모습을 엿볼 수 있었던
+                                                진로발표대회 현장을 살펴본다.</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/webzine06.png" alt=""></div>
+                                        <div class="txt">
+                                            <strong>리더육성 장학사업</strong>
+                                            <h3>전문가와 함께 구체적인 해결책을찾으며 꿈에 대한 확신을 얻다</h3>
+                                            <p>가슴속에 품어온 꿈을 펼치기 위해 대학에 진학한 대학 희망장학생들.
+                                                하지만 바쁜 대학생활을 보내면서 내가 꿈꾸던 진로가 적성에 맞지 않거나,
+                                                현실과 이상 사이에서 방향을 잡지 못해 고민하는 순간들이 많아졌다.
+                                                이에 삼성꿈장학재단은 대학 희망장학생들을 대상으로 진로&취업지원 워크숍을 마련했다.
+                                                자신이 원하는 진로를 찾고, 관련 분야에서 취업을 꿈꾸는 장학생들의 열기로
+                                                가득했던 워크숍 현장으로 떠나보자.</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!--//list-->
+                    <div class="ctrl_wrap">
+                        <button class="prev"><span class="sr-only">이전팝업보기</span></button>
+                        <button class="next"><span class="sr-only">다음팝업보기</span></button>
+                        <div class="more"><a href="#n">more</a></div><!--//more-->
+                    </div><!--//ctrl_wrap-->
+                </div>
+            </section><!--//webzine-->
+            <section class="service">
+                <div class="wrapper">
+                    <div class="tit">
+                        <strong>Deep Dive</strong>
+                        <h2>꿈에 깊이를 더하다</h2>
+                    </div><!--//tit-->
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#n">
+                                    <strong>Youtube</strong>
+                                    <h3>장학재단 홍보영상</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <strong>Webzine</strong>
+                                    <h3>재단소식 웹진</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <strong>Q&A</strong>
+                                    <h3>묻고답하기</h3>
+                                </a>
+                            </li>
+                        </ul>
+                    </div><!--//list-->
+                </div>
+            </section><!--//service-->
+        </main>
+        <footer class="footer">
+            <div class="wrapper">
+                <button class="top"><span class="sr-only">위로가기</span></button>
+                <div class="f_nav">
+                    <ul>
+                        <li><a href="#n">이용약관</a></li>
+                        <li><a href="#n">이메일 무단 수집거부</a></li>
+                        <li class="imp"><a href="#n">개인정보처리방침</a></li>
+                        <li class="imp"><a href="#n">교육부 홈페이지</a></li>
+                    </ul>
+                </div><!--//f_nav-->
+                <div class="f_info">
+                    <address>(우)04323 서울특별시 용산구 후암로 107 게이트웨이타워 20층</address>
+                    <span>TEL. 02-727-5400</span>
+                    <span>FAX. 02-727-5409</span>
+                </div><!--//f_info-->
+                <div class="copyright">© Samsung Dream Scholarship Foundation. All rights reserved.</div>
+            </div><!--//wrapper-->
+        </footer>
+    </div>
+</body>
+</html>
