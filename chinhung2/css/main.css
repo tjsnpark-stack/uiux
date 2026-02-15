@@ -1,0 +1,16 @@
+@import url(fonts.css);
+@import url(commom.css);
+
+.header{
+    height: 100px;
+}
+.header .wrapper{
+    display: flex;/* logo,gnb 좌우배치 */
+    justify-content: space-between;
+}
+.header .gnb ul{
+    display: flex;/* li 좌우로 배치 */
+}
+.header .gnb ul li a{
+    display: block  ;
+}
