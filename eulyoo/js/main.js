@@ -1,82 +1,51 @@
 $(document).ready(function(){
-    const visual_swiper = new Swiper('.visual  .swiper', { /* 팝업을 감싼는 요소의 class명 */
+    let visual_bar_w
+    const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
+
         autoplay: {  /* 팝업 자동 실행 */
             delay: 5000,
-            disableOnInteraction: true,
+            disableOnInteraction: false,
         },
+
         //effect: "fade", /* fade 효과 */
+
         loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-    });//visual_swiper
 
-
-    /*******************************
-     * header에 마우스를 올리면(오버하면)  over 클래스 추가  
-                마우스를 내리면(아웃하면) over 클래스 삭제
-        브라우저의 스크롤을 내리면 header에 fixed 클래스 추가
-        브라우저를 다시 맨 위로 스크롤하면 fixed 클래스 삭제
-     ************************************ */
-    $('.header').on('mouseenter', function(){
-        // console.log('마우스 올림')
-        $(this).addClass('over')
-    })
-    $('.header').on('mouseleave', function(){
-        // console.log('마우스 올렸다 내림')
-        $(this).removeClass('over')
-    })
-
-    let scrolling //브라우저가 스크롤 된 값
-
-    function header_fixed(){
-        scrolling = $(window).scrollTop()
-        // console.log(scrolling)
-        if(scrolling > 0){
-            // console.log('0보다 큼')
-            $('header').addClass('fixed')
-        }else{
-            // console.log('0이거나 0보다 작다') 
-            $('header').removeClass('fixed')
-        }
-    }
-    //맨처음 html이 로딩된 이후 단 한번실행
-    header_fixed() 
-    $(window).scroll(function(){ //브라우저가 실행될때마다 실행
-        header_fixed()
-    })
-
-    /************************************************************
-     웹진 swiper
-     **********************************************************/
-     const webzine_swiper = new Swiper('.webzine .swiper', { /* 팝업을 감싼는 요소의 class명 */
-        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
-        breakpoints: {
-            // 541: {    /* 768-540 사이 */
-            //     slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
-            //     spaceBetween: 16,
-            // },
-            769: {    /* 769px 이상일때 적용 */
-                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
-                spaceBetween: 24,
+        pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+            el: '.swiper-pagination', /* 해당 요소의 class명 */
+            clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
+            type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
+            renderBullet: function (index, className) {   /* paging에 특정 코드 넣기 */
+                return '<span class="' + className + '">' + (index + 1) + "</span>";
             },
         },
-        //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
-        loop: false,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
         
-        navigation: {
-            nextEl: '.webzine .ctrl_wrap .next',
-            prevEl: '.webzine .ctrl_wrap .prev',
+
+        navigation: {  /* 이전, 다음 버튼 */
+            nextEl: '.visual .ctrl_right .next',  /* 다음 버튼의 클래스명 */
+            prevEl: '.visual .ctrl_right .prev',  
         },
+         on: {
+            autoplayTimeLeft(s, time, progress) {
+                /*  1 -> 0 
+                   0% ~ 100% */
+                visual_bar_w = 100 - (100 * progress)
+                $('.visual .ctrl_left .bar span').width(visual_bar_w + '%')
+            }
+        }
+
     });
 
-    /************************************************
-     * top버튼을 클릭하면 상단으로(맨위로) 스크롤
-     * **********************************************/
-    $('.footer .top').on('click', function(){
-        console.log('클릭')
-        // $(Window).scrollTop(0)
-        $('html,body').animate({
-            scrollTop : 0
-        },500)
+    $('.visual .ctrl_left .stop').on('click', function(){
+        // console.log('정지')
+        visual_swiper.autoplay.stop();  /* 일시정지 기능 */
+        $(this).hide()    
+        $('.visual .ctrl_left .play').show()
     })
-
-})//$(document).ready
+    $('.visual .ctrl_left .play').on('click', function(){
+        // console.log('재생')
+        visual_swiper.autoplay.start(); /* 재생 기능 */
+        $(this).hide()
+        $('.visual .ctrl_left .stop').show()
+    })
+})//document ready//

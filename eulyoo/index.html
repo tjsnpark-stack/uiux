@@ -3,14 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 외부라이브러리 파일 연결 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <!-- 내가 만든 파일 연결 -->
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
     <title>을유문화사</title>
 </head>
 <body>
-    <div class="wrapper">
-        1945년(을유년) 12월 1일, 광복의 감격과 의의를 기리며 ‘출판은 곧 건국 사업’이라는 사명감으로 첫발을 내디딘 을유문화사는 한국 현대사와 궤軌를 같이하며 한국 출판의 기틀을 다져 왔습니다.
-        한글의 원상회복을 위해 만든 첫 책 『가정 글씨 체첩』을 시작으로 『청록집』, 『삼대』, 『임꺽정』 등 광복 이후 우리 문학사의 중요한 흐름을 대표하는 책들을 출간했고, 출판사상 큰 의미를 갖는 『우리말 큰사전』과 『한국사』, 국내 문고판의 효시가 된 ‘을유문고’(1948~1988)와 ‘세계문학전집’(1959~1975)을 발간했습니다. 이후 『김약국의 딸들』을 선보인 ‘한국신작문학전집’과 ‘을유신서’ 등을 출간하며 현대 지성의 산실로서 그 명맥을 꾸준히 이어 왔습니다.
-        오늘날에는 『국화와 칼』, 『이기적 유전자』, 『러셀 서양철학사』, 『도시는 무엇으로 사는가』, 『글자 풍경』 등 단행본과 50년 만에 새롭게 선보이는 ‘을유세계문학전집’, 시공을 초월한 지적 성취를 담은 ‘을유사상고전’, 위대한 예술가들의 삶과 작품 세계를 조명한 ‘현대 예술의 거장’ 등 시리즈를 출간하고 있습니다. 앞으로도 저희는 법고창신法古創新의 정신을 지향하며 지금까지 쌓아 온 경험을 기반으로, 작가와 독자 사이의 충실한 가교 역할을 하면서 이 시대에 필요한 책을 만들고자 합니다.
+    <div id="wrap">
+        <header class="header">
+            <h1 class="logo"><a href="index.html"><span>을유문화사</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open">
+                    <span class="sr-only">메뉴열기</span>
+                    <svg width="24" height="18" viewBox="0 0 24 18" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 2.07692V0H24V2.07692H0ZM0 18V15.9231H24V18H0ZM0 10.0385V7.96154H24V10.0385H0Z" />
+                    </svg>
+                </button>
+                <div class="gnb_wrap">
+                    <div class="gnb_logo"><span>을유문화사</span></div>
+                    <ul class="depth1">
+                        <li>
+                            <a href="#n"><span>을유문화사</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>을유1945</span></a></li>
+                                <li><a href="#n"><span>출판사 소개</span></a></li>
+                                <li><a href="#n"><span>인사말</span></a></li>
+                                <li><a href="#n"><span>아카이브</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>콘텐츠</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>스테디셀러</span></a></li>
+                                <li><a href="#n"><span>전체 도서</span></a></li>
+                                <li><a href="#n"><span>작가 소개</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>을유소식</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>을유스토어</span></a></li>
+                                <li><a href="#n"><span>새소식</span></a></li>
+                                <li><a href="#n"><span>자료실</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>독자참여</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>원고투고</span></a></li>
+                                <li><a href="#n"><span>1:1 문의</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button class="gnb_close">
+                        <span>메뉴닫기</span>
+                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.42532 18L0 16.5747L7.57467 9L0 1.42532L1.42532 0L9 7.57467L16.5747 0L18 1.42532L10.4253 9L18 16.5747L16.5747 18L9 10.4253L1.42532 18Z"/>
+                        </svg>
+                    </button>
+                </div><!--gnb_wrap-->
+                <div class="gnb_bg"></div><!--메뉴 배경-->
+            </nav>
+        </header>
+        <main class="contianer">
+            <section class="visual">
+                <h2 class="sr-only">팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide bg1">
+                            <h3>1945년부터 이어진 지성의 숨결</h3>
+                            <p>광복의 기쁨으로 피어난 을유1945, 이제 당신의 화면 위에서 새로운 역사를 기록합니다.</p>
+                        </li>
+                        <li class="swiper-slide bg2">
+                            <h3>시대를 적고, 내일을 그리다</h3>
+                            <p>1945년의 뜨거운 기록이 현대의 감각과 만나, 당신의 모든 문장에 깊은 울림을 더합니다.</p>
+                        </li> 
+                        <li class="swiper-slide bg3">
+                            <h3>우리 시대의 지혜를 엮다</h3>
+                            <p>80년 전통으로 길어 올린 글과 사유의 세계를 전합니다.</p>
+                        </li>  
+                    </ul>
+                </div><!--//swiper-->
+                <div class="ctrl_left">
+                    <!-- jquery에서 넓이를 제어하려면 반드시 해당 요소가 코딩 된 요소여야함
+                         before/after는 안됨 -->
+                    <div class="bar"><span></span></div>
+                    <button class="stop">
+                        <span class="sr-only">일시정지</span>
+                        <svg width="12" height="13" viewBox="0 0 12 13" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.75 13V0H11.5V13H7.75ZM0 13V0H3.75V13H0Z" />
+                        </svg>
+                    </button>
+                    <button class="play">
+                        <span class="sr-only">다시시작</span>
+                        <svg width="10" height="13" viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 13V0L10 6.5L0 13Z" />
+                        </svg>
+                    </button>
+                </div><!--//ctr_left-->
+                <div class="ctrl_right">
+                    <button class="prev">
+                        <span class="sr-only">이전 팝업 보기</span>
+                        <svg width="17" height="13" viewBox="0 0 17 13" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.01958 12.0386L0 6.01931L6.01958 0L7.14146 1.15462L3.07527 5.22082H16.4V6.81781H3.07527L7.14146 10.884L6.01958 12.0386Z" />
+                        </svg>
+                    </button>
+                    <button class="next">
+                        <span class="sr-only">다음 팝업 보기</span>
+                        <svg width="17" height="13" viewBox="0 0 17 13" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.3803 -5.09722e-05L16.3999 6.01926L10.3803 12.0386L9.25844 10.884L13.3246 6.81776L-9.77312e-05 6.81776L-9.78708e-05 5.22077L13.3246 5.22077L9.25844 1.15457L10.3803 -5.09722e-05Z" />
+                        </svg>
+                    </button>
+                </div><!--//ctr_right-->
+            </section>
+            <section class="book"></section>
+            <section class="interview"></section>
+            <section class="story"></section>
+        </main>
+        <footer class="footer"></footer>
     </div>
 </body>
 </html>
