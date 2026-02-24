@@ -2,6 +2,27 @@
 @import url(fonts.css);
 @import url(common.css);
 
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-h);
+    color: #fff;
+    fill: #fff;
+    padding: 0 var(--wrapper-margin);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo a{
+    display: block;
+    width: max(calc(var(--header-h) * 2.1333), 120px);
+    height: max(calc(var(--header-h) * 0.3333), 20px);
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
+}
+
 .visual{
     position: relative; /* ctrl_left/right 정렬의 기준 */
 }

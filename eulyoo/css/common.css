@@ -56,10 +56,12 @@ body{
     --line-height-default: 1.5;
     --line-height-tit: 1.3;
     --font-family-tit: "Eulyoo";
+    --header-h: 90px;
 }
 @media screen and (max-width:1024px){
     :root{
         --wrapper-margin: 30px;
+        --header-h: 70px;
     }
 }
 @media screen and (max-width:768px){
@@ -68,5 +70,6 @@ body{
         --font-size-tit: 32px;
         --font-size-subtit1: 28px;
         --wrapper-margin: 16px;
+        --header-h: 56px;
     }
 }
