@@ -5,25 +5,25 @@
 */
 body{
     font-family: "Pretendard", sans-serif;
-    font-weight: var(--font-weigt-default);
+    font-weight: var(--font-weight-default);
     font-size: var(--font-size-default);
-    color: var(--font-color-txt);
+    color: var(--font-color-default);
     line-height: var(--line-height-default);/* 배수(글자크기의 몇배) */
     word-break: keep-all;/* 단어 단위로 줄바꿈 */
-    word-wrap: break-word;/* 단어가 제한된 넓이보다 길면 강제 줄바꿈  */
+    word-wrap: break-word;/* 단어가 제한된 넓이보다 길면 강제 줄바꿈 */
 }
 .wrapper{
-    width: 1284px;
+    width: var(--wrapper-w);
     margin: 0 auto; /* 화면에 가운데 정렬 */
 }
 #wrap{
     position: relative;
 }
-@media screen and (max-width:1384px){/* 1284+50+50 */
-     .wrapper{
-     width: auto;
-     margin: 0 var(--wrapper-margin);
-     }
+@media screen and (max-width:1384px){ /* 1284 + 50px + 50px */
+    .wrapper{
+        width: auto;
+        margin: 0 var(--wrapper-margin);
+    }
 }
 
 
@@ -47,21 +47,31 @@ body{
     --font-size-subtit1: 32px;
     --font-size-subtit2: 28px;
     --wrapper-margin: 50px;
+    --wrapper-w: 1284px;
+    --font-color-default: #231815;
+    --font-color-tit: #231815;
     --font-color-txt: #231815;
+    --font-color-gray: #555555;
     --color-main: #2E1D0B;
     --color-point: #533A35;
     --color-bg: #FBF9F7;
-    --font-weigt-default: 400;
-    --font-weigt-tit: 700;
+    --color-white: #fff;
+    --font-weight-default: 400;
+    --font-weight-bold: 700;
+    --font-weight-tit: 700;
     --line-height-default: 1.5;
     --line-height-tit: 1.3;
     --font-family-tit: "Eulyoo";
-    --header-h: 90px;
+    --header-h: 100px;
 }
 @media screen and (max-width:1024px){
     :root{
         --wrapper-margin: 30px;
         --header-h: 70px;
+        --font-size-default: 16px;
+        --font-size-tit: 38px;
+        --font-size-subtit1: 30px;
+        --font-size-subtit2: 26px;
     }
 }
 @media screen and (max-width:768px){
@@ -69,6 +79,7 @@ body{
         --font-size-default: 16px;
         --font-size-tit: 32px;
         --font-size-subtit1: 28px;
+        --font-size-subtit2: 24px;
         --wrapper-margin: 16px;
         --header-h: 56px;
     }

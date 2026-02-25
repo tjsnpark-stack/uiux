@@ -28,8 +28,9 @@ button{
     font-size: inherit;
     color: inherit;
     line-height: inherit;
-    cursor: pointer;
-    /* 오버했을때 마우스 포인터를 a와 동일한 스타일로 변경 */
+    cursor: pointer; 
+    /* 오버했을때 마우스 포인터를
+       a와 동일한 스타일로 변경 */
 }
 *{
     margin: 0;

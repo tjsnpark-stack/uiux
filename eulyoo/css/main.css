@@ -6,7 +6,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 100;
+    z-index: 100; /* 내가 맨위 */
     width: 100%;
     height: var(--header-h);
     color: #fff;
@@ -15,26 +15,326 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 0.3s;
 }
 .header .logo a{
     display: block;
-    width: max(calc(var(--header-h) * 2.1333), 120px);
-    height: max(calc(var(--header-h) * 0.3333), 20px);
+    width: max(121px, calc(var(--header-h) * 1.78));
+    height: max(19px, calc(var(--header-h) * 0.28));
     background: url(../images/logo_w.svg) no-repeat center center / contain;
 }
+.header.fixed{
+    background-color: #fff;
+    color: var(--font-color-tit);
+    fill: var(--font-color-tit);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+}
+.header.fixed .logo a{
+    background-image: url(../images/logo.svg);
+}
+@media screen and (min-width:1025px){
+/* header는 pc와 모바일이 로고빼고 스타일이 완전 달라서 pc버전/모바일 스타일을
+   media로 구분함  min-width:1025px  1025px이상에만 적용 - pc용
+                   max-width:1024px  1024px이에만 적용  - 모바일용  */
+                .header .gnb .gnb_open,
+                .header .gnb .gnb_wrap .gnb_logo,
+                .header .gnb .gnb_wrap .gnb_close{
+                    display: none; /* 모바일에서만 나옴 */
+                }
+                .header .gnb .gnb_wrap ul.depth1{
+                    display: flex;
+                }
+                .header .gnb .gnb_wrap ul.depth1 > li{
+                    position: relative; /* ul.depth2 정렬의 기준 */
+                    min-width: 0; /* 최소넓이로 0 -> 180px로 부드럽게 .. */
+                    transition: 0.3s;
+                }
+                .header .gnb .gnb_wrap ul.depth1 > li > a{
+                    display: block;
+                    line-height: var(--header-h);
+                    /* 행간을 header높이만큼 주면 a의 높이가 header 높이가되고
+                       글자도 위아래 가운데 들어감 */
+                    font-family: var(--font-family-tit);
+                    font-size: 22px;
+                    padding: 0 25px; /* 마우스 오버전에는 메뉴 사이의 여백이 동일 */
+                    text-align: center;
+                    position: relative; /* after 정렬의 기준 */
+                }
+                .header .gnb .gnb_wrap ul.depth1 > li > a::after{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: -2px;
+                    z-index: 10;
+                    width: 0;
+                    height: 3px;
+                    background-color: var(--color-main);
+                    transition: 0.3s;
+                }
+                .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
+                    /* 2차메뉴 - 무조건 absolute */
+                    display: block !important;
+                    /* 선택자의 우선순위와 상관없이 무조건 이 속성을 우선 적용 */
+                    position: absolute;
+                    left: 0;
+                    top: var(--header-h);
+                    width: 100%;
+                    height: 0;
+                    text-align: center;
+                    padding: 0;
+                    border-right: 1px solid #ccc;
+                    opacity: 0;
+                    transition: 0.3s;
+                    overflow: hidden;
+                    /*
+                        display:none;으로 숨겼다가 display:block으로 보이게 하는 요소는
+                        transition이 안들어감... 
+                    */
+                }
+                .header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
+                    padding: 24px 0 0 0;
+                    height: 260px;
+                    opacity: 1;
+                }
+                .header .gnb .gnb_wrap ul.depth1 > li:first-child > ul.depth2{
+                    /* 첫번째 1차메뉴의 2차 ul에 */
+                    border-left: 1px solid #ccc;
+                }
+                .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a{
+                    display: block;
+                    padding: 9px 0;
+                }
+                .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover{
+                    color: var(--color-main);
+                }
+                .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a > span{
+                    position: relative; /* after 정렬의 기준 */
+                }
+                .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a > span::after{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: -2px;
+                    width: 0;
+                    height: 1px;
+                    background-color: var(--color-main);
+                    transition: 0.3s;
+                }
+                .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover > span::after{
+                    width: 100%;
+                }
+                
+                .header .util{
+                    display: flex;
+                }
+                .header .util .search .search_open,
+                .header .util .mypage{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 50px;
+                    height: 50px;
+                }
+
+                /* 메뉴에 마우스를 올렸을때 menu_over */
+                .header.menu_over{
+                    color: var(--font-color-tit);
+                    fill: var(--font-color-tit);
+                }
+                .header::before{
+                    content: "";
+                    position: absolute;/* header를 기준으로 정렬 */
+                    left: 0;
+                    top: 0;
+                    z-index: -1; 
+                    /* 지하 1층  - 기본적으로 position 없으면 1층 있으면 2층부터 시작 */
+                    width: 100%;
+                    height: 360px;
+                    background-color: #fff;
+                    transform: translateY(-110%); 
+                    /* 자기 높이보다 조금더 많은 값을 위로 이동 - 그럼 안보임 */
+                    transition: 0.3s;
+                }
+                .header.menu_over::before{
+                    transform: translateY(0);
+                }
+                .header.menu_over::after{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: var(--header-h);
+                    width: 100%;
+                    height: 1px;
+                    background-color: #ccc;
+                }
+                .header.menu_over .logo a{
+                    background-image: url(../images/logo.svg);
+                }
+                .header.menu_over .gnb .gnb_wrap ul.depth1 > li{
+                    min-width: 180px;
+                }
+                .header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a{
+                    color: var(--color-main);
+                    font-weight: var(--font-weight-bold);
+                }
+                .header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a::after{
+                    width: 100%;
+                }
+                .header .gnb .gnb_bg{
+                    position: fixed;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100vh;
+                    z-index: -2;  
+                    /* 메뉴의 흰색 bg를 z-index: -1로 줘서 그보다 아래 -2 */
+                    background-color: rgba(0, 0, 0, 0);
+                    backdrop-filter: blur(0);
+                    transform: translateY(-110%);
+                    transition: background-color 0.3s, backdrop-filter 0.3s;
+                    /*
+                        클래스 추가 전후에 변화는 transform, background-color, backdrop-filter만 존재
+                        이때 transition을 background-color, backdrop-filter만 줌 
+                        그럼 남은 하나 transform은 빨리 적용되고 나머지는 transition 시간만큼 천천히
+                    */
+                }
+                .header.menu_over .gnb .gnb_bg{
+                    background-color: rgba(0, 0, 0, 0.5);
+                    backdrop-filter: blur(4px);
+                    transform: translateY(0);
+                }
+}/*media*/
+@media screen and (min-width:1025px) and (max-width:1200px){ /* 1200 ~ 1025 사이 일때만*/
+                .header.menu_over .gnb .gnb_wrap ul.depth1 > li{
+                    min-width: 140px;
+                }
+}/*media*/
+@media screen and (max-width:1024px){ /* 1024이하일때 */
+                .header{
+                    padding-right: 0;
+                }
+                .header .gnb .gnb_open{
+                    width: var(--header-h);
+                    height: var(--header-h);
+                    display: flex;
+                    justify-content: center; /* svg를 가운데 */
+                    align-items: center;
+                }
+                .header .gnb .gnb_wrap{
+                    position: fixed;
+                    right: 0;
+                    top: 0;
+                    z-index: 10;
+                    width: 100%;
+                    max-width: 500px;
+                    height: 100%;
+                    background-color: #fff;
+                    color: var(--font-color-tit);
+                    fill: var(--font-color-tit);
+                    transform: translateX(110%); /* gnb_wrap 넓이보다 조금더 많이 이동 */
+                    transition: 0.3s;
+                }
+                /** 메뉴가 열렸을때 ***/
+                .header.menu_open .gnb .gnb_wrap{
+                    transform: translateX(0);
+                }
+                .header .gnb .gnb_wrap .gnb_logo {
+                    position: absolute; 
+                    /* gnb_wrap을 기준으로 정렬 - ul.depth1을 제외한 나머지는 absolute  */
+                    left: var(--wrapper-margin);
+                    top: 0;
+                    height: var(--header-h);
+                    width: max(121px, calc(var(--header-h) * 1.78));
+                    background: url(../images/logo.svg) no-repeat left center / contain;
+                }
+                .header .gnb .gnb_wrap ul.depth1{
+                    margin: var(--header-h) 0 0 0;
+                    height: calc(100% - var(--header-h));
+                    padding: 15px 0 0 0;
+                    overflow-y: auto;
+                }
+                .header .gnb .gnb_wrap ul.depth1 > li > a{
+                    font-family: var(--font-family-tit);
+                    font-size: 22px;
+                    display: block;
+                    padding: 14px var(--header-h) 14px var(--wrapper-margin);
+                    position: relative; /* after 정렬의 기준 */
+                }
+                .header .gnb .gnb_wrap ul.depth1 > li.open > a{
+                    color: var(--color-main);
+                    font-weight: var(--font-weight-bold);
+                }
+                .header .gnb .gnb_wrap ul.depth1 > li > a::after{
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: var(--header-h); /* 닫기 버튼과 넓이를 같게 */
+                    height: 100%; /* a랑 사이즈 동일 */
+                    background-image: url("data:image/svg+xml,%3Csvg width='17' height='10' viewBox='0 0 17 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17 1.28172L8.5 10L0 1.28172L1.24963 8.99051e-07L8.5 7.43678L15.7504 2.65204e-07L17 1.28172Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    transition: 0.3s;
+                }
+                .header .gnb .gnb_wrap ul.depth1 > li.open > a::after{
+                    transform: rotate(180deg);
+                    background-image: url("data:image/svg+xml,%3Csvg width='17' height='10' viewBox='0 0 17 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17 1.28172L8.5 10L0 1.28172L1.24963 8.99051e-07L8.5 7.43678L15.7504 2.65204e-07L17 1.28172Z' fill='%236C4B43'/%3E%3C/svg%3E%0A");
+                }
+                .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
+                    display: none;
+                    background-color: var(--color-bg);
+                    padding: 16px var(--wrapper-margin) 16px var(--wrapper-margin);
+                }
+                /* .header .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2{
+                    display: block;
+                } */
+                .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a{
+                    display: block;
+                    padding: 8px 0 8px var(--wrapper-margin);
+                }
+                .header .gnb .gnb_wrap .gnb_close{
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: var(--header-h);
+                    height: var(--header-h);
+                    display: flex;
+                    justify-content: center; /* svg를 가운데 */
+                    align-items: center;
+                }
+                .header .gnb .gnb_bg{
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: rgba(0, 0, 0, 0);
+                    backdrop-filter: blur(0);
+                    transition: background-color 0.3s, backdrop-filter 0.3s;
+                    transform: translateX(110%);
+                }
+                .header.menu_open .gnb .gnb_bg{
+                    background-color: rgba(0, 0, 0, 0.5);
+                    backdrop-filter: blur(4px);
+                    transform: translateX(0);
+                }
+                .header .util{
+                    display: none;
+                }
+}/*media*/
 
 .visual{
     position: relative; /* ctrl_left/right 정렬의 기준 */
 }
 .visual .swiper-slide{
     /* height: 100vh;
-    min-height: 500px; 이렇게 두개를 쓸걸 축약한 버전*/
+    min-height: 500px;  이렇게 두개를 쓸꺼를 축약한 버전 */
     height: max(500px, 100vh);
-    background: url(../images/visual_bg1.jpg)no-repeat center center / cover;
+    background: url(../images/visual_bg1.jpg) no-repeat center center / cover;
     color: #fff;
-    padding: 0 var(--wrapper-margin) 126px var(--wrapper-margin);
-
-    display: flex;/* h3, p 아래로 정렬 */
+    padding: 0 var(--wrapper-margin) 175px var(--wrapper-margin);
+    
+    display: flex;/* h3와 p를 아래로 정렬하기 위해서 */
     flex-direction: column;
     justify-content: flex-end;
 }
@@ -46,29 +346,28 @@
 }
 .visual .swiper-slide h3{
     font-family: var(--font-family-tit);
-    font-size: clamp(40px, 6vw, 60px);
-    /* clamp(최소값, 평소값, 최대값)
-       clamp(모바일크기, 대충 pc크기 px기준 1/10정도 vw, pc크기) */
+    font-size: clamp(40px, 7vw, 80px);
+    /* clamp(최소값, 평소값, 최대값)  
+       clamp(모바일크기, 대충 pc크기 px기준 1/10 정도의 vw, pc크기) */
     line-height: var(--line-height-tit);
-    font-weight: 700;
-    margin: 0 0 10px 0;
+    margin: 0 0 4px 0;
 }
 .visual .ctrl_left{
-    position: absolute;/* visual을 기준으로 정렬 */
+    position: absolute; /* visual을 기준으로 정렬 */
     left: var(--wrapper-margin);
-    bottom: 63px;
+    bottom: 95px;
     z-index: 10;
     color: #fff;
     fill: #fff; /* svg 아이콘 흰색 */
     display: flex;
-    gap: 13px;
+    gap: 19px;
     align-items: center;
 }
 .visual .ctrl_left .bar{
     width: 200px;
     height: 3px;
     background-color: rgba(255, 255, 255, 0.2);
-    position: relative; /* before의 정렬의 기준 */
+    position: relative; /* span 정렬의 기준 */
 }
 .visual .ctrl_left .bar span{
     position: absolute; /* bar를 기준으로 정렬 */
@@ -79,35 +378,246 @@
     background-color: #fff;
 }
 .visual .ctrl_left .play{
-    display: none; /* 재생버튼을 눌렀을때만 나타남 */
+    display: none; /* 재생버튼을 누르면 나옴 */
 }
 .visual .ctrl_right{
-    position: absolute;/* visual을 기준으로 정렬 */
+    position: absolute; /* visual을 기준으로 정렬 */
     right: var(--wrapper-margin);
-    bottom: 62px;
+    bottom: 77px;
     z-index: 10;
     color: #fff;
     fill: #fff; /* svg 아이콘 흰색 */
     display: flex;
-    gap: 6PX;
+    gap: 6px;
 }
 .visual .ctrl_right button{
     width: 50px;
     height: 50px;
     border: 1px solid #fff;
     border-radius: 50%;
-    display: flex; /* svg 가운데 배치 */
-    align-items: center;
+    display: flex;/* svg를 가운데 배치 */
     justify-content: center;
+    align-items: center;
 }
 
 @media screen and (max-width:768px){
     .visual .swiper-slide{
-        height: 750px;
-        padding-bottom: 51px;
+        height: 500px;
+        padding-bottom: 45px;
     }
     .visual .ctrl_left,
     .visual .ctrl_right{
         display: none;
     }
 }/*@media*/
+
+.book{
+    margin: clamp(109px, 17.4vw, 174px) 0 clamp(84px, 10.8vw, 108px) 0;
+    /* display: flex;
+    justify-content: flex-end; inner를 오른쪽으로 배치 */ 
+}
+.book .inner{
+    /* width: calc(50% + calc(var(--wrapper-w) / 2)); book 넓이의 50% */
+    margin-left: calc(calc(100% - var(--wrapper-w)) / 2);
+    /* 전체 넓이의 100% - wrapper의 넓이 = 그럼 양 사이드 여백이 남음
+       그럼 그 여백을 반띵하면 왼쪽 여백이 됨 */
+    display: flex; /* tit-list 좌우 배치 */
+    justify-content: space-between;
+    position: relative; /* btn_wrap 정렬의 기준 */
+}
+@media screen and (max-width:1384px){
+    .book .inner{
+        margin-left: var(--wrapper-margin);
+        /* width: calc(50% + calc(var(--wrapper-w) / 2)); book 넓이의 50% */
+    }
+}/*@media*/
+.book .tit h2{
+    font-family: var(--font-family-tit);
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    color: var(--font-color-tit);
+    margin: 0 0 24px 0;
+}
+.book .list{
+    width: calc(100% - 387px);
+    /* inner의 넓이 100%에서 왼쪽 tit의 넓이 387px 빼고 전부 다 */
+}
+.book .list .swiper{
+   padding-right: var(--wrapper-margin);
+}
+.book .list .swiper-slide{
+    width: 260px;
+}
+.book .list .swiper-slide a{
+    display: block;
+}
+.book .list .swiper-slide a .photo{
+    overflow: hidden;
+    border: 1px solid #E5E1E1;
+}
+.book .list .swiper-slide a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 책이 안짤리고 다 나옴 */
+    vertical-align: top;
+}
+.book .list .swiper-slide a .txt h3{
+    font-family: var(--font-family-tit);
+    font-size: var(--font-size-subtit2);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    margin: 32px 0 14px 0;
+    /* 1줄 */
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+
+    /* 최대 2줄 */
+    line-height: var(--line-height-tit);
+    max-height: calc(var(--line-height-tit) * 2em); /* 행간 * 줄수 = 단위em */
+    overflow: hidden;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* 2줄 */
+
+    word-break: normal; /* 단어 줄바꿈 안함 - 글자를 책 이미지 넓이와 동일하게 하기 위해 */
+}
+.book .list .swiper-slide a .txt h3 strong{
+    background-image: linear-gradient(transparent calc(100% - 1px), var(--color-main) 10px); 
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position: left bottom;
+    transition: background-size 0.6s ease;
+}
+.book .list .swiper-slide a:hover .txt h3 strong{
+    background-size: 100% 100%;
+}
+.book .list .swiper-slide a .txt span{
+    /* 1줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+.book .btn_wrap{
+    position: absolute;/* inner를 기준으로 정렬 */
+    left: 0;
+    top: 390px;
+    display: flex;
+    gap: 0 6px;
+}
+.book .btn_wrap button,
+.book .btn_wrap .more{
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-main);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: var(--color-main);
+}
+.book .btn_wrap button.swiper-button-disabled{
+    opacity: 0.3;
+    cursor: default;
+}
+.book .btn_wrap button:not(.swiper-button-disabled):hover,
+.book .btn_wrap .more:hover{
+    border-color: var(--color-main);
+    background-color: var(--color-main);
+    fill: #fff;
+}
+@media screen and (max-width:1024px){
+    .book .inner{
+        flex-direction: column;
+        gap: 41px 0;
+    }
+    .book .tit h2{
+        margin: 0 0 8px 0;
+    }
+    .book .tit p br{
+        display: none;
+    }
+    .book .list{
+        width: auto;
+    }
+    .book .btn_wrap{
+        left: auto;/* left-right로 정렬이 바뀌면 left: auto 처리 */
+        right: var(--wrapper-margin);
+        top: 0;
+    }
+}/*@media*/
+@media screen and (max-width:768px){
+    .book .list .swiper-slide {
+        width: 210px;
+    }
+    .book .btn_wrap{
+        display: none;
+    }
+}/*@media*/
+
+.interview{
+    background-color: var(--color-bg);
+    padding: clamp(126px, 18.2vw, 182px) 0 clamp(130px, 16.8vw, 168px) 0;
+}
+.interview .tit{
+    text-align: center;
+}
+.interview .tit h2{
+    font-family: var(--font-family-tit);
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    color: var(--font-color-tit);
+    margin: 0 0 24px 0;
+}
+.interview .list{
+    margin: clamp(42px, 4.8vw, 48px) 0 0 0;
+}
+.interview .list ul{
+    display: flex;
+    justify-content: space-between;
+}
+.interview .list ul li{
+    width: calc(33.33% - 16px);
+    /* 100% / 한줄에 보이는 li갯수 - 전체 여백의 합 / 한줄에 보이는 li갯수 
+       100% / 3 - (24+24)/3 = 33.33% - 16px */
+}
+.interview .list ul li:nth-child(2){
+    margin-top: 40px;
+}
+.interview .list ul li a{
+    display: block;
+}
+.interview .list ul li a .photo{
+    overflow: hidden;
+    height: 392px;
+    border-radius: 60px 0 60px 0;
+    position: relative;/* before 정렬의 기준 */
+}
+.interview .list ul li a .photo::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 20;
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(to top,rgba(0, 0, 0, 0.6) 0%,rgba(0, 0, 0, 0) 100%);
+}
+/* 디자인상 뭐가 오든 상관없이 무조건 두번째 요소가 스타일이 다름 */
+.interview .list ul li:nth-child(2) a .photo{
+    border-radius: 0 60px 0 60px;
+}
+.interview .list ul li a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.footer{
+    margin: 1000px 0 0 0;
+}
