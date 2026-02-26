@@ -7,6 +7,9 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!--aos 애니메이션-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- 내가 만든 파일 연결 -->
     <link rel="stylesheet" href="css/main.css">
@@ -144,13 +147,13 @@
                     </button>
                 </div><!--//ctrl_right-->
             </section>
-            <section class="book">
+            <section class="book" data-aos="fade-up">
                 <div class="inner"><!--콘텐츠를 감싸는 요소를 inner라고 많이 줌-->
-                    <div class="tit">
+                    <div class="tit" data-aos="fade-up">
                         <h2>오늘의 책</h2>
                         <p>시대를 건너온 사유를 <br> 한 권에 담았습니다.</p>
                     </div><!--tit-->
-                    <div class="list">
+                    <div class="list" data-aos="fade-up" data-aos-delay="500">
                             <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
                                 <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
                                     <li class="swiper-slide">
@@ -245,7 +248,7 @@
                                 </ul>
                             </div>
                     </div><!--list-->
-                    <div class="btn_wrap">
+                    <div class="btn_wrap"  data-aos="fade-up">
                         <button class="prev">
                             <span class="sr-only">이전팝업보기</span>
                             <svg width="17" height="13" viewBox="0 0 17 13" xmlns="http://www.w3.org/2000/svg">
@@ -267,13 +270,13 @@
                     </div><!--btn_wrap-->
                 </div>
             </section><!--book-->
-            <section class="interview">
+            <section class="interview" >
                 <div class="wrapper">
-                    <div class="tit">
+                    <div class="tit" data-aos="fade-up">
                         <h2>기록된 목소리</h2>
                         <p>책에 다 담지 못한 지성의 깊이를 영상으로 남깁니다.</p>
                     </div>
-                    <div class="list">
+                    <div class="list" data-aos="fade-up">
                         <ul>
                             <!-- 마우스를 올리면 li에 over 클래스를 추가 -->
                             <li>

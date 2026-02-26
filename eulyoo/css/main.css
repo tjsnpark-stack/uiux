@@ -900,7 +900,7 @@
 .footer .f_info .sns{
     display: flex;
     flex-wrap: wrap;
-    gap: 0 442.6em;
+    gap: 0 2em;
 }
 .footer .f_info .sns a{
     position: relative;
@@ -931,7 +931,7 @@
     margin: 11px 0 0 0;
 }
 @media screen and (max-width:1024px){
-        .footer .f_info{
+            .footer .f_info{
                 width: auto;
             }
 }/*@media*/
