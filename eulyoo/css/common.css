@@ -46,6 +46,7 @@ body{
     --font-size-tit: 45px;
     --font-size-subtit1: 32px;
     --font-size-subtit2: 28px;
+    --font-size-subtit3: 24px;
     --wrapper-margin: 50px;
     --wrapper-w: 1284px;
     --font-color-default: #231815;
@@ -54,6 +55,7 @@ body{
     --font-color-gray: #555555;
     --color-main: #2E1D0B;
     --color-point: #533A35;
+    --color-point2: #E8EEF6;
     --color-bg: #FBF9F7;
     --color-white: #fff;
     --font-weight-default: 400;
@@ -72,6 +74,7 @@ body{
         --font-size-tit: 38px;
         --font-size-subtit1: 30px;
         --font-size-subtit2: 26px;
+        --font-size-subtit3: 22px;
     }
 }
 @media screen and (max-width:768px){
@@ -80,7 +83,16 @@ body{
         --font-size-tit: 32px;
         --font-size-subtit1: 28px;
         --font-size-subtit2: 24px;
+        --font-size-subtit3: 20px;
         --wrapper-margin: 16px;
         --header-h: 56px;
     }
+}
+::selection{
+    background-color: var(--color-point2);
+    color: var(--color-main);
+}
+.footer *::selection{
+    background-color: var(--color-main);
+    color: var(--color-point2);
 }
