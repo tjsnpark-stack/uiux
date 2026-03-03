@@ -1,0 +1,14 @@
+@import url(common.css);
+@import url(fonts.css);
+@import url(default.css);
+@import url(layout.css);
+
+h2{
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    color: var(--font-color-tit);
+    line-height: var(--line-height-tit);
+}
+.wrapper{
+    border: 1px solid rebeccapurple;
+}
