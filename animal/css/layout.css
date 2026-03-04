@@ -1,0 +1,76 @@
+/*
+layout.css
+header,footer의 스타일이 저장 됨
+*/
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-h);
+    color: var(--color-white);
+}
+.header .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo{
+    display: block;
+    width: 212px;
+    height: 44px;
+    background: url(../images/common/loho_w.svg) no-repeat center center / contain;
+}
+.header .gnb ul.depht1{
+    display: flex; 
+    gap: 0 38px;
+    text-align: center;
+}
+.header .gnb ul.depht1 > li{
+    position: relative; /* ul.depht2 정렬의 기준 */
+}
+.header .gnb ul.depht1 > li > a{
+    display: block;
+    line-height: var(--header-h);
+    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+}
+.header .gnb ul.depht1 > li:has(ul.depht2) > a{
+    padding-right: 17px;
+    position: relative; /* after 정렬의 기준 */
+}
+.header .gnb ul.depht1 > li:has(ul.depht2) > a::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 47px;
+    width: 12px;
+    height: 7px;
+    background-image: var(--icon-arrow-w);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+.header .gnb ul.depht1 > li > ul.depht2{
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* 가운데 배치 */
+    top: 82px;
+    background-color: var(--color-point2);
+    color: var(--font-color-tit);
+    padding: 21px 10px;
+    border-radius: 10px;
+}
+.header .gnb ul.depht1 > li > ul.depht2 > li > a{
+    display: block;
+    padding: 5px 0;
+    white-space: nowrap; /*무조건 1줄*/ 
+}
+.header .gnb ul.depht1 > li > ul.depht2 > li > a:hover{
+    text-decoration: underline;
+}
+.header .sitemap{
+    display: none;
+}
