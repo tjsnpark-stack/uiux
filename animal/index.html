@@ -6,7 +6,7 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/slick.min.js"></script>
     <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/slick-theme.css">  
+    <link rel="stylesheet" href="css/slick-theme.css">
     <!-- 외부 라이브러리 파일 먼저 연결 -->
 
     <!-- 내가 만든 파일은 나중에 연결 -->
@@ -18,14 +18,20 @@
 </head>
 <body>
     <div id="wrap">
-        <header class="header">
+        <!--
+            메뉴는 상단 고정 fixed 클래스 추가
+            pc 메뉴에 마우스를 오버하면 menu_over 클래스 추가
+            mobile 에서 메뉴를 열면 header menu_open 클래스 추가
+        -->
+        <header class="header  ">
             <div class="wrapper">
-                <h1 class="logo"><a href="index.html"><span class="sr-only">전국종합유기견분양센터 합유기견보호센터</span></a></h1>
+                <h1 class="logo"><a href="index.html"><span class="sr-only">전국종합유기견분양센터 종합유기견보호센터</span></a></h1>
                 <nav class="gnb">
-                    <ul class="depht1">
+                    <ul class="depth1">
+                        <!-- 메뉴에 마우스를 오버하면 li에 over 클래스 추가 -->
                         <li>
                             <a href="#n"><span>찾습니다</span></a>
-                            <ul class="depht2">
+                            <ul class="depth2">
                                 <li><a href="#n"><span>반려동물 실종신고</span></a></li>
                                 <li><a href="#n"><span>유기동물 보호중</span></a></li>
                             </ul>
@@ -33,14 +39,14 @@
                         <li><a href="#n"><span>구조분양</span></a></li>
                         <li>
                             <a href="#n"><span>봉사·후원</span></a>
-                            <ul class="depht2">
+                            <ul class="depth2">
                                 <li><a href="#n"><span>자원봉사 모집</span></a></li>
                                 <li><a href="#n"><span>기부금 및 후원</span></a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#n"><span>커뮤니티</span></a>
-                            <ul class="depht2">
+                            <ul class="depth2">
                                 <li><a href="#n"><span>자유게시판</span></a></li>
                                 <li><a href="#n"><span>재회성공담</span></a></li>
                                 <li><a href="#n"><span>입양후기</span></a></li>
@@ -48,7 +54,7 @@
                         </li>
                         <li>
                             <a href="#n"><span>반려지식</span></a>
-                            <ul class="depht2">
+                            <ul class="depth2">
                                 <li><a href="#n"><span>애견 지식정보</span></a></li>
                                 <li><a href="#n"><span>냥이 지식정보</span></a></li>
                                 <li><a href="#n"><span>기타동물 지식정보</span></a></li>
@@ -57,40 +63,45 @@
                     </ul>
                 </nav>
                 <div class="util">
-                    <a href="#n"><span>마이페이지</span></a>
-                    <button class="sitemap_open"><span>전체 메뉴열기</span></button>
+                    <a href="#n" class="mypage"><span class="sr-only">마이페이지</span></a>
+                    <button class="sitemap_btn" title="메뉴 열기">
+                        <span class="line1"></span>
+                        <span class="line2"></span>
+                        <span class="line3"></span>
+                    </button>
                 </div><!--util-->
             </div><!--//wrapper-->
-            <div class="sitemap">
-                <h2>logo</h2>
+            <div class="sitemap"><!-- pc에서는 전체메뉴, 모바일에서는 메뉴 -->
+                <h2 class="sr-only">사이트맵</h2>
                 <div class="sitemap_wrap">
-                    <ul class="depht1">
+                    <ul class="depth1">
                         <li>
-                            <a href="#n"><span>찾습니다</span></a>
-                            <ul class="depht2">
+                            <!-- 모바일에서는 하위메뉴를 여는 기능을 가지고 있으므로 button태그로 코딩 -->
+                            <button><span>찾습니다</span></button>
+                            <ul class="depth2">
                                 <li><a href="#n"><span>반려동물 실종신고</span></a></li>
                                 <li><a href="#n"><span>유기동물 보호중</span></a></li>
                             </ul>
                         </li>
-                        <li><a href="#n"><span>구조분양</span></a></li>
+                        <li><button><span>구조분양</span></button></li>
                         <li>
-                            <a href="#n"><span>봉사·후원</span></a>
-                            <ul class="depht2">
+                            <button><span>봉사·후원</span></button>
+                            <ul class="depth2">
                                 <li><a href="#n"><span>자원봉사 모집</span></a></li>
                                 <li><a href="#n"><span>기부금 및 후원</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#n"><span>커뮤니티</span></a>
-                            <ul class="depht2">
+                            <button><span>커뮤니티</span></button>
+                            <ul class="depth2">
                                 <li><a href="#n"><span>자유게시판</span></a></li>
                                 <li><a href="#n"><span>재회성공담</span></a></li>
                                 <li><a href="#n"><span>입양후기</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#n"><span>반려지식</span></a>
-                            <ul class="depht2">
+                            <button><span>반려지식</span></button>
+                            <ul class="depth2">
                                 <li><a href="#n"><span>애견 지식정보</span></a></li>
                                 <li><a href="#n"><span>냥이 지식정보</span></a></li>
                                 <li><a href="#n"><span>기타동물 지식정보</span></a></li>
@@ -98,7 +109,6 @@
                         </li>
                     </ul>
                 </div>
-                <button class="sitemap_close"><span>전체 메뉴닫기</span></button>
                 <div class="sitemap_bg"></div><!--모바일 배경 검은색-->
             </div>
         </header>
@@ -107,29 +117,55 @@
                 <h2 class="sr-only">팝업</h2>
                 <div class="popup_wrap">
                     <div class="popup"> <!-- slick에서 호출하는 이름 -->
-                        <div class="item bg1">
+                        <div class="item  bg1">
                             <div class="wrapper">
                                 <p>애타는 마음과 따뜻한 손길이 모여 <br> 기적 같은 재회와 행복한 입양을 만듭니다</p>
                             </div>
                         </div>
-                        <div class="item bg2">
+                        <div class="item  bg2">
                             <div class="wrapper">
                                 <p>길 잃은 생명에게 따뜻한 손길을 건네고 <br> 행복한 반려의 기쁨을 함께 공유하세요</p>
                             </div>
                         </div>
-                        <div class="item bg3">
+                        <div class="item  bg3">
                             <div class="wrapper">
                                 <p>실종, 구조, 입양부터 유익한 반려 지식과 <br> 따뜻한 소통까지 모두 나누는 곳</p>
                             </div>
                         </div>
-                    </div><!--popup-->
-                </div><!--popup_wrap-->
+                    </div><!--//popup-->
+                </div><!--//popup_wrap-->
                 <div class="ctrl_wrap">
                     <button class="stop"><span class="sr-only">일시정지</span></button>  <!-- 일시정지 버튼 -->
                     <button class="play"><span class="sr-only">재생</span></button>  <!-- 재생 버튼 -->
-                </div><!--ctrl_wrap-->
+                </div><!--//ctrl_wrap-->
             </section>
-            <section class="find"></section>
+            <section class="find">
+                <div class="wrapper">
+                    <h2>잃어버린 마음을 찾습니다</h2>
+                    <div class="tab_list">
+                        <ul role="tablist"><!--role은 해당요소의 역할을 말함-->
+                            <!--id는 이 html안에서 유일한 이름
+                                aria-selected="true" 현재 선택 된 탭
+                                aria-controls에 써있는 속성값과 같은 id를 가진 요소를 보이게 함-->
+                            <li id="find_tab01" role="tab" aria-controls="find_conts01" aria-selected="true" class="active"><!--현재 선택된 요소-->
+                                <button><span>반려동물</span><em>선택됨</em></button>
+                                <!--선택된 요소는 탭 이름에 선택됨 이라고 써줘야함-->
+                            </li>
+                            <li id="find_tab02" role="tab" aria-controls="find_conts02" aria-selected="false">
+                                <button><span>보호자</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab_conts">
+                        <div id="find_conts01" aria-labelledby="find_tab01" class="tab_item animal active">
+                            <h3>잃어버린 반려동물을 찾습니다</h3>
+                        </div>
+                        <div id="find_conts02" aria-labelledby="find_tab02" class="tab_item people">
+                            <h3>떠도는 동물의 가족을 찾습니다</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section class="message"></section>
             <section class="adopt"></section>
             <section class="review"></section>

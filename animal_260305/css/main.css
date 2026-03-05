@@ -1,0 +1,275 @@
+/*
+    메인페이지에서만 호출
+    메인에 필요한 다른 css를 부름
+*/
+@import url(default.css);
+@import url(common.css);
+@import url(fonts.css);
+@import url(layout.css);
+
+.visual{
+    overflow-x: hidden; /* 가로 스크롤바 허용 안함 */
+    position: relative; /* ctrl_wrap 정렬의 기준 */
+}
+.visual .popup_wrap .popup{
+    margin: 0;
+}
+.visual .popup_wrap .popup .item{
+    height: clamp(500px, 65vw,650px);
+    background: url(../images/main/visual01.jpg) no-repeat center center / cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.visual .popup_wrap .popup .item.bg2{
+    background-image: url(../images/main/visual02.jpg);
+}
+.visual .popup_wrap .popup .item.bg3{
+    background-image: url(../images/main/visual03.jpg);
+}
+.visual .popup_wrap .popup .item p{
+    margin: 0 0 clamp(95px, 14vw, 141px) 0;
+    font-size: clamp(30px, 6vw, 60px);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+}
+.visual .popup_wrap .popup .slick-dots{
+    position: absolute; /* popup을 기준으로 정렬 */
+    bottom: 48px;
+    left: calc(50%  -  (var(--wrapper-w)  /  2)); /* absolute는 반드시 left 또는 right 있어야함 */
+    width: auto;
+    display: flex;
+    gap: 0 6px;
+}
+.visual .popup_wrap .popup .slick-dots li{
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+.visual .popup_wrap .popup .slick-dots li button{
+    width: 15px;
+    height: 7px;
+    padding: 0;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.6);
+}
+.visual .popup_wrap .popup .slick-dots li.slick-active button{
+    width: 78px;
+    background: #fff;
+}
+.visual .popup_wrap .popup .slick-dots li button::before{
+    display: none;
+}
+.visual .ctrl_wrap{
+    position: absolute; /* visual을 기준으로 정렬 */
+    left: calc(50%  -  (var(--wrapper-w)  /  2)  +  132px);
+    bottom: 37px;
+}
+.visual .ctrl_wrap button{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.2  );
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .ctrl_wrap button.stop{
+    background-image: var(--icon-stop);
+}
+.visual .ctrl_wrap button.play{
+    display: none;
+    background-image: var(--icon-play);
+}
+@media screen and (max-width:1500px){
+    .visual .popup_wrap .popup .slick-dots{
+        left: var(--wrapper-margin);
+    }
+    .visual .ctrl_wrap{
+        left: calc(var(--wrapper-margin)  +  132px);
+    }
+}/*@media*/
+@media screen and (max-width:768px){
+    .visual .popup_wrap .popup .item p br{
+        display: none; /* 줄바꿈 삭제 */
+    }
+}/*@media*/
+
+.find{
+    background-color: var(--color-bg2);
+    color: var(--color-main);
+    padding: clamp(108px, 15vw, 150px) 0 clamp(70px, 7.9vw, 79px) 0;
+    overflow-x: hidden; /* 가로스크롤바 삭제     */
+}
+.find h2{
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+}
+.find .tab_list{
+    margin: clamp(46px, 6.2vw, 62px) 0 clamp(34px, 3.7vw, 37px) 0;
+}
+.find .tab_list ul{
+    display: flex; /* li 좌우로 배치 */
+    gap: 0 17px;
+    justify-content: center;
+}
+.find .tab_list ul li button{
+    padding: 0.542em 1.25em;
+    font-size: var(--font-size-subtit);
+    font-weight: var(--font-weight-bold);
+    border-radius: 50px;
+    color: var(--color-sub2);
+}
+.find .tab_list ul li.animal.active button{
+    background-color: var(--color-main);
+    color: var(--color-sub1);
+}
+.find .tab_list ul li.people.active button{
+    background-color: var(--color-sub1);
+    color: var(--color-main);
+}
+.find .tab_conts .tab_item{
+    display: none;
+}
+.find .tab_conts .tab_item.active{
+    display: block;
+}
+.find .tab_conts .tab_item .tab_conts_list_wrap{
+    width: calc(100% + var(--gap));
+    /* slick은 각각 항목 사이의 여백을 js에서 못줌
+       css에서 추가하는데 항목이 4개면 여백도 4개가 생김
+       (3개가 생겨야 좌우가 slide로 딱 끝남)
+       그래서 감싸는 요소의 넓이를 100% + 여백 하나의 값만큼 더 줌 */
+}
+.find .tab_conts .tab_item .tab_conts_list_wrap .tab_conts_list .item{
+    margin: 0 var(--gap) 0 0;
+}
+.find .tab_conts .tab_item .tab_conts_list_wrap .tab_conts_list .item .photo{
+    overflow: hidden;
+    height: 448px;
+    border-radius: 25px;
+}
+.find .tab_conts .tab_item .tab_conts_list_wrap .tab_conts_list .item .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+.find .tab_conts .tab_item .tab_conts_list_wrap .tab_conts_list .item:hover .photo img{
+    transform: scale3d(1.125, 1.125, 1);
+}
+.find .tab_conts .tab_item .tab_conts_list_wrap .tab_conts_list .item ul{
+    margin: 20px 0 0 20px;
+}
+.find .tab_conts .tab_item .tab_conts_list_wrap .tab_conts_list .item ul li{
+    display: flex;
+    line-height: 1.8;
+}
+.find .tab_conts .tab_item .tab_conts_list_wrap .tab_conts_list .item ul li strong{
+    color: var(--font-color-tit);
+    width: 4.5em;
+}
+.find .tab_conts .tab_item .tab_conts_list_wrap .tab_conts_list .item ul li span{
+    /* 1줄제한 반드시 넓이가 제한되어야 함 */
+    width: calc(100% - 4.5em);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--font-color-tit);
+}
+.find .tab_conts .tab_item .slick-prev {
+    left: -25px;
+}
+.find .tab_conts .tab_item .slick-next {
+    right: calc(var(--gap) - 30px);
+    transform: rotate(180deg) !important;
+}
+.find .tab_conts .tab_item .slick-prev,
+.find .tab_conts .tab_item .slick-next {
+    top: 40%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-main);
+    /* 무조건 적용하는 것  !important*/
+    background-image: var(--icon-arrow-main);
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform: translate(0);
+    z-index: 10;
+}
+.find .tab_conts .tab_item.people .slick-prev,
+.find .tab_conts .tab_item.people .slick-next{
+    background-color: var(--color-sub1);
+    background-image: var(--icon-arrow-tit);
+}
+.find .tab_conts .tab_item .slick-prev::before,
+.find .tab_conts .tab_item .slick-next::before{
+    display: none;
+}
+@media screen and (max-width:768px){
+        .find .tab_list ul{
+            gap: 0 5px;
+        }
+        .find .tab_conts .tab_item .tab_conts_list_wrap .tab_conts_list .item{
+            width: 272px;
+        }
+        .find .tab_conts .tab_item .tab_conts_list_wrap .tab_conts_list .item .photo{
+            height: 356px;
+        }
+        .find .tab_conts .tab_item .tab_conts_list_wrap .tab_conts_list .item ul{
+            margin: 22px 0 0 0;
+        }
+        .find .tab_conts .tab_item .slick-prev,
+        .find .tab_conts .tab_item .slick-next {
+            display: none !important;
+        }
+}/*@media*/
+
+.message{
+    height: 400vh;
+    border: 1px solid blue;
+    position: relative;
+}
+.message::before{
+    content: "123456789123456789123456789123456789";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 200px;
+    color: #ccc;
+    writing-mode: sideways-rl;
+}
+.message .inner{
+    height: calc(100vh - var(--header-h));
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; /* inner안에 p를 가운데 넣으려고 */
+    position: sticky;
+    top: var(--header-h);
+}
+.message p{
+    text-align: center;
+    font-size: 80px;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-sub2);
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.message p strong{
+    position: relative; /* span태그 정렬의 기준 */
+}
+.message p strong span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    color: #ED6325;
+}

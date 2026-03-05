@@ -1,6 +1,6 @@
-/*********************************
- * main.js는 메인페이지에서만 구동되는 스크립트를 저장
- * *******************************/
+/*************************
+* main.js는 메인페이지에서만 구동되는 스크립트를 저장..
+***********************/
 $(document).ready(function(){
     $('.visual .popup_wrap .popup').slick({
         autoplay: true, //팝업 자동 실행
@@ -12,8 +12,6 @@ $(document).ready(function(){
         //pauseOnHover: true, //마우스호버시 일시정지
         //infinite: false, //무한반복
     });
-
-    
 
     $('.visual .ctrl_wrap .stop').on('click', function(){
         $('.visual .popup_wrap .popup').slick('slickPause');  /* 일시정지 기능 */

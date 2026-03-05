@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <!-- 외부 라이브러리 파일 먼저 연결 -->
+
+    <!-- 내가 만든 파일은 나중에 연결 -->
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+    <title>종합유기견보호센터</title>
+</head>
+<body>
+    <div id="wrap">
+        <!--
+            메뉴는 상단 고정 fixed 클래스 추가
+            pc 메뉴에 마우스를 오버하면 menu_over 클래스 추가
+            mobile 에서 메뉴를 열면 header menu_open 클래스 추가
+        -->
+        <header class="header  ">
+            <div class="wrapper">
+                <h1 class="logo"><a href="index.html"><span class="sr-only">전국종합유기견분양센터 종합유기견보호센터</span></a></h1>
+                <nav class="gnb">
+                    <ul class="depth1">
+                        <!-- 메뉴에 마우스를 오버하면 li에 over 클래스 추가 -->
+                        <li>
+                            <a href="#n"><span>찾습니다</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>반려동물 실종신고</span></a></li>
+                                <li><a href="#n"><span>유기동물 보호중</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#n"><span>구조분양</span></a></li>
+                        <li>
+                            <a href="#n"><span>봉사·후원</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>자원봉사 모집</span></a></li>
+                                <li><a href="#n"><span>기부금 및 후원</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>커뮤니티</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>자유게시판</span></a></li>
+                                <li><a href="#n"><span>재회성공담</span></a></li>
+                                <li><a href="#n"><span>입양후기</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>반려지식</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>애견 지식정보</span></a></li>
+                                <li><a href="#n"><span>냥이 지식정보</span></a></li>
+                                <li><a href="#n"><span>기타동물 지식정보</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="util">
+                    <a href="#n" class="mypage"><span class="sr-only">마이페이지</span></a>
+                    <button class="sitemap_btn" title="메뉴 열기">
+                        <span class="line1"></span>
+                        <span class="line2"></span>
+                        <span class="line3"></span>
+                    </button>
+                </div><!--util-->
+            </div><!--//wrapper-->
+            <div class="sitemap"><!-- pc에서는 전체메뉴, 모바일에서는 메뉴 -->
+                <h2 class="sr-only">사이트맵</h2>
+                <div class="sitemap_wrap">
+                    <ul class="depth1">
+                        <li>
+                            <!-- 모바일에서는 하위메뉴를 여는 기능을 가지고 있으므로 button태그로 코딩 -->
+                            <button><span>찾습니다</span></button>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>반려동물 실종신고</span></a></li>
+                                <li><a href="#n"><span>유기동물 보호중</span></a></li>
+                            </ul>
+                        </li>
+                        <li><button><span>구조분양</span></button></li>
+                        <li>
+                            <button><span>봉사·후원</span></button>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>자원봉사 모집</span></a></li>
+                                <li><a href="#n"><span>기부금 및 후원</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <button><span>커뮤니티</span></button>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>자유게시판</span></a></li>
+                                <li><a href="#n"><span>재회성공담</span></a></li>
+                                <li><a href="#n"><span>입양후기</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <button><span>반려지식</span></button>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>애견 지식정보</span></a></li>
+                                <li><a href="#n"><span>냥이 지식정보</span></a></li>
+                                <li><a href="#n"><span>기타동물 지식정보</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sitemap_bg"></div><!--모바일 배경 검은색-->
+            </div>
+        </header>
+        <main class="container">
+            <section class="visual">
+                <h2 class="sr-only">팝업</h2>
+                <div class="popup_wrap">
+                    <div class="popup"> <!-- slick에서 호출하는 이름 -->
+                        <div class="item  bg1">
+                            <div class="wrapper">
+                                <p>애타는 마음과 따뜻한 손길이 모여 <br> 기적 같은 재회와 행복한 입양을 만듭니다</p>
+                            </div>
+                        </div>
+                        <div class="item  bg2">
+                            <div class="wrapper">
+                                <p>길 잃은 생명에게 따뜻한 손길을 건네고 <br> 행복한 반려의 기쁨을 함께 공유하세요</p>
+                            </div>
+                        </div>
+                        <div class="item  bg3">
+                            <div class="wrapper">
+                                <p>실종, 구조, 입양부터 유익한 반려 지식과 <br> 따뜻한 소통까지 모두 나누는 곳</p>
+                            </div>
+                        </div>
+                    </div><!--//popup-->
+                </div><!--//popup_wrap-->
+                <div class="ctrl_wrap">
+                    <button class="stop"><span class="sr-only">일시정지</span></button>  <!-- 일시정지 버튼 -->
+                    <button class="play"><span class="sr-only">재생</span></button>  <!-- 재생 버튼 -->
+                </div><!--//ctrl_wrap-->
+            </section>
+            <section class="find">
+                <div class="wrapper">
+                    <h2>잃어버린 마음을 찾습니다</h2>
+                    <div class="tab_list">
+                        <ul role="tablist"><!--role은 해당요소의 역할을 말함-->
+                            <!--id는 이 html안에서 유일한 이름
+                                aria-selected="true" 현재 선택 된 탭
+                                aria-controls에 써있는 속성값과 같은 id를 가진 요소를 보이게 함-->
+                            <li id="find_tab01" role="tab" aria-controls="find_conts01" aria-selected="true" class="animal active"><!--현재 선택된 요소-->
+                                <button><span>반려동물</span><em class="sr-only">선택됨</em></button>
+                                <!--선택된 요소는 탭 이름에 선택됨 이라고 써줘야함-->
+                            </li>
+                            <li id="find_tab02" role="tab" aria-controls="find_conts02" aria-selected="false" class="people">
+                                <button><span>보호자</span><em class="sr-only"></em></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab_conts">
+                        <div id="find_conts01" aria-labelledby="find_tab01" class="tab_item animal active">
+                            <h3 class="sr-only">잃어버린 반려동물을 찾습니다</h3>
+                            <div class="tab_conts_list_wrap">
+                                <div class="tab_conts_list"> <!-- slick에서 호출하는 이름 -->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal01.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>서울 용산구 이태원</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2026-03-01</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>요키, 암컷, 7개월, 3kg</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>베이지, 검은색 섞인 털, 겁이 많음</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal02.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>전북 전주시 평화동 주공 5단지</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2026-02-12</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>푸들, 암컷, 중성화 O</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>코 위에 점, 입에서 냄새남</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal03.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>대구 바르미스시뷔페두산점 야외주차장</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2026-01-23</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>코리안쇼트헤어, 수컷, 중성화 O</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>고등어 무늬, 핑크 코, 온순함</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal04.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>경남 남해군 도마초등학교 인근</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2025-12-03</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>골든 리트리버, 수컷 , 6세</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>카키색 목줄, 메달 목걸이 착용</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal05.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>청주시 상당구 성안길부근</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2025-12-01</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>허스키, 수컷, 중성화 O</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>털 색이 브라운 컬러를 띔</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal06.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>서울시 용산구 이태원 거리</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2025-11-30</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>달마시안, 암컷, 중성화 O</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>다리가 굉장히 길고 빠름</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal07.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>울산 방어진 초등학교 부근</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2025-11-24</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>코리안쇼트헤어, 5개월, 중성화 X</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>털에 무늬가 호랑이 같음</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal08.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>안산 고잔25시 광장</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2025-10-13</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>웰시코기, 10개월, 중성화 O</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>눈 위에 까만 점이 있고 귀염상임</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                </div><!--//tab_conts_list-->
+                            </div>
+                        </div>
+                        <div id="find_conts02" aria-labelledby="find_tab02" class="tab_item people">
+                            <h3 class="sr-only">떠도는 동물의 가족을 찾습니다</h3>
+                            <div class="tab_conts_list_wrap">
+                                <div class="tab_conts_list"> <!-- slick에서 호출하는 이름 -->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people01.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>서울 서초구 태봉로 근처</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2026-03-01</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>골든두들, 수컷, 2세, 25kg</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>리트리버보단 푸들에 가까움</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people02.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>대구 달서구 벤디시온 주차장</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2026-02-11</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>러시안블루, 암컷, 중성화 O</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>눈동자 초록색, 꼬리가 김</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people03.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>서울 보라매역 부근</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2026-02-06</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>셰틀랜드 쉽독 , 수컷, 중성화 O</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>사람을 좋아하는 순한 아이</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people04.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>경남 창원시 성산구 안민중학교</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2025-12-03</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>코리안쇼트헤어, 암컷 , 중성화 O</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>삼색 털, 눈이 올리브 색임</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people05.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>울산 삼산동 업스퀘어 부근</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2025-12-02</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>삽살개 믹스, 수컷, 중성화 O</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>눈, 코가 까맣고 가슴에 흰털이 있음</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people06.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>청주 분평동 남성중학교 앞</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2025-11-28</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>아비시니안, 암컷, 중성화 O</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>애교가 많고 코가 진한 핑크색임</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people07.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>울산 일산지 사거리</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2025-11-15</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>말티푸, 2살, 중성화 0</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>다리가 길고 점프를 잘함</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people08.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>안산 와동체육관 앞</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2025-10-17</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>코리안쇼트헤어, 7살, 중성화 O</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>앞다리 무늬가 강렬하고 가슴은 흰색털임</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--item-->
+                                </div><!--//tab_conts_list-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="message">
+                <div class="inner">
+                    <h2 class="sr-only">구조가 필요한 동물을 발견했을때 구조요령</h2>
+                    <p>
+                        <strong>공공장소에서 주인 없이<span>공공장소에서 주인 없이</span></strong>
+                        <strong>떠도는 동물을 발견한 경우<span>떠도는 동물을 발견한 경우</span></strong>
+                        <strong>관할 시군구청 또는 동물보호센터에<span>관할 시군구청 또는 동물보호센터에</span></strong>
+                        <strong>신고하시기 바랍니다.<span>신고하시기 바랍니다.</span></strong>
+                    </p>
+                </div>
+            </section>
+            <section class="adopt"></section>
+            <section class="review"></section>
+        </main>
+        <footer class="footer"></footer>
+    </div>
+</body>
+</html>

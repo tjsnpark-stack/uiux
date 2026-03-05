@@ -59,8 +59,8 @@
         position: absolute;
         right: 0;
         top: 45px;
-        width: 5px;
-        height: 10px;
+        width: 7px;
+        height: 12px;
         background-image: var(--icon-arrow-w);
         background-repeat: no-repeat;
         background-size: contain;
@@ -202,12 +202,13 @@
         color: var(--color-main);
     }
     .header.menu_over .gnb ul.depth1 > li.over:has(ul.depth2) > a > span::after {
-        background-image: var(--icon-arrow-main);
-        transform: rotate(270deg);
+        background-image: var(--icon-arrow);
+        transform: rotate(360deg);
     }
     .header.menu_over .gnb ul.depth1 > li:has(ul.depth2) > a > span::after,
     .header.fixed .gnb ul.depth1 > li:has(ul.depth2) > a > span::after {
-        background-image: var(--icon-arrow-tit);
+        background-image: var(--icon-arrow);
+        transform: rotate(360deg);
     }
     .header.menu_over .util .mypage,
     .header.fixed .util .mypage {
@@ -257,6 +258,13 @@
         border-radius: 3px;
         background-color: #fff;
         transition: 0.3s;
+    }
+    .header.fixed .util .sitemap_btn span{
+        background-color: var(--font-color-default);
+    }
+    .header.menu_open .util .sitemap_btn span,
+    .header.menu_open.fixed .util .sitemap_btn span{
+        background-color: #fff;
     }
     .header .util .sitemap_btn span.line1{
         top: calc(50% - 7px);
