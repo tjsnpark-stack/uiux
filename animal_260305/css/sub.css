@@ -1,0 +1,150 @@
+/* sub페이지에서 호출하는 css 
+   sub페이지의 공통 스타일이 들어감 */
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+@import url(contents.css);
+
+/* 선택된 메뉴 표시 */
+@media screen and (min-width:1025px){ /* 1025이상에서만 */
+            .header .gnb ul.depth1 > li.active > a{
+                color: var(--color-sub1);
+            }
+            .header .gnb ul.depth1 > li.active:has(ul.depth2) > a > span::after{
+                background-image: var(--icon-arrow-y);
+            }
+            .header .gnb ul.depth1 > li.active > ul.depth2 > li.active > a{
+                text-decoration: underline;
+            }
+            .header .sitemap .sitemap_wrap ul.depth1 > li.active > button,
+            .header .sitemap .sitemap_wrap ul.depth1 > li.active > a{
+                color: var(--color-sub1);
+            }
+            .header .sitemap .sitemap_wrap ul.depth1 > li.active > ul.depth2 > li.active > a{
+                color: var(--color-sub1);
+            }
+}
+@media screen and (max-width:1024px){
+    .header .sitemap .sitemap_wrap ul.depth1 > li.active:has(ul.depth2) > button::after {
+        transform: rotate(90deg);
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li.active > ul.depth2 > li.active > a{
+        text-decoration: underline;
+    }
+}
+.sub_visual{
+    height: 400px;
+    background: url(../images/sub/sub_visual01.jpg) no-repeat center center / cover;
+    color: #fff;
+}
+.sub_visual.bg2{
+    background-image: url(../images/sub/sub_visual02.jpg);
+}
+.sub_visual.bg3{
+    background-image: url(../images/sub/sub_visual03.jpg);
+}
+.sub_visual.bg4{
+    background-image: url(../images/sub/sub_visual04.jpg);
+}
+.sub_visual.bg5{
+    background-image: url(../images/sub/sub_visual05.jpg);
+}
+.sub_visual .wrapper{
+    position: relative;
+    height: clamp(284px, 40vw, 400px);
+}
+.sub_visual .breadcrumb{
+    padding: clamp(135px, 17.8vw, 178px) 0 5px 0;
+}
+.sub_visual .breadcrumb ol{
+    display: flex; /* li 좌우 */
+    justify-content: center;
+    align-items: center;
+    gap: 0 1.29em;
+}
+.sub_visual .breadcrumb ol li{
+    position: relative;/* after 정렬의 기준 */
+}
+.sub_visual .breadcrumb ol li::before{
+    content: "";
+    position: absolute;
+    left: -0.88em;
+    top: 0.41em;
+    width: 0.35em;
+    height: 0.65em;
+    background-image: var(--icon-arrow-w);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.sub_visual .breadcrumb ol li.home::before{
+    display: none;
+}
+.sub_visual .breadcrumb ol li.home a{
+    display: block;
+    width: 0.76em;
+    height: 0.88em;
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='15' viewBox='0 0 13 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15V5L6.5 0L13 5V15H8.125V9.16667H4.875V15H0Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.sub_visual .sub_tit{
+    text-align: center;
+    font-size: clamp(32px, 5vw, 50px);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+}
+.snb{
+    margin: clamp(17px, 2.7vw, 27px) 0 0 0;
+    color: #fff;
+}
+.snb ul{
+    display: flex;
+    justify-content: center;
+    height: var(--snb_h);
+    background-color: var(--color-main);
+    border-radius: 100px;
+    overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
+    overflow-x: auto; /* 좌우 스크롤바 생성 */
+}
+ .snb ul::-webkit-scrollbar { /* 스크롤바의 영역 */
+    display: none;
+}
+@media screen and (max-width:768px){
+    .snb ul{
+        border-radius: 0px;
+        justify-content: flex-start;
+        padding: 0 var(--wrapper-margin);
+    }
+    .snb .wrapper{
+        margin: 0;
+    }
+}
+.snb ul li a{
+    display: block;
+    line-height: var(--snb_h);
+    font-size: clamp(16px, 2.2vw, 22px);
+    font-weight: var(--font-weight-bold);
+    padding: 0 1.24em;
+    white-space: nowrap; /* 줄바꿈 금지 */
+}
+.snb ul li a span{
+    position: relative;
+}
+.snb ul li.active a{
+    color: var(--color-sub1);
+}
+
+.page_tit h1{
+    margin: clamp(52px, 9.7vw, 97px) 0 clamp(50px, 8.3vw, 83px) 0;
+    text-align: center;
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    color: var(--font-color-tit);
+}
+.contents{
+    min-height: 300px; /* 최소높이 */
+}

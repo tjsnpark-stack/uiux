@@ -160,7 +160,8 @@
         display: flex;
         align-items: center;
     }
-    .header .sitemap .sitemap_wrap ul.depth1 > li > button{
+    .header .sitemap .sitemap_wrap ul.depth1 > li > button,
+    .header .sitemap .sitemap_wrap ul.depth1 > li > a{
         display: block;
         font-size: 32px;
         font-weight: var(--font-weight-bold);
@@ -203,12 +204,12 @@
     }
     .header.menu_over .gnb ul.depth1 > li.over:has(ul.depth2) > a > span::after {
         background-image: var(--icon-arrow);
-        transform: rotate(360deg);
+        transform: rotate(90deg);
     }
     .header.menu_over .gnb ul.depth1 > li:has(ul.depth2) > a > span::after,
     .header.fixed .gnb ul.depth1 > li:has(ul.depth2) > a > span::after {
         background-image: var(--icon-arrow);
-        transform: rotate(360deg);
+        transform: rotate(90deg);
     }
     .header.menu_over .util .mypage,
     .header.fixed .util .mypage {
@@ -319,7 +320,8 @@
     .header .sitemap .sitemap_wrap ul.depth1 > li{
         border-bottom: 1px solid #EDEDED;
     }
-    .header .sitemap .sitemap_wrap ul.depth1 > li > button{
+    .header .sitemap .sitemap_wrap ul.depth1 > li > button,
+    .header .sitemap .sitemap_wrap ul.depth1 > li > a{
         display: block;
         font-size: 22px;
         font-weight: var(--font-weight-bold);
@@ -333,7 +335,7 @@
         position: absolute;
         right: 7px;
         top: 20px;
-        transform: rotate(90deg);
+        transform: rotate(270deg);
         width: 7px;
         height: 15px;
         background-image: var(--icon-arrow-tit);
@@ -343,11 +345,11 @@
         transition: 0.3s;
     }
     .header .sitemap .sitemap_wrap ul.depth1 > li.open:has(ul.depth2) > button::after{
-        transform: rotate(270deg);
+        transform: rotate(90deg);
     }
     .header .sitemap .sitemap_wrap ul.depth1 > li > ul.depth2{
         display: none;
-        background-color: #F4F4F4;
+        background-color: #FFE4B3;
         padding: 10px 0 10px var(--wrapper-margin);
     }
     .header .sitemap .sitemap_wrap ul.depth1 > li > ul.depth2 > li > a{

@@ -1,0 +1,93 @@
+/* 각각의 콘텐츠 페이지 스타일
+   - 여기있는 css를 수정하면 해당 페이지 1개만 영향이 있음
+   대신에 절대 클래스명을 페이지에 제한되게 cnt_페이지명으로 시작해야함
+*/
+.cnt_info{
+    margin: 0 0 clamp(50px, 9vw, 90px) 0;
+}
+.cnt_info .wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.cnt_info .photo{
+    overflow: hidden;
+    width: 32.2%;
+    height: clamp(443px, 60.8vw, 608px);
+    border-radius: 20px;
+    margin: 67px 0 0 0;
+}
+.cnt_info .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.cnt_info .txt_wrap{
+    width: 57.57%;
+}
+.cnt_info .txt_wrap .tit{
+    position: relative;/* before 정렬의 기준 */
+    color: var(--font-color-tit);
+    padding-bottom: 56px;
+}
+.cnt_info .txt_wrap .tit::before{
+    content: "";
+    position: absolute;
+    left: -100vw;
+    top: 0;
+    z-index: -1;
+    width: 200vw;
+    height: 100%;
+    background-color: #FFE4B3;
+}
+.cnt_info .txt_wrap .tit h2{
+    font-size: 32px;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    padding: 132px 0 42px 0;
+}
+.cnt_info .txt_wrap .tit p{
+    font-size: var(--font-size-subtit2);
+} 
+.cnt_info .txt_wrap .txt{
+    margin: 70px 0;
+}
+.cnt_info .txt_wrap .sign img{
+    width: 267px;/* 높이는 비율에 맞게 알아서 들어감 */
+}
+@media screen and (max-width:1024px){
+            .cnt_info .wrapper{
+                display: block; /* flex 해제 */
+            }
+            .cnt_info .photo{
+                width: 100%;
+                max-width: 500px;
+                border-radius: 15px;
+                margin: 0 auto;
+            }
+            .cnt_info .txt_wrap{
+                width: auto;
+            }
+            .cnt_info .txt_wrap .tit{
+                padding-bottom: 32px;
+            }
+            .cnt_info .txt_wrap .tit::before{
+                left: calc(var(--wrapper-margin) * -1);
+                top: -199px;
+                width: 100vw;
+                height: calc(100% + 199px);
+            }
+            .cnt_info .txt_wrap .tit h2{
+                font-size: 24px;
+                padding: 79px 0 21px 0;
+            }
+            .cnt_info .txt_wrap .tit p{
+                font-size: 16px;
+            } 
+            .cnt_info .txt_wrap .txt{
+                margin: 34px 0 50px 0;
+            }
+            .cnt_info .txt_wrap .sign img{
+                width: 328px;/* 높이는 비율에 맞게 알아서 들어감 */
+            }
+}/*@media*/
