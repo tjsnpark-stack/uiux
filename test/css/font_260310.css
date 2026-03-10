@@ -1,0 +1,29 @@
+@import url(default.css);
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans+Deva:wght@100..800&display=swap');
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+body{
+    /* 한글이 지원되지 않는 영문폰트를 맨앞에 선언하고 뒤에 한글이 지원되는 폰트명을 씀
+       영문, 숫자, 특수문자 등은 영문 폰트가 적용되고 한글만 한글폰트가 적용 */
+    font-family: "Playpen Sans Deva", "Paperozi" , "cursive";
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #3d3d3d;
+}
+h2{
+    font-size: 40px;
+    font-weight: 700;
+    margin: 3em 0 1em 0;
+}
