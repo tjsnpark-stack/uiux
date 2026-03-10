@@ -14,7 +14,7 @@ a{
 ul,ol,li{
     list-style: none;
 }
-strong{
+strong, th{
     font-weight: inherit;
 }
 em,address{
@@ -36,4 +36,33 @@ button{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+input, select, textarea{
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    color: inherit;
+    line-height: inherit;
+}
+/* 자동완성 스타일 제거 */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: #000 !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+fieldset{
+    border: 0;
+}
+legend{
+    display: none;
+}
+caption{
+    display: none;
+}
+table{
+    width: 100%;
+    border-collapse: collapse; /* border의 겹침 병합 */
 }
