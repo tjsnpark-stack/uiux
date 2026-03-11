@@ -1,0 +1,19 @@
+body, html{
+    font-family: 'SeoulNotice' , sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #3d3d3d;
+    line-height: 1.5;
+    word-break: keep-all; /* 단어로 줄바꿈 */
+    word-wrap: break-word; /* 단어가 제한된 넓이보다 길면 강제 줄바꿈 */
+}
+.wrapper{
+    width: 1260px;
+    margin: 0 auto; /* 가운데 */
+}
+@media screen and (max-width: 1320px) {  /* 1260 + 30 + 30 */
+    .wrapper{
+        width: auto; /* 브라우저의 넓이에 맞게 알아서 */
+        margin: 0 30px; /* 이제 좌우여백이 고정으로 변경 */
+    }
+}
