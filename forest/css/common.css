@@ -1,20 +1,25 @@
 body, html{
-    font-family: 'SeoulNotice' , sans-serif;
+    font-family: 'Suit', sans-serif;
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 400;
     color: #3d3d3d;
     line-height: 1.5;
     word-break: keep-all; /* 단어로 줄바꿈 */
-    word-wrap: break-word; /* 단어가 제한된 넓이보다 길면 강제 줄바꿈 */
+    word-wrap: break-word;/* 단어가 제한된 넓이보다 길면 강제 줄바꿈 */
 }
 .wrapper{
     width: 1260px;
     margin: 0 auto; /* 가운데 */
 }
-@media screen and (max-width: 1618px) {  /* 1618 - 1260 =358/2 = 179px */
+@media screen and (max-width:1520px) { /* 1520 - 1260 = 260/2 = 130px */
     .wrapper{
         width: auto; /* 브라우저의 넓이에 맞게 알아서 */
-        margin: 0 179px; /* 이제 좌우여백이 고정으로 변경 */
+        margin: 0 130px; /* 이제 좌우여백이 고정으로 변경 */
+    }
+}
+@media screen and (max-width:1024px) {
+    .wrapper{
+        margin: 0 clamp(16px, 3vw, 30px);
     }
 }
 .sr-only {
