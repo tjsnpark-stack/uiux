@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+
     <link rel="stylesheet" href="css/main.css">
     <title>아이조아펫파크</title>
 </head>
@@ -92,31 +97,272 @@
             <section class="visual">
                 <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                     <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
-                        <li class="swiper-slide   pop1">
+                        <li class="swiper-slide pop1">
                             <div class="wrapper">
                                 <h2>아이조아가 약속하는 가장 따뜻한 기억</h2>
                             </div>
                         </li>
-                        <li class="swiper-slide   pop2">
+                        <li class="swiper-slide pop2">
                             <div class="wrapper">
                                 <h2>반려동물과 함께 사랑과 희망을 나누는 곳</h2>
                             </div>
                         </li>
-                        <li class="swiper-slide   pop3">
+                        <li class="swiper-slide pop3">
                             <div class="wrapper">
                                 <h2>낯선 곳에서의 시간이 휴식이 되는 마법</h2>
                             </div>
-                        </li>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
                     </ul>
                 </div>
             </section><!--visual-->
-            <section class="brand"></section><!--brand-->
-            <section class="service"></section><!--service-->
-            <section class="care"></section><!--care-->
-            <section class="insta"></section><!--insta-->
-            <section class="map"></section><!--map-->
+            <section class="brand">
+                <div class="wrapper">
+                    <h2>가장 행복한 기억을 <strong>선물</strong>하는 곳</h2>
+                    <p>아이조아 펫파크는? <br> 반려견이 진심으로 즐거워하는 환경을 만들겠습니다. <br> 매일 건강한 웰빙 라이프와 행복한 기억을 선물하겠습니다.</p>
+                </div>
+                <img src="images/dog01.svg" alt="" class="dog01">
+                <img src="images/ball01.svg" alt="" class="ball01">
+                <img src="images/dog02.svg" alt="" class="dog02">
+            </section><!--brand-->
+            <section class="service">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2><strong>IJOA</strong> 서비스</h2>
+                        <p>전문가의 따스한 시선 아래 놀이와 쉼, 성장이 하나로 이어집니다. <br> 아이조아만의 올인원 케어로 우리 아이의 매일이 더 사랑스럽게 피어납니다.</p>
+                    </div>
+                    <div class="list">
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                <li class="swiper-slide   pop1">
+                                    <div class="wrapper">
+                                        <h2>Hotel</h2>
+                                        <p>낯선 곳도 내 집처럼 포근하게, 정서적 안정을 채우는 프라이빗 힐링 스테이입니다.</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide   pop2">
+                                    <div class="wrapper">
+                                        <h2>Daycare</h2>
+                                        <p>반려견 전문가의 전담 케어로 완성되는 올바른 예절과 사랑스러운 변화합니다.</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide   pop3">
+                                    <div class="wrapper">
+                                        <h2>Training</h2>
+                                        <p>아이의 눈높이에 맞춘 1:1 맞춤 교육으로 더 행복한 내일을 약속합니다.</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide   pop4">
+                                    <div class="wrapper">
+                                        <h2>Nursing</h2>
+                                        <p>아이의 상태와 기질에 맞춘 1:1 밀착 케어로 작은 변화까지 세심하게 관리합니다.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="prev">
+                            <span class="sr-only">이전팝업보기</span>
+                            <svg width="12" height="20" viewBox="0 0 12 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.1911 20L0 10L10.1911 0L12 1.775L3.61783 10L12 18.225L10.1911 20Z" />
+                            </svg>
+                        </button>
+                        <button class="next">
+                            <span class="sr-only">다음팝업보기</span>
+                            <svg width="12" height="20" viewBox="0 0 12 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.80892 -8.90933e-07L12 10L1.80892 20L1.10885e-06 18.225L8.38217 10L2.54695e-06 1.775L1.80892 -8.90933e-07Z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section><!--service-->
+            <section class="care">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2><strong>IJOA</strong> 안심 케어 공간</h2>
+                        <p>아이조아의 공간은 사랑으로 완성됩니다. <br> 단순히 머무는 장소를 넘어,  모든 아이가 존중받고 사랑받는 따뜻한 보금자리이자 즐거운 놀이터가 되어줍니다.</p>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/care01.jpg" alt=""></div>
+                                    <h3>DogPark</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/care02.jpg" alt=""></div>
+                                    <h3>CatPark</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/care03.jpg" alt=""></div>
+                                    <h3>SkyPark</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/care04.jpg" alt=""></div>
+                                    <h3>RestArea</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/care05.jpg" alt=""></div>
+                                    <h3>care</h3>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section><!--care-->
+            <section class="insta">
+                <div class="tit">
+                    <svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 25.2876V10.8395C0.0605706 10.4288 0.141332 10.0181 0.168252 9.60068C0.444185 4.94173 3.39868 1.41384 7.91456 0.437614C8.87023 0.228904 9.85955 0.141384 10.8287 0H25.2714C25.655 0.0538607 26.0319 0.141378 26.4155 0.161576C31.7659 0.457809 35.7569 4.31559 35.8915 9.65453C36.0328 15.2762 36.0395 20.9047 35.8915 26.5197C35.7501 31.7711 31.7727 35.75 26.5232 35.8914C20.8767 36.0395 15.2167 36.0328 9.57016 35.8914C4.90622 35.777 1.35947 32.6396 0.417261 28.1153C0.222089 27.1795 0.134601 26.2234 0 25.2741V25.2876ZM18.0635 32.7069C18.0635 32.7069 18.0635 32.7069 18.0635 32.7002C20.7084 32.7002 23.3601 32.7675 25.9983 32.68C28.1519 32.6127 30.07 31.8653 31.389 30.0341C32.2774 28.7953 32.6678 27.368 32.6745 25.8733C32.7149 20.7296 32.7687 15.5859 32.6745 10.4423C32.587 6.03914 30.1238 3.53462 25.7425 3.44036C20.6344 3.32591 15.5195 3.32591 10.4114 3.44036C5.98976 3.54135 3.52655 5.98527 3.43233 10.3884C3.31792 15.5321 3.32465 20.6758 3.43233 25.8195C3.52655 30.1014 6.0436 32.5588 10.3037 32.7002C12.8881 32.7877 15.4724 32.7136 18.0635 32.7136V32.7069Z" fill="#231A11" fill-opacity="0.8"/>
+                        <path d="M17.9765 27.3212C12.8011 27.274 8.72942 23.12 8.79672 17.9629C8.85729 12.7855 13.0098 8.72577 18.1717 8.79983C23.3068 8.87388 27.3381 12.9808 27.3044 18.111C27.2708 23.2816 23.1318 27.3683 17.9698 27.3212H17.9765ZM24.0336 18.0773C24.0336 14.7178 21.4021 12.0719 18.0438 12.0719C14.6855 12.0719 12.0608 14.7178 12.0675 18.0841C12.0743 21.3965 14.699 24.0289 18.0102 24.0424C21.3752 24.0559 24.0269 21.4234 24.0336 18.0706V18.0773Z" fill="#231A11" fill-opacity="0.8"/>
+                        <path d="M27.6669 6.27441C28.9052 6.27441 29.8273 7.18297 29.834 8.41457C29.834 9.61925 28.8783 10.6019 27.6871 10.6086C26.5228 10.6086 25.4998 9.59906 25.4864 8.43476C25.4796 7.25027 26.4555 6.28114 27.6669 6.27441Z" />
+                    </svg>
+                    <h2><strong>IJOA</strong>INSTARGRAM</h2>
+                </div>    
+                <div class="link">
+                    <a href="#n"><span>@ijoaiteawon</span></a>
+                    <a href="#n"><span>@ijoapark_official</span></a>
+                    <a href="#n"><span>@ijoadeagu</span></a>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/insta01.jpg" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/insta02.jpg" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/insta03.jpg" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/insta04.jpg" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/insta05.jpg" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/insta06.jpg" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/insta07.jpg" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/insta08.jpg" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/insta09.jpg" alt=""></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section><!--insta-->
+            <section class="map">
+                <div class="tit">
+                    <h2><strong>IJOA</strong> 예약안내</h2>
+                </div>
+                <div class="tab_list">
+                    <ul>
+                        <li class="active"><button>서울용산점</button></li>
+                        <li><button>화성동탄점</button></li>
+                        <li><button>대구달성점</button></li>
+                    </ul>
+                </div>
+                <div class="tab_conts">
+                    <div class="tab_item active">
+                        <div class="tel">
+                            <strong>010-7598-1160</strong>
+                            <span>※ 상담가능시간 08:00 ~ 21:00</span>
+                        </div>
+                        <div class="link">
+                            <ul>
+                                <li><a href="#n">반려동물 호텔 예약</a></li>
+                                <li><a href="#n">반려견 유치원 예약</a></li>
+                                <li><a href="#n">반려견 훈련 예약</a></li>
+                                <li><a href="#n">반려동물 요양원 예약</a></li>
+                            </ul>
+                        </div>
+                        <div class="map_area map01"></div>
+                    </div>
+                    <div class="tab_item">
+                        <div class="tel">
+                            <strong>010-6763-8891</strong>
+                            <span>※ 상담가능시간 08:00 ~ 21:00</span>
+                        </div>
+                        <div class="link">
+                            <ul>
+                                <li><a href="#n">반려동물 호텔 예약</a></li>
+                                <li><a href="#n">반려견 유치원 예약</a></li>
+                                <li><a href="#n">반려견 훈련 예약</a></li>
+                                <li><a href="#n">반려동물 요양원 예약</a></li>
+                            </ul>
+                        </div>
+                        <div class="map_area map02"></div>
+                    </div>
+                    <div class="tab_item">
+                        <div class="tel">
+                            <strong>010-2973-9312</strong>
+                            <span>※ 상담가능시간 08:00 ~ 21:00</span>
+                        </div>
+                        <div class="link">
+                            <ul>
+                                <li><a href="#n">반려동물 호텔 예약</a></li>
+                                <li><a href="#n">반려견 유치원 예약</a></li>
+                                <li><a href="#n">반려견 훈련 예약</a></li>
+                                <li><a href="#n">반려동물 요양원 예약</a></li>
+                            </ul>
+                        </div>
+                        <div class="map_area map03"></div>
+                    </div>
+                </div>
+            </section><!--map-->
         </main>
-        <footer></footer>
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="f_logo"><img src="images/logo_w.svg" alt="아이조아펫파크로고"></div>
+                <div class="inner">
+                    <div class="f_nav">
+                        <ul>
+                            <li><a href="#n">개인정보처리방침</a></li>
+                            <li><a href="#n">저작권보호 및 정책</a></li>
+                            <li><a href="#n">영상정보처리기기 운영·관리방침</a></li>
+                            <li><a href="#n">이메일수집거부</a></li>
+                        </ul>
+                    </div>
+                    <div class="f_info">
+                        <span>아이조아 펫파크</span><br>
+                        <address>서울특별시 용산구 녹사평대로32길 28 2층</address>
+                        <span>사업자등록번호 : 229-12-03300</span><span>대표자 : 정성아</span><br>
+                        <span>Tel : 010-7598-1160</span><span>Fax : 02-798-1160</span><span>Email : ijoa@ijoapark.com</span><br>
+                        <span>개인정보 보호책임자 : 정성아</span>
+                    </div>
+                    <div class="copyright">COPYRIGHTⓒ IJOAPETPARK. ALL RIGHTS RESERVED.</div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
