@@ -402,7 +402,7 @@
     position: absolute;
     right: 16px;
     bottom: 10px;
-    width: 262px;
+    width: 18%;
 }
 @media screen and (max-width:768px){
     .brand img.dog02{
@@ -486,6 +486,39 @@
     background-color: var(--font-color-tit);
     fill: var(--color-point);
 }
+@media screen and (max-width:768px){
+    .service .tit h2{
+        margin: 85px 0 0 0;
+    }
+    .service .tit p{
+        display: none;
+    }
+    .service .list{
+        position: relative;
+    }
+    .service .swiper-slide{
+        margin-top: 30px;
+        height: 337px;
+        border-radius: 25px;
+    }
+    .service .list h2{
+        font-size: 22px;
+        margin: 296px 0 16px 214px;
+    }
+    .service .list p{
+        font-size: var(--font-size-default);
+        margin: 0 0 37px 214px;
+    }
+    .service button{
+        position: absolute;
+    }
+    .service .prev{
+        display: none;
+    }
+    .service .next{
+        display: none;
+    }
+}/*@media*/
 
 .care .tit{
     text-align: center;
@@ -541,6 +574,26 @@
     font-size: 24px;
     color: #fff;
 }
+@media screen and (max-width:768px){
+    .care .tit h2{
+        margin: 85px 0 0 0;
+    }
+    .care .tit p{
+        display: none;
+    }
+    .care .list{
+        margin-top: 30px;
+    }
+    .care .list ul li a h3{
+        position: absolute; /* a를 기준으로 정렬 */
+        text-align: center;
+        left: 0;
+        bottom: 30px;
+        width: 100%;
+        font-size: 22px;
+        color: #fff;
+    }
+}/*@media*/
 
 .insta{
     margin-top: 185px;
@@ -568,6 +621,15 @@
 }
 .insta .link a{
     position: relative;
+}
+.insta .link a:hover .iteawon{
+    color: var(--color-main);
+}
+.insta .link a:hover .official{
+    color: var(--color-main);
+}
+.insta .link a:hover .deagu{
+    color: var(--color-main);
 }
 .insta .link a::after{
     content: " ";

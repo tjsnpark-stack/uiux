@@ -1,0 +1,243 @@
+@import url(default.css);
+@import url(common.css);
+@import url(fonts.css);
+
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-h);
+    color: #fff;
+    fill: #fff;
+    padding: 0 var(--wrapper-margin);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-w20);
+}
+.header .logo a{
+    display: block;
+    width: 162px;
+    height: 33px;
+    background: url(../images/logo_w.svg) no-repeat center center / contain ;
+}
+.header.fixed,
+.header.menu_over{
+    background-color: #fff;
+    color: var(--font-color-tit);
+    fill: var(--font-color-tit);
+    border-color: rgba(35, 26, 17, 0.2);
+}
+.header.fixed .logo a,
+.header.menu_over .logo a{
+    background-image: url(../images/logo.svg);
+}
+@media screen and (min-width:1025px){
+            .header.menu_over::before{
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: -1;
+                width: 100%;
+                height: 496px;
+                background-color: #fff;
+            }
+            .header.menu_over::after{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                background-color: rgba(35, 26, 17, 0.2);
+            }
+            .header .gnb .gnb_open,
+            .header .gnb .gnb_wrap .gnb_logo, 
+            .header .gnb .gnb_wrap .gnb_close{
+                display: none;
+            }
+            .header .gnb .gnb_wrap ul.depth1{
+                display: flex;
+            }
+            .header .gnb .gnb_wrap ul.depth1 > li{
+                position: relative; /* depth2 정렬의 기준 */
+                width: 205px;
+                text-align: center;
+            }
+            .header .gnb .gnb_wrap ul.depth1 > li > a{
+                display: block;
+                line-height: var(--header-h);
+                font-size: 20px;
+                font-weight: var(--font-weight-bold);
+            }
+            .header .gnb .gnb_wrap ul.depth1 > li.over > a{
+                position: relative;
+                color: var(--color-main);
+            }
+            .header .gnb .gnb_wrap ul.depth1 > li.over > a::after{
+                position: absolute;
+                content: "";
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 3px;
+                background-color: var(--color-sub);
+            }
+            .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
+                display: none;
+                position: absolute; /* li를 기준으로 정렬 */
+                left: 0;
+                top: var(--header-h);
+                width: 100%;
+                height: 396px;
+                padding-top: 28px;
+                border-right: 1px solid rgba(35, 26, 17, 0.2);
+            }
+            .header .gnb .gnb_wrap ul.depth1 > li:first-child > ul.depth2{
+                border-left: 1px solid rgba(35, 26, 17, 0.2);
+            }
+            .header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
+                display: block;
+
+            }
+            .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a{
+                display: block;
+                font-size: 20px;
+                padding: 0.5em 0 0.5em 0;
+            }
+            .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover{
+                color: var(--color-main);
+            }
+            .header .util{
+                display: flex;
+            }
+            .header .util .mypage{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                height: 50px;
+            }
+            .header .util .mypage:hover{
+                fill: var(--color-main);
+            }
+            .header .util .lang{
+                position: relative;
+            }
+            .header .util .lang .language_open{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                height: 50px;
+            }
+            .header .util .lang .language_open:hover{
+                fill: var(--color-main);
+            }
+            .header .util .lang .lang_wrap{
+                display: none;
+                position: absolute;
+                right: -8px;
+                top: 44px;
+                z-index: 10;
+                padding: 7px 22px;
+                background-color: var(--font-color-tit);
+                border-radius: 10px;
+                color: #fff;
+            }
+            .header .util .lang.open .lang_wrap{
+                display: block;
+            }
+            .header .util .lang .lang_wrap ul li a{
+                display: block;
+                padding: 0.5em 0 0.5em 0;
+            }
+}
+@media screen and (min-width:1025px) and (max-width:1280px){
+    .header .gnb .gnb_wrap ul.depth1 > li{
+        width: clamp(161px, 16vw, 205px);
+    }
+}
+@media screen and (max-width:1024px){
+    .header{
+        padding-right: 0;
+    }
+    .header .logo a{
+        width: 91px;
+        height: 19px;
+    }
+    .header .gnb .gnb_open{
+        width: var(--header-h);
+        height: var(--header-h);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header .gnb .gnb_wrap{
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        color: var(--font-color-tit);
+        fill: var(--font-color-tit);
+    }
+    .header.menu_open .gnb .gnb_wrap{
+        display: block;
+    }
+    .header .gnb .gnb_wrap .gnb_logo{
+        position: absolute;
+        left: 16px;
+        top: 19px;
+    }
+    .header .gnb .gnb_wrap .gnb_logo img{
+        width: 91px;
+    }
+    .header .gnb .gnb_wrap .gnb_close{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: var(--header-h);
+        height: var(--header-h);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header .util{
+        display: none;
+    }
+}
+
+.visual .swiper-slide{
+    height: clamp(500px, 80vw, 900px);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.visual .swiper-slide.bg1{
+    background-image: url(../images/visual01.jpg);
+}
+.visual .swiper-slide.bg2{
+    background-image: url(../images/visual02.jpg);
+}
+.visual .swiper-slide.bg3{
+    background-image: url(../images/visual03.jpg);
+}
+.visual .swiper-slide h3{
+    margin-bottom: 2.6em;
+    font-size: var(--font-size-tit);
+    line-height: var(--line-height-tit);
+}
+
+body{
+    margin-bottom: 2000px;
+}
