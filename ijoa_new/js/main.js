@@ -50,7 +50,7 @@ $(document).ready(function(){
         $('.header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
         $(this).addClass('over')
     })
-    $('.header .gnb').on('mouseleave', function(){
+    $('.header .gnb .gnb_wrap').on('mouseleave', function(){
         $('.header').removeClass('menu_over')
         $('.header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
     })
@@ -60,4 +60,96 @@ $(document).ready(function(){
     $('.header .util .lang .language_open').on('click', function(){
         $('.lang').toggleClass('open')
     })
+
+    /****************************** */
+
+    $('.header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+		e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
+        if($(this).parent().hasClass('open') == true){
+            $(this).parent().removeClass('open')
+        }else{
+            $('.header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+            $(this).parent().addClass('open')
+        }
+	});
+    $('.header .gnb .gnb_open').on('click', function(){
+        $('.header').addClass('menu_open')
+    })
+    $('.header .gnb .gnb_wrap .gnb_close').on('click', function(){
+        $('.header').removeClass('menu_open')
+    })
+
+    const service_swiper = new Swiper('.service .swiper', { /* 팝업을 감싼는 요소의 class명 */
+
+
+        //effect: "fade", /* fade 효과 */
+
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        
+
+        navigation: {  /* 이전, 다음 버튼 */
+            nextEl: '.service .next',  /* 다음 버튼의 클래스명 */
+            prevEl: '.service .prev',  
+        },
+
+        slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            426: {    /* 640px 이상일때 적용 */
+                slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+            769: {    /* 640px 이상일때 적용 */
+                slidesPerView: 1,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+        },
+
+    });
+
+    /***********************place 하나씩 넘기는 팝업********************** */
+
+    const place_swiper = new Swiper('.place .swiper', { /* 팝업을 감싼는 요소의 class명 */
+
+        slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            499: {    /* 640px 이상일때 적용 */
+                slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+            650: {    /* 640px 이상일때 적용 */
+                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 12,
+            },
+            1050: {    /* 640px 이상일때 적용 */
+                slidesPerView: 5,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 12,
+            },
+        },
+
+    });
+
+
+    /***********************place 하나씩 넘기는 팝업********************** */
+
+    const insta_swiper = new Swiper('.insta .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            499: {    /* 640px 이상일때 적용 */
+                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 12,
+            },
+            769: {    /* 640px 이상일때 적용 */
+                slidesPerView: 5,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 12,
+            },
+            1025: {    /* 640px 이상일때 적용 */
+                slidesPerView: 6,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 12,
+            },
+        },
+    });    
+    
 });
