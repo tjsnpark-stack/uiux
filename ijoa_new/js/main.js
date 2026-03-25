@@ -84,7 +84,7 @@ $(document).ready(function(){
 
         //effect: "fade", /* fade 효과 */
 
-        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        loop: false,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
         
 
         navigation: {  /* 이전, 다음 버튼 */
@@ -150,6 +150,36 @@ $(document).ready(function(){
                 spaceBetween: 12,
             },
         },
-    });    
+    });
+    
+
+
+    let reserve_select
+    $('.reserve .tab_list ul li').on('click', function(){
+        reserve_select = $(this).attr('data-name')
+		// console.log(reserve_select)
+        $('.reserve .tab_list ul li').removeClass('active')
+        $(this).addClass('active')
+        $('.reserve .tab_contents .tab_item').removeClass('active')
+        $('.reserve .tab_contents .tab_item.' + reserve_select).addClass('active')
+	});
+
+
+    
+    $('.quick_menu .quick_open').on('click', function(e){
+		e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
+        if($(this).parent().hasClass('open') == true){
+            $(this).parent().removeClass('open')
+        }else{
+            $('.quick_menu .quick_open').removeClass('open')
+            $(this).parent().addClass('open')
+        }
+	});
+    $('.quick_menu .quick_open').on('click', function(){
+        $('.quick_menu').addClass('open')
+    })
+    $('.quick_menu .quick_close').on('click', function(){
+        $('.quick_menu').removeClass('open')
+    })
     
 });

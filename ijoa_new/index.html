@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=c4u9ss4vxm"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
     <script src="js/main.js"></script>
@@ -286,9 +287,222 @@
                         </div>
                     </div>
                 </section>
-                <section></section>
+                <section class="reserve">
+                    <h2><strong>IJOA</strong> 예약안내</h2>
+                    <div class="tab_list">
+                        <ul>
+                            <li class="active seo" data-name="seo"><button>서울용산점</button></li>
+                            <li class="hwa" data-name="hwa"><button>화성동탄점</button></li>
+                            <li class="dea" data-name="dea"><button>대구달성점</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab_contents">
+                        <div class="tab_item active seo">
+                            <div class="tel">
+                                <strong>010-7598-1160</strong>
+                                <span>※ 상담가능시간 08:00 ~ 21:00</span>
+                            </div>
+                            <div class="link">
+                                <a href="#n">반려동물호텔</a>
+                                <a href="#n">반려견유치원</a>
+                                <a href="#n">반려견훈련</a>
+                                <a href="#n">반려동물요양원</a>
+                            </div>
+                            <div class="map" id="map_s"></div>
+                            <script>
+                                var HOME_PATH = window.HOME_PATH || '.';
+                                var cityhall = new naver.maps.LatLng(37.533652, 126.990318),
+                                    map = new naver.maps.Map('map_s', {
+                                        center: cityhall.destinationPoint(0, 500),
+                                        zoom: 15
+                                    })
+                                    marker = new naver.maps.Marker({
+                                        map: map,
+                                        position: cityhall
+                                });
+
+                                var greenMarker = new naver.maps.Marker({
+                                    position: new naver.maps.LatLng(37.533652, 126.990318),
+                                    map: map,
+                                    title: 'Green',
+                                    icon: {
+                                        content: [
+                                                    '<div class="iw_inner">서울 용산구 녹사평대로32길 28 2층</div>'
+                                                ].join(''),
+                                        size: new naver.maps.Size(38, 58),
+                                        anchor: new naver.maps.Point(19, 58),
+                                    },
+                                    draggable: false
+                                });
+                            </script>
+                        </div>
+                        <div class="tab_item hwa">
+                            <div class="tel">
+                                <strong>010-2973-9331</strong>
+                                <span>※ 상담가능시간 08:00 ~ 21:00</span>
+                            </div>
+                            <div class="link">
+                                <a href="#n">반려동물호텔</a>
+                                <a href="#n">반려견유치원</a>
+                                <a href="#n">반려견훈련</a>
+                                <a href="#n">반려동물요양원</a>
+                            </div>
+                            <div class="map" id="map_h">
+                                <script>
+                                    var HOME_PATH = window.HOME_PATH || '.';
+
+                                    var cityhall = new naver.maps.LatLng(37.219210, 127.119331),
+                                        map = new naver.maps.Map('map_h', {
+                                            center: cityhall.destinationPoint(0, 500),
+                                            zoom: 15
+                                        })
+                                        marker = new naver.maps.Marker({
+                                            map: map,
+                                            position: cityhall
+                                        });
+
+                                    var greenMarker = new naver.maps.Marker({
+                                        position: new naver.maps.LatLng(37.219210, 127.119331),
+                                        map: map,
+                                        title: 'Green',
+                                        icon: {
+                                            content: [
+                                                        '<div class="iw_inner">경기 화성시 동탄구 중리북길 39</div>'
+                                                    ].join(''),
+                                            size: new naver.maps.Size(38, 58),
+                                            anchor: new naver.maps.Point(19, 58),
+                                        },
+                                        draggable: false
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="tab_item dea">
+                            <div class="tel">
+                                <strong>010-9799-8791</strong>
+                                <span>※ 상담가능시간 08:00 ~ 21:00</span>
+                            </div>
+                            <div class="link">
+                                <a href="#n">반려동물호텔</a>
+                                <a href="#n">반려견유치원</a>
+                                <a href="#n">반려견훈련</a>
+                                <a href="#n">반려동물요양원</a>
+                            </div>
+                            <div class="map" id="map_d">
+                                <script>
+                                    var cityhall = new naver.maps.LatLng(35.869431, 128.495438),
+                                        map = new naver.maps.Map('map_d', {
+                                            center: cityhall.destinationPoint(0, 500),
+                                            zoom: 15
+                                        })
+                                        marker = new naver.maps.Marker({
+                                            map: map,
+                                            position: cityhall
+                                        });
+
+                                    var greenMarker = new naver.maps.Marker({
+                                        position: new naver.maps.LatLng(35.869431, 128.495438),
+                                        map: map,
+                                        title: 'Green',
+                                        icon: {
+                                            content: [
+                                                        '<div class="iw_inner">대구 달성군 다사읍 서재로 57-6 1층</div>'
+                                                    ].join(''),
+                                            size: new naver.maps.Size(38, 58),
+                                            anchor: new naver.maps.Point(19, 58),
+                                        },
+                                        draggable: false
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </section>
         </main>
-        <footer class="footer"></footer>
+        <aside class="quick_menu">
+            <button class="quick_open">
+                <span class="sr-only">메뉴열기</span>
+                <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 15L0 7.5L14 0L28 7.5L14 15ZM14 20L0.731818 12.9062L3.40455 11.4688L14 17.1562L24.5955 11.4688L27.2682 12.9062L14 20ZM14 25L0.731818 17.9062L3.40455 16.4688L14 22.1562L24.5955 16.4688L27.2682 17.9062L14 25ZM14 12.1562L22.6864 7.5L14 2.84375L5.31364 7.5L14 12.1562Z" fill="white"/>
+                </svg>
+            </button>
+            <div class="quick_wrap">
+                <ul>
+                    <li>
+                        <a href="#n">
+                            <svg width="25" height="23" viewBox="0 0 25 23"  xmlns="http://www.w3.org/2000/svg">
+                                <mask id="path-1-inside-1_72_52" fill="white">
+                                <path d="M12.502 0C19.4052 0 25 4.63006 25 10.3457C25 16.0575 19.4052 20.6914 12.502 20.6914C11.2535 20.6914 10.052 20.5378 8.91504 20.2578L4.06445 23.001L4.65918 18.4014C1.81897 16.5064 0 13.6025 0 10.3457C1.03525e-05 4.63389 5.59485 0 12.498 0H12.502Z"/>
+                                </mask>
+                                <path d="M25 10.3457H27V10.3457L25 10.3457ZM12.502 20.6914L12.5019 22.6914H12.502V20.6914ZM8.91504 20.2578L9.39334 18.3158L8.62199 18.1259L7.93051 18.5169L8.91504 20.2578ZM4.06445 23.001L2.08096 22.7445L1.56818 26.7104L5.04898 24.7419L4.06445 23.001ZM4.65918 18.4014L6.64267 18.6578L6.80186 17.4267L5.7692 16.7377L4.65918 18.4014ZM0 10.3457L-2 10.3457V10.3457H0ZM12.502 0V2C18.6711 2 23 6.0719 23 10.3457L25 10.3457L27 10.3457C27 3.18821 20.1392 -2 12.502 -2V0ZM25 10.3457H23C23 14.6161 18.6706 18.6914 12.502 18.6914V20.6914V22.6914C20.1397 22.6914 27 17.4989 27 10.3457H25ZM12.502 20.6914L12.502 18.6914C11.4181 18.6914 10.3771 18.5581 9.39334 18.3158L8.91504 20.2578L8.43674 22.1998C9.72686 22.5175 11.0889 22.6914 12.5019 22.6914L12.502 20.6914ZM8.91504 20.2578L7.93051 18.5169L3.07992 21.2601L4.06445 23.001L5.04898 24.7419L9.89957 21.9987L8.91504 20.2578ZM4.06445 23.001L6.04794 23.2574L6.64267 18.6578L4.65918 18.4014L2.67569 18.1449L2.08096 22.7445L4.06445 23.001ZM4.65918 18.4014L5.7692 16.7377C3.37353 15.1393 2 12.8103 2 10.3457H0H-2C-2 14.3947 0.264408 17.8735 3.54916 20.0651L4.65918 18.4014ZM0 10.3457L2 10.3457C2.00001 6.0753 6.32938 2 12.498 2V0V-2C4.86032 -2 -1.99999 3.19248 -2 10.3457L0 10.3457ZM12.498 0V2H12.502V0V-2H12.498V0Z" mask="url(#path-1-inside-1_72_52)"/>
+                            </svg>
+                            <span>카카오문의</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.8 28C2.03 28 1.37083 27.7262 0.8225 27.1785C0.274167 26.6309 0 25.9725 0 25.2035V5.62797C0 4.85893 0.274167 4.20058 0.8225 3.65293C1.37083 3.10529 2.03 2.83146 2.8 2.83146H15.295L12.495 5.62797H2.8V25.2035H22.4V15.4856L25.2 12.6891V25.2035C25.2 25.9725 24.9258 26.6309 24.3775 27.1785C23.8292 27.7262 23.17 28 22.4 28H2.8ZM8.4 19.6105V13.6679L21.245 0.838951C21.525 0.559301 21.84 0.349563 22.19 0.209738C22.54 0.0699126 22.89 0 23.24 0C23.6133 0 23.9692 0.0699126 24.3075 0.209738C24.6458 0.349563 24.955 0.559301 25.235 0.838951L27.195 2.83146C27.4517 3.11111 27.65 3.41989 27.79 3.7578C27.93 4.09571 28 4.43945 28 4.78901C28 5.13858 27.9358 5.48231 27.8075 5.82022C27.6792 6.15814 27.475 6.46692 27.195 6.74657L14.35 19.6105H8.4ZM11.2 16.814H13.16L21.28 8.70412L20.3 7.72534L19.285 6.74657L11.2 14.8215V16.814Z" />
+                            </svg>
+                            <span>예약문의</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <svg width="31" height="25" viewBox="0 0 31 25" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.5 0L31 11.431L29.6268 13.2039L26.799 11.1172V25H4.20098V11.1172L1.37321 13.2039L0 11.431L15.5 0ZM9.36388 12.7844C9.36388 13.9345 9.99261 15.1604 11.2501 16.4621C12.5073 17.7641 13.9239 19.1182 15.5 20.5245C17.0954 19.1182 18.5217 17.7646 19.7789 16.4636C21.0364 15.1623 21.6651 13.9372 21.6651 12.7881C21.6651 11.834 21.3338 11.0414 20.6712 10.4105C20.0083 9.77948 19.213 9.46399 18.2852 9.46399C17.711 9.46399 17.1877 9.57948 16.7154 9.81048C16.2431 10.0412 15.838 10.3382 15.5 10.7014C15.1814 10.3382 14.7757 10.0412 14.2831 9.81048C13.7907 9.57948 13.279 9.46399 12.7479 9.46399C11.8192 9.46399 11.023 9.77861 10.3593 10.4079C9.69569 11.0374 9.36388 11.8295 9.36388 12.7844ZM24.5392 22.7765V9.43545L15.5 2.76493L6.46078 9.43545V22.7765H24.5392Z" />
+                            </svg>
+                            <span>가맹문의</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.75 6.69375L15.75 28L12.25 28L12.25 6.69375L2.45 16.4938L-6.11959e-07 14L14 1.29539e-06L28 14L25.55 16.4937L15.75 6.69375Z"/>
+                            </svg>
+                            <span>TOP</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button class="quick_close">
+                <span class="sr-only">메뉴닫기</span>
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.8 28L0 25.2L11.2 14L0 2.8L2.8 0L14 11.2L25.2 0L28 2.8L16.8 14L28 25.2L25.2 28L14 16.8L2.8 28Z" fill="white"/>
+                </svg>
+            </button>
+        </aside>
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="photo"><img src="images/logo_w.svg" alt="아이조아펫파크로고"></div>
+                <div class="inner">
+                    <div class="f_nav">
+                        <ul>
+                            <li>
+                                <a href="#n"><span>개인정보처리방침</span></a>
+                            </li>
+                            <li>
+                                <a href="#n"><span>저작권보호 및 정책</span></a>
+                            </li>
+                            <li>
+                                <a href="#n"><span>영상정보처리기기 운영·관리방침</span></a>
+                            </li>
+                            <li>
+                                <a href="#n"><span>이메일수집거부</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="f_info">
+                        <span>아이조아 펫파크</span><br>
+                        <span>서울특별시 용산구 녹사평대로32길 28 2층</span><br>
+                        <span>사업자등록번호 : 229-12-03300</span><span>대표자 : 정성아</span><br>
+                        <span>Tel : 010-7598-1160</span><span>Fax : 02-798-1160</span><span> Email : ijoa@ijoapark.com</span><br>
+                        <span>개인정보 보호책임자 : 정성아</span>
+                    </div>
+                    <div class="copyright">COPYRIGHTⓒ IJOAPETPARK. ALL RIGHTS RESERVED.</div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
