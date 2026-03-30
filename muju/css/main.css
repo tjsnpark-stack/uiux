@@ -2,6 +2,33 @@
 @import url(fonts.css);
 @import url(common.css);
 
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    height: var(--header-h);
+    color: #fff;
+    padding: 0 var(--wrapper-margin);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border-bottom: 1px solid var(--color-w20); */
+}
+.header .logo a{
+    display: block;
+    width: 253px;
+    height: 18px;
+    background: url(../images/logo_w.svg);
+}
+.header .logo,
+.header .gnb .gnb_open,
+.header .gnb .gnb_wrap,
+.header .gnb .util,
+.header .gnb .gnb_close{
+    display: none;
+}
 .visual{
     position: relative; /* reserve 정렬의 기준 */
 }
@@ -131,6 +158,75 @@
                 justify-content: center;
             }    
 }
+
+.experience{
+    margin-top: clamp(80px, 17.4vw, 174px);
+    text-align: center;
+}
+.experience h2{
+    font-size: var(--font-size-tit);
+    color: var(--font-color-tit);
+    margin-bottom: clamp(20px, 3vw, 30px);
+} 
+.experience .list{
+    margin-top: clamp(60px, 7vw, 70px);
+}
+.experience .list ul{
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+.experience .list ul li{
+    aspect-ratio: 4 / 5;
+    height: clamp(350px, 46.2vw, 462px);
+    color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.experience .list ul li:hover{
+    height: clamp(386px, 46.2vw, 522px);
+}
+.experience .list ul li.bg1{
+    background-image: url(../images/Experience01.jpg);
+}
+.experience .list ul li:hover.bg1{
+    background-image: url(../images/Experience04.jpg);
+}
+.experience .list ul li.bg2{
+    background-image: url(../images/Experience02.jpg);
+}
+.experience .list ul li:hover.bg2{
+    background-image: url(../images/Experience05.jpg);
+}
+.experience .list ul li.bg3{
+    background-image: url(../images/Experience03.jpg);
+}
+.experience .list ul li:hover.bg3{
+    background-image: url(../images/Experience06.jpg);
+}
+
+.experience .list ul li a h3{
+    margin-top: 30px;
+    font-size: var(--font-size-tit);
+
+}
+.experience .list ul li a p,
+.experience .list ul li a strong{
+    display: none;
+}
+.experience .list ul li:hover a p,
+.experience .list ul li:hover a strong{
+    display: block;
+    margin-top: clamp(10px, 2vw, 20px);
+    font-size: 20px;
+}
+.experience .list ul li a span,
+.experience .list ul li a svg{
+    display: none;
+}
+
+
 
 body{
     margin-bottom: 600px;
