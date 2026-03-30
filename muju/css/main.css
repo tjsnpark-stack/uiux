@@ -1,0 +1,137 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+.visual{
+    position: relative; /* reserve 정렬의 기준 */
+}
+.visual .swiper-slide{
+    height: clamp(530px, 90vw, 900px);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.visual .swiper-slide.bg1{
+    background-image: url(../images/vsiual01.jpg);
+}
+.visual .swiper-slide.bg2{
+    background-image: url(../images/vsiual02.jpg);
+}
+.visual .swiper-slide.bg3{
+    background-image: url(../images/vsiual03.jpg);
+}
+.visual .swiper-slide.bg4{
+    background-image: url(../images/vsiual04.jpg);
+}
+.visual .swiper-slide h3{
+    margin-bottom: 0.28em;
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: var(--line-height-tit);
+}
+.visual .swiper-slide p{
+    font-size: clamp(16px, 2vw, 20px);
+}
+.visual .reserve{
+    position: absolute; /* visual을 기준으로 정렬 */
+    left: 0;
+    bottom: 100px;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: pretendard;
+    color: #fff;
+    font-size: clamp(16px, 2vw, 20px);
+}
+.visual .reserve .check{
+    position: relative; /* after 정렬의 기준 */
+    padding: 6px 30px;
+    border-right: 1px solid var(--color-w80);
+}
+.visual .reserve .check::after{
+    position: absolute; /* check를 기준으로 정렬 */
+    content: "";
+    right: 15px;
+    top: 34px;
+    width: 9px;
+    height: 13px;
+    background-image: url("data:image/svg+xml,%3Csvg width='9' height='5' viewBox='0 0 9 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0.64086L4.5 5L0 0.640861L0.66157 4.47919e-07L4.5 3.71839L8.33843 1.12353e-07L9 0.64086Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.visual .reserve .check strong{
+    display: block;
+    margin-bottom: 12px;
+}
+.visual .reserve .check span{
+    display: block;
+}
+.visual .reserve .rooms{
+    display: flex;
+    text-align: center;
+    gap: 17px;
+    padding: 4px 30px;
+}
+.visual .reserve .room strong{
+    display: block;
+    margin-bottom: 12px;
+}
+.visual .reserve .room span{
+    display: inline-block;
+    padding: 0 14px 0 0;
+    position: relative; /* after 정렬의 기준 */
+}
+.visual .reserve .room span::after{
+    position: absolute; /* span을 기준으로 정렬 */
+    content: "";
+    right: 0;
+    top: 6px;
+    width: 9px;
+    height: 13px;
+    background-image: url("data:image/svg+xml,%3Csvg width='9' height='5' viewBox='0 0 9 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0.64086L4.5 5L0 0.640861L0.66157 4.47919e-07L4.5 3.71839L8.33843 1.12353e-07L9 0.64086Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.visual .reserve .search{
+    padding: 25px 67px;
+    background-color: var(--font-color-tit);
+    color: #fff;
+}
+.visual .reserve .search:hover{
+    color: var(--color-point);
+}
+.visual .reserve_m{
+    display: none;
+}
+.visual .reserve_m a{
+    font-family: pretendard;
+    padding: 11px 24px;
+    color: #fff;
+    border: 1px solid #fff;
+    text-align: center;
+}
+@media screen and (max-width:768px){
+            .visual .reserve{
+                display: none;
+            }
+            .visual .reserve_m{ 
+                position: absolute; /* visual을 기준으로 정렬 */
+                left: 0;
+                bottom: 80px;
+                z-index: 1;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }    
+}
+
+body{
+    margin-bottom: 600px;
+}
