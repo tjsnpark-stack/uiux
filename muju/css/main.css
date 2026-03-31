@@ -163,69 +163,297 @@
     margin-top: clamp(80px, 17.4vw, 174px);
     text-align: center;
 }
-.experience h2{
+.experience .tit h2{
     font-size: var(--font-size-tit);
+    line-height: var(--line-height-tit);
     color: var(--font-color-tit);
     margin-bottom: clamp(20px, 3vw, 30px);
 } 
 .experience .list{
     margin-top: clamp(60px, 7vw, 70px);
 }
-.experience .list ul{
-    display: flex;
-    justify-content: center;
-    gap: 24px;
+.experience .list .swiper{
+    overflow: visible;
 }
-.experience .list ul li{
-    aspect-ratio: 4 / 5;
-    height: clamp(350px, 46.2vw, 462px);
+/* .experience .list .swiper-slide{
     color: #fff;
+    height: clamp(386px, 52.2vw, 522px);
+    transition: box-shadow .1s;
+}
+:root {
+    --base-ratio: 0.5;
+    --base-size: 1920;
+    --base-percent: 100vw;
+}
+.experience .list .swiper-slide:hover{
+    box-shadow: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) max(calc(30px * var(--base-ratio)), calc(calc(30 / var(--base-size)) * var(--base-percent))) 0px #b7b4b4;
+    transition: box-shadow .4s .1s;
+}
+.experience .list .swiper-slide a{
+    position: relative; 
+    display: block;
+    -webkit-clip-path: inset(clamp(18px, 3vw, 30px) 0 clamp(18px, 3vw, 30px) 0);
+    clip-path: inset(clamp(18px, 3vw, 30px) 0 clamp(18px, 3vw, 30px) 0);
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
+    transition: -webkit-clip-path .3s;
+    transition: clip-path .3s;
+    transition: clip-path .3s, -webkit-clip-path .3s;
+}
+.experience .list .swiper-slide:hover a{
+    clip-path: inset(0 0 0 0);
+}
+.experience .list .swiper-slide a .photo{
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.experience .list .swiper-slide a h3{
+    padding-top: clamp(38px, 6vw, 60px);
+    font-size: var(--font-size-tit);
+    line-height: var(--line-height-tit);
+} */
+
+.experience .list .swiper-slide a{
+    display: block;
+    position: relative; /* photo 정렬의 기준 */
+    height: clamp(386px, 52.2vw, 522px);
+}
+.experience .list .swiper-slide a .photo{
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    top: 50%;
+    z-index: -1;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+    transition: height 0.3s, box-shadow 0.3s;
+}
+.experience .list .swiper-slide a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.experience .list .swiper-slide a .photo img.over_after{    
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+.experience .list .swiper-slide a:hover .photo{
+    height: 100%;
+    box-shadow: 10px 10px 10px 0 rgba(0,0,0,0.2);
+}
+.experience .list .swiper-slide a:hover .photo img.over_after{
+    opacity: 1;
+}
+.experience .list .swiper-slide a .txt{
+    color: #fff;
+    padding-top: clamp(38px, 6vw, 60px);
+    text-align: center;
+}
+.experience .list .swiper-slide a .txt h3{
+    font-size: var(--font-size-tit);
+    line-height: var(--line-height-tit);
+}
+.experience .list .swiper-slide a .txt p{
+    display: none;
+    margin-top: clamp(10px, 2vw, 20px);
+}
+.experience .list .swiper-slide a:hover .txt p{
+    display: block;
+}
+.experience .list .swiper-slide a .txt .more{
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 50%;
+    transform: translate(-50%);
+    bottom: clamp(50px, 6vw, 60px);
+    color: #fff;
+    font-family: pretendard;
+}
+.experience .list .swiper-slide a .txt .more span{
+    display: none;
+    position: relative; /* after 정렬의 기준 */
+    padding: 0 22px 0 0;
+}
+.experience .list .swiper-slide a:hover .txt .more span{
+    display: block;
+}
+.experience .list .swiper-slide a .txt .more span::after{
+    position: absolute; /* span을 기준으로 정렬 */
+    content: "";
+    right: 0;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.47059 12V6.52941H0V5.47059H5.47059V0H6.52941V5.47059H12V6.52941H6.52941V12H5.47059Z' fill='white'/%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: contain;
 }
-.experience .list ul li:hover{
-    height: clamp(386px, 46.2vw, 522px);
-}
-.experience .list ul li.bg1{
-    background-image: url(../images/Experience01.jpg);
-}
-.experience .list ul li:hover.bg1{
-    background-image: url(../images/Experience04.jpg);
-}
-.experience .list ul li.bg2{
-    background-image: url(../images/Experience02.jpg);
-}
-.experience .list ul li:hover.bg2{
-    background-image: url(../images/Experience05.jpg);
-}
-.experience .list ul li.bg3{
-    background-image: url(../images/Experience03.jpg);
-}
-.experience .list ul li:hover.bg3{
-    background-image: url(../images/Experience06.jpg);
+@media screen and (max-width:768px){
+        .experience .tit p{
+            display: none;
+        }
+        .experience .list .swiper-slide.swiper-slide-active a .photo{
+            height: 100%;
+            box-shadow: 10px 10px 10px 0 rgba(0,0,0,0.2);
+        }
+        .experience .list .swiper-slide.swiper-slide-active a .photo img.over_after{
+            opacity: 1;
+        }
+        .experience .list .swiper-slide.swiper-slide-active a .txt p{
+            display: block;
+        }
+        .experience .list .swiper-slide.swiper-slide-active a .txt .more span{
+            display: block;
+        }
 }
 
-.experience .list ul li a h3{
-    margin-top: 30px;
+.offer .wrapper{
+    position: relative; /* more 정렬의 기준 */
+}
+.offer .tit{
+    margin-top: clamp(80px, 17.4vw, 174px);
+    text-align: center;
+}
+.offer .tit h2{
     font-size: var(--font-size-tit);
-
-}
-.experience .list ul li a p,
-.experience .list ul li a strong{
+    line-height: var(--line-height-tit);
+    color: var(--font-color-tit);
+    margin-bottom: clamp(20px, 3vw, 30px);
+} 
+.offer .tit h2 br{
     display: none;
 }
-.experience .list ul li:hover a p,
-.experience .list ul li:hover a strong{
+.offer .list{
+    margin-top: clamp(60px, 7vw, 70px);
+}
+.offer .list .swiper-slide{
+    font-family: pretendard;
+}
+.offer .list .swiper-slide .photo{
+    overflow: hidden;
+}
+.offer .list .swiper-slide .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+    transition: 0.3s;
+}
+.offer .list .swiper-slide:hover .photo img{
+    transform: scale3d(1.125, 1.125, 1);
+}
+.offer .list .swiper-slide h3{
+    margin: clamp(20px, 2.6vw, 26px) 0 clamp(10px, 2vw, 20px) 0;
+    color: var(--font-color-tit);
+    font-size: clamp(17px, 2vw, 20px);
+    font-weight: 700;
+}
+.offer .list .swiper-slide p{
+    word-break: normal;
+}
+.offer .list .swiper-slide span{
     display: block;
-    margin-top: clamp(10px, 2vw, 20px);
-    font-size: 20px;
+    margin-top: 10px;
 }
-.experience .list ul li a span,
-.experience .list ul li a svg{
-    display: none;
+.offer .more{
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 14.5%;
+    display: block;
+    font-family: pretendard;
+    color: var(--font-color-df80);
+}
+.offer .more span{
+    position: relative; /* after 정렬의 기준 */
+    margin: 0 22px 0 0;
+}
+.offer .more span::after{
+    position: absolute; /* span을 기준으로 정렬 */
+    content: "";
+    right: -22px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.47059 12V6.52941H0V5.47059H5.47059V0H6.52941V5.47059H12V6.52941H6.52941V12H5.47059Z' fill='%23333333' fill-opacity='0.8'/%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+@media screen and (max-width:768px){
+            .offer .tit{
+                text-align: left;
+            }
+            .offer .tit h2 br{
+                display: block;
+            } 
+            .offer .tit p{
+                display: none;
+            }
+            .offer .list .swiper-slide p{
+                line-height: var(--line-height-default);
+                height: calc(var(--line-height-default) * 2em); /* 행간 * 줄수 = 단위em */
+                overflow: hidden;
+                /* 단어별 줄바꿈 안하고 그냥 단어로 나눠서 들어가게 - 가독성은 떨어져도 글자가 좌우로 꽉 참 */
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+            }
+            .offer .more{
+                top: 11%;
+            } 
 }
 
+.room{
+    margin-top: clamp(80px, 17.4vw, 174px);
+}
+.room .wrapper{
+    position: relative; /* tit 정렬의 기준 */
+}
+.room .tit{
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: 7.5%;
+    top: 0;
+    z-index: 10;
+    background-color: var(--color-bg);
+    /* padding: 70px 62px; */
+    width: clamp(350px, 41.8vw, 418px);
+    height: clamp(240px, 28vw, 280px);
+    padding: clamp(50px, 7vw, 70px) clamp(32px, 6.2vw, 62px) 0 clamp(32px, 6.2vw, 62px);
+}
+.room .tit h2{
+    font-size: clamp(38px, 4.5vw, 45px);
+    line-height: var(--line-height-tit);
+}
+.room .tit p{
+    word-break: normal;
+    padding-top: clamp(15px, 3vw, 30px);
+}
+.room .list{
+    padding-top: 20px;
+}
+.room .list .swiper-slide .photo{
+    overflow: hidden;
+    height: clamp(550px, 68.3vw, 683px);
+}
+.room .list .swiper-slide .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+    transition: 0.3s;
+}
 
 
 body{
