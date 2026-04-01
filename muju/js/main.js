@@ -53,27 +53,54 @@ $(document).ready(function(){
     });
 
 
-    var room_swiper = new Swiper(".room .swiper_paging", {
-      spaceBetween: 10,
+    var stay_swiper = new Swiper(".stay .swiper_paging", {
+      spaceBetween: 24,
       slidesPerView: 4,
       freeMode: true,
       watchSlidesProgress: true,
     });
-    var room_swiper_paging = new Swiper(".room .swiper", {
+    var stay_swiper_paging = new Swiper(".stay .swiper", {
       spaceBetween: 10,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
       thumbs: {
-        swiper: room_swiper,
+        swiper: stay_swiper,
       },
     });
 
-
+    let dining_select
+    $('.dining .tab_list ul li').on('click', function(){
+        dining_select = $(this).attr('data-name')
+		// console.log(dining_select)
+        $('.dining .tab_list ul li').removeClass('active')
+        $(this).addClass('active')
+        $('.dining .tab_conts .tab_item').removeClass('active')
+        $('.dining .tab_conts .tab_item.' + dining_select).addClass('active')
+	});
     
     
-
+    const snbScroll = function() {
+                    const $menu_wrap = $(".dining .tab_list ul");  /* 선택자를 잘 입력해야함 */
+                    const $menu_li = $(".dining .tab_list ul li");  
+                    function scrollToElement($element) {
+                        const containerWidth = $menu_wrap.width();
+                        const itemWidth = $element.outerWidth(true);
+                        const totalItemsWidth = $menu_wrap[0].scrollWidth;
+                        const newScrollPosition = ($element.index() === 0) ? 0 :
+                            ($element.index() === $menu_li.length - 1) ? totalItemsWidth - containerWidth :
+                            $element.position().left + $menu_wrap.scrollLeft() - (containerWidth - itemWidth) / 2;
+                        $menu_wrap.animate({
+                            scrollLeft: newScrollPosition
+                        }, 500);
+                    }
+                    const $activeItem = $menu_wrap.find(".active");
+                    if ($activeItem.length) {
+                        scrollToElement($activeItem);
+                    }
+                } 
+                snbScroll();   /* 함수의 실행 */
 
     
     
