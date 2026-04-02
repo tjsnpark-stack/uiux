@@ -67,7 +67,7 @@ $(document).ready(function(){
 		e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
         if($(this).parent().hasClass('open') == true){
             $(this).parent().removeClass('open')
-        }else{
+        }else{  
             $('.header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
             $(this).parent().addClass('open')
         }

@@ -1,4 +1,45 @@
 $(document).ready(function(){
+
+/********************.header.menu_over****************** */
+
+let device_status
+    let window_w
+    let mobile_size = 1024
+    function device_chk(){
+        window_w = $(window).width()
+        if(window_w > mobile_size){
+            device_status = 'pc'
+        }else{
+            device_status = 'mo'
+        }
+        console.log(device_status)
+    }
+    device_chk()
+    $(window).resize(function(){
+        device_chk()
+    })
+    $('.header .header_sub .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
+        $('.header').addClass('menu_over')
+        $('.header .header_sub .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+        $(this).addClass('over')
+    })
+    $('.header .header_sub .gnb .gnb_wrap').on('mouseleave', function(){
+        $('.header').removeClass('menu_over')
+        $('.header .header_sub .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+    })
+
+
+
+
+
+/****************lang 오버했을때*************** */
+
+    $('.header .header_top .lang .language_open').on('click', function(){
+        $('.lang').toggleClass('open')
+    })
+
+/******************************visual 팝업*************************************** */
+
 	const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
         autoplay: {  /* 팝업 자동 실행 */
