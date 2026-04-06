@@ -46,7 +46,7 @@
             .header .header_top .lang{
                 position: absolute;
                 right: 0;
-                top: calc(var(--header-h) * 18px);
+                top: 38px;
                 font-size: 20px;
                 font-family: pretendard;
             }
