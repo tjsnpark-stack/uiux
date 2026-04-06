@@ -29,6 +29,22 @@ let device_status
     })
 
 
+    $('.header .header_sub .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+		e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
+        if($(this).parent().hasClass('open') == true){
+            $(this).parent().removeClass('open')
+        }else{  
+            $('.header .header_sub .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+            $(this).parent().addClass('open')
+        }
+	});
+    $('.header .header_sub .gnb .gnb_open').on('click', function(){
+        $('.header').addClass('menu_open')
+    })
+    $('.header .header_sub .gnb .gnb_wrap .gnb_close').on('click', function(){
+        $('.header').removeClass('menu_open')
+    })
+
 
 
 
