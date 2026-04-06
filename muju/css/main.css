@@ -527,8 +527,8 @@
     margin-top: clamp(60px, 7vw, 70px);
 }
 .experience .list .swiper{
-    overflow: visible;
-    padding-bottom: 17px;
+    /* overflow: visible; */
+    padding: 0 17px 17px 0;
 }
 /* .experience .list .swiper-slide{
     color: #fff;
