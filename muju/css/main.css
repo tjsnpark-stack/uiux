@@ -528,6 +528,7 @@
 }
 .experience .list .swiper{
     overflow: visible;
+    padding-bottom: 17px;
 }
 /* .experience .list .swiper-slide{
     color: #fff;
