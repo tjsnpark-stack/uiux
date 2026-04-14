@@ -1,5 +1,51 @@
 $(document).ready(function(){
 
+let device_status
+    let window_w
+    let mobile_size = 1024
+    function device_chk(){
+        window_w = $(window).width()
+        if(window_w > mobile_size){
+            device_status = 'pc'
+        }else{
+            device_status = 'mo'
+        }
+        console.log(device_status)
+    }
+    device_chk()
+    $(window).resize(function(){
+        device_chk()
+    })
+    $('.header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
+        $('.header').addClass('menu_over')
+        $('.header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+        $(this).addClass('over')
+    })
+    $('.header .gnb .gnb_wrap').on('mouseleave', function(){
+        $('.header').removeClass('menu_over')
+        $('.header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+    })
+
+
+    $('.header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+		e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
+        if($(this).parent().hasClass('open') == true){
+            $(this).parent().removeClass('open')
+        }else{  
+            $('.header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+            $(this).parent().addClass('open')
+        }
+	});
+    $('.header .gnb .gnb_open').on('click', function(){
+        $('.header').addClass('menu_open')
+    })
+    $('.header .gnb .gnb_wrap .gnb_close').on('click', function(){
+        $('.header').removeClass('menu_open')
+    })
+
+
+
+
 var c_type_swiper = new Swiper(".c_type .swiper", {
     effect: "coverflow",
     grabCursor: true,
