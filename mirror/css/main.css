@@ -361,7 +361,7 @@
     gap: clamp(16px, 2.4vw, 24px);
 }
 .product .list ul li{
-    width: 100%;
+    width: 20%;
     max-width: 197px;
     aspect-ratio: 1 / 1;
     font-size: clamp(16px, 2vw, 20px);
@@ -972,7 +972,7 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
     color: transparent; /* 내부 투명 */
-    -webkit-text-stroke: 1px rgba(255, 68, 0, 0.3);
+    -webkit-text-stroke: 1px rgba(255, 68, 0, 0.4);
     white-space: nowrap;
 }
 .footer .text_stroke span{
