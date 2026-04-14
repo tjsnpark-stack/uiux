@@ -778,6 +778,7 @@
 }
 .review .group{
     display: flex;
+    justify-content: center;
 }
 .review .group .photo{
     overflow: hidden;
@@ -1015,7 +1016,12 @@
                 align-items: center;
             }
             .footer .inner .f_nav ul{
+                flex-wrap: wrap;
                 justify-content: center;
+            }
+
+            .footer .inner .f_nav ul li a{
+                white-space: normal; /* 줄바꿈 허용 */
             }
             .footer .inner .f_info{
                 text-align: center;
