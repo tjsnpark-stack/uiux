@@ -778,10 +778,27 @@
 }
 .review .group{
     display: flex;
-    justify-content: center;
 }
 .review .group .photo{
     overflow: hidden;
+}
+.review .group .photo.re01{
+    width: 50%;
+}
+.review .group .photo.re02{
+    width: 25%;
+}
+.review .group .photo.re03{
+    width: 25%;
+}
+.review .group .photo.re04{
+    width: 25%;
+}
+.review .group .photo.re05{
+    width: 50%;
+}
+.review .group .photo.re06{
+    width: 25%;
 }
 .review .group .photo img{
     width: 100%;
