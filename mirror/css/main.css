@@ -263,8 +263,10 @@
 
 .container{
     position: relative;
-    border: 0.1px solid var(--color-bg);
+    border-top: 0.1px solid var(--color-bg);
+    border-bottom: 0.1px solid var(--color-bg);
     background-color: var(--color-bg);
+    transition: 0.3s;
 }
 .container::before{
     content: "";
@@ -275,6 +277,14 @@
     height: calc(100% - 200vh + 10px);
     background-color: var(--color-bg);
     z-index: 9;
+    transition: 0.3s;
+}
+.container.bg_w::before{
+    background-color: #fff;
+}
+.container.bg_w{
+    border-color: #fff;
+    background-color: #fff;
 }
 .fixed_photo{
     overflow: hidden;
@@ -536,7 +546,10 @@
     position: relative;
     z-index: 10;
     padding: clamp(80px, 17.4vw, 174px) 0 clamp(80px, 17.4vw, 174px) 0;
-    background-color: #fff;
+    color: var(--color-w60);
+}
+.container.bg_w .most{
+    color: var(--font-color-default);
 }
 .most .wrapper{
     position: relative; /* more 정렬의 기준 */
@@ -545,8 +558,11 @@
     font-size: var(--font-size-tit);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
-    color: var(--font-color-tit);
+    color: var(--color-point);
     margin-bottom: 26px;
+}
+.container.bg_w .most .tit h2{
+    color: var(--font-color-tit);
 }
 .most .list{
     margin-top: clamp(30px, 5vw, 50px);
@@ -593,6 +609,10 @@
     top: calc(var(--font-size-tit) * var(--line-height-tit) + 26px);
     display: block;
     white-space: nowrap;
+    color: #fff;
+}
+.container.bg_w .most .more{
+    color: var(--font-color-df80);
 }
 .most .more svg{
     display: none;
@@ -622,10 +642,13 @@
                 top: 10px;
                 width: 17px;
                 height: 17px;
-                background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.75 17V9.25H0V7.75H7.75V0H9.25V7.75H17V9.25H9.25V17H7.75Z' fill='%233D3D3D' fill-opacity='0.8'/%3E%3C/svg%3E ");
+                background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.75 17V9.25H0V7.75H7.75V0H9.25V7.75H17V9.25H9.25V17H7.75Z' fill='white'/%3E%3C/svg%3E%0A");
                 background-repeat: no-repeat;
                 background-position: center center;
                 background-size: contain;
+            }
+            .container.bg_w .most .more::after{
+                background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.75 17V9.25H0V7.75H7.75V0H9.25V7.75H17V9.25H9.25V17H7.75Z' fill='%233D3D3D' fill-opacity='0.8'/%3E%3C/svg%3E ");
             }
             .most .more span{
                 display: none;
@@ -635,7 +658,6 @@
     position: relative;
     z-index: 10;
     padding-bottom: clamp(80px, 17.4vw, 174px);
-    background-color: #fff;
 }
 .new .wrapper{
     position: relative; /* more 정렬의 기준 */
@@ -734,18 +756,25 @@
 .review{
     position: relative;
     z-index: 10;
-    background-color: #fff;
+    margin-top: 200px;
 }
 .review .tit{
     margin-bottom: clamp(50px, 7vw, 70px);
     text-align: center;
+    color: var(--color-w60);
+}
+.container.bg_w .review .tit{
+    color: var(--font-color-df80);
 }
 .review .tit h2{
     font-size: var(--font-size-tit);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
-    color: var(--font-color-tit);
+    color: var(--color-point);
     margin-bottom: 26px;
+}
+.container.bg_w .review .tit h2{
+    color: var(--font-color-tit);
 }
 .review .group{
     display: flex;
@@ -765,6 +794,10 @@
     top: calc(var(--font-size-tit) * var(--line-height-tit) + 26px);
     display: block;
     white-space: nowrap;
+    color: var(--color-white);
+}
+.container.bg_w .review .more{
+    color: var(--font-color-default);
 }
 .review .more svg{
     display: none;
@@ -798,10 +831,13 @@
                 top: 10px;
                 width: 17px;
                 height: 17px;
-                background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.75 17V9.25H0V7.75H7.75V0H9.25V7.75H17V9.25H9.25V17H7.75Z' fill='%233D3D3D' fill-opacity='0.8'/%3E%3C/svg%3E ");
+                background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.75 17V9.25H0V7.75H7.75V0H9.25V7.75H17V9.25H9.25V17H7.75Z' fill='white'/%3E%3C/svg%3E%0A");
                 background-repeat: no-repeat;
                 background-position: center center;
                 background-size: contain;
+            }
+            .container.bg_w .review .more::after{
+                background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.75 17V9.25H0V7.75H7.75V0H9.25V7.75H17V9.25H9.25V17H7.75Z' fill='%233D3D3D' fill-opacity='0.8'/%3E%3C/svg%3E ");
             }
             .review .more span{
                 display: none;

@@ -100,7 +100,39 @@ const new_swiper = new Swiper('.new .swiper', { /* 팝업을 감싼는 요소의
 
 });
 
-    
-    
+    /***********************container 색상 교체**********************/
+
+    let scrolling
+    let win_h
+    let bg_start
+    let bg_end
+    let bg_start_name = $('.most')
+    let bg_end_name = $('.review')
+    let bg_name = $('.container')
+    function bg_change(){
+        scrolling = $(window).scrollTop()
+        win_h = $(window).height()
+        bg_start = bg_start_name.offset().top - (win_h * 0.5)
+        bg_end = bg_end_name.offset().top - (win_h * 0.5)
+        // console.log(scrolling, bg_start, bg_end)
+
+        if(scrolling < bg_start){
+            console.log('검은색')
+            bg_name.removeClass('bg_w')
+        }else if(scrolling > bg_end){
+            console.log('검은색')
+            bg_name.removeClass('bg_w')
+        }else{
+            console.log('흰색')
+            bg_name.addClass('bg_w')
+        }
+    }
+    bg_change()
+    $(window).scroll(function(){
+        bg_change()
+    })
+    $(window).resize(function(){
+        bg_change()
+    })
     
 });
