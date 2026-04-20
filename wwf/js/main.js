@@ -1,4 +1,32 @@
-$(document).ready(function(){
+$(document).ready(function () {
+    // GSAP 플러그인 등록
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 1. [Visual 섹션] 슬라이드가 위로 덮으며 올라오는 효과
+    const visualSections = gsap.utils.toArray(".visual > div[class]:not(.scroll_down)");
+    
+    if (visualSections.length > 0) {
+        const visualTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".visual",
+                start: "top top",
+                end: "+=400%", // 섹션 수에 맞춰 조절
+                pin: true,
+                scrub: true,
+                invalidateOnRefresh: true
+            }
+        });
+
+        visualSections.forEach((section, i) => {
+            if (i > 0) {
+                visualTl.to(section, {
+                    clipPath: "inset(0% 0% 0% 0%)",
+                    ease: "none"
+                });
+            }
+        });
+    }
+
 
 
 });
