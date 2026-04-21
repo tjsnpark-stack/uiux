@@ -58,7 +58,7 @@ body{
     --line-height-tit: 1.3;
     --header-h: 100px;
     --font-size-default: clamp(16px, 1.7vw, 17px);
-    --font-size-tit: clamp(28px, 4.5vw, 45px);
+    --font-size-tit: clamp(28px, 3.2vw, 45px);
 }
 @media screen and (max-width:1024px){
     :root{

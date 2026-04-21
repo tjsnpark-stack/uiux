@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     // 1. [Visual 섹션] 슬라이드가 위로 덮으며 올라오는 효과
     const visualSections = gsap.utils.toArray(".visual > div[class]:not(.scroll_down)");
-    
+
     if (visualSections.length > 0) {
         const visualTl = gsap.timeline({
             scrollTrigger: {
@@ -28,5 +28,30 @@ $(document).ready(function () {
     }
 
 
+    const swiper_paging = new Swiper('.activity .txt .swiper_paging', {
+        effect: "fade",
+        allowTouchMove: false,
+        slidesPerView: 1,
+    });
 
+    const activity_swiper = new Swiper('.activity .list .swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+        centeredSlides: true,
+        loop: true,
+        // breakpoints: {
+        //     640: {
+        //         slidesPerView: 2,
+        //         spaceBetween: 20,
+        //     },
+        // },
+    });
+
+    activity_swiper.on('slideChange', () => {
+        swiper_paging.slideToLoop(activity_swiper.realIndex);
+    });
+
+    
+
+    
 });
