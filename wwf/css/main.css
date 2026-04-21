@@ -120,9 +120,7 @@
 
 @media screen and (max-width: 1024px){
     .visual .scroll_down {
-        right: 20px;
-        bottom: 30px;
-        transform: scale(0.8); /* 살짝 작게 */
+        display: none;
     }
 }
 @media screen and (max-width: 768px){
@@ -136,6 +134,10 @@
     height: 100dvh;
     display: flex;
     align-items: center;
+    position: relative;
+}
+.activity .m_tit{
+    display: none;
 }
 .activity .inner{
     position: relative;/* txt 정렬의 기준 */
@@ -174,18 +176,20 @@
     line-height: var(--line-height-tit);
     margin-bottom: 30px;
 }
-.activity .inner .more{
+.activity .inner .txt .more{
     margin-top: clamp(30px, 4vw, 65px);
 }
-.activity .inner .more a{
+.activity .inner .txt .more a{
     display: inline-block;
     border: 1px solid var(--font-color-default);
     border-radius: 30px;
     padding: 7px 25px;
 }
-.activity .inner .more a:hover{
-    background-color: var(--font-color-default);
-    color: var(--color-point);
+@media screen and (min-width:1025px){
+    .activity .inner .txt .more a:hover{
+        background-color: var(--font-color-default);
+        color: var(--color-point);
+    }
 }
 .activity .inner .list{
     width: 100vw;
@@ -251,6 +255,17 @@
     opacity: 0;
 }
 @media screen and (max-width:1024px){
+    .activity .m_tit{
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 80px;
+        font-size: var(--font-size-tit);
+        font-weight: var(--font-weight-bold);
+        line-height: var(--line-height-tit);
+        color: var(--font-color-tit);
+        padding-left: var(--wrapper-margin);
+    }
     .activity .inner{
         display: flex;
         flex-direction: column-reverse;
@@ -261,9 +276,31 @@
         top: auto;
     }
     .activity .inner .txt .tit{
-        font-size: clamp(32px, 4vw, 45px);
+        display: none;
     }
-    .activity .inner .txt .swiper_paging{
+    .activity .inner .txt .more a{
+        position: relative; /* after 정렬의 기준 */
+        display: inline-block;
+        border: 1px solid var(--font-color-default);
+        border-radius: 50%;
+        padding: 0;
+        width: 37px;
+        height: 37px;
+    }
+    .activity .inner .txt .more a::after{
+        content: "";
+        position: absolute; /* a를 기준으로 정렬 */
+        left: 10px;
+        top: 10px;
+        width: 15px;
+        height: 15px;
+        background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.127 8.25H0V6.75H12.127L6.43075 1.05375L7.5 0L15 7.5L7.5 15L6.43075 13.9462L12.127 8.25Z' fill='%233D3D3D'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+    .activity .inner .txt .more a span{
+        display: none;
     }
     .activity .inner .list{
         width: 100vw;
@@ -274,7 +311,7 @@
     }
     .activity .inner .list .swiper{
         width: 100%;
-        padding-bottom: 30px;
+        padding: 15% 0 5% 0;
     }
     .activity .inner .list .swiper-slide{
         display: flex;
@@ -282,9 +319,6 @@
         position: relative; /* after 정렬의 기준 */
         width: 50%;
         min-width: 350px;
-    }
-    .activity .inner .list .swiper-slide.swiper-slide-active::after{
-        display: none;
     }
     .activity .inner .list .swiper-slide .photo{
         position: relative;
@@ -302,7 +336,9 @@
     .activity .inner .list .swiper-slide .photo span{
         font-size: var(--font-size-tit);
     }
-    .activity .inner .more{
+}
+@media screen and (max-width:425px){
+    .activity .inner .list .swiper-slide.swiper-slide-active::after{
         display: none;
     }
 }
