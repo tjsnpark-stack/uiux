@@ -13,6 +13,7 @@
 
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
     <script src="js/main.js"></script>
+    <script src="js/scroll.js"></script>
     <title>WWF 세계자연기금</title>
 </head>
 
@@ -131,34 +132,86 @@
                         <div class="list">
                             <ul>
                                 <li class="nature">
-                                    <h3>자연 서식지 보전</h3>
+                                    <h3>자연 서식지<br> 보전</h3>
                                     <p>훼손된 자연을 회복하고<br>지속가능한 생태계를 만듭니다</p>
                                 </li>
                                 <li class="animal">
-                                    <h3>생물종 멸종 방지</h3>
+                                    <h3>생물종 멸종<br> 방지</h3>
                                     <p>위기에 놓인 생명을 지키고<br>생물다양성을 유지합니다</p>
                                 </li>
                                 <li class="footprint">
-                                    <h3>생태발자국 감소</h3>
+                                    <h3>생태발자국<br> 감소</h3>
                                     <p>생산과 소비 방식을 바꾸어<br>지속가능한 사회로 전환합니다</p>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="photo_wrap"> <!-- 안움직임 position:relative; 주기 -->
-                        <div class="photo_move"> <!-- 이게 실제 움직임 position:absolute -->
+                        <div class="photo_move" data-staus=""> <!-- 이게 실제 움직임 position:absolute -->
                             <div class="photo_bg"></div> <!-- 스크롤되면서 이미지를 덮을 요소 (절대 before/after로 대체금지) -->
                             <video autoplay loop muted playsinline aria-label="바람에 흔들리는 나뭇잎을 촬영한 영상">
-                                <source src="">
+                                <source src="images/goal.mp4">
                             </video>
                         </div>  
                     </div>
                 </div>
             </section>
             <section class="support sub_cont">
-                
+                <div class="wrapper">
+                    <div class="txt ">
+                        <div class="tit">
+                            <h2>사라지는 터전 위에서<br>이들은 버티고 있습니다</h2>
+                            <p>이들의 시간이 얼마 남지 않았습니다.</p>
+                        </div>
+                        <div class="now">
+                            <a href="#n"><span>지금, 함께하기</span></a>
+                        </div>
+                    </div>
+                    <div class="photo_wrap"> <!-- 안움직임 position:relative; 주기 -->
+                        <div class="photo_move" data-staus="end"> <!-- 이게 실제 움직임 position:absolute -->
+                            <div class="photo_bg"></div> <!-- 스크롤되면서 이미지를 덮을 요소 (절대 before/after로 대체금지) -->
+                            <img src="images/support.jpg">
+                        </div>  
+                    </div>
+                </div>
             </section>
-            <section class="campaign"></section>
+            <section class="campaign sub_cont">
+                <div class="tit">
+                    <h2>WWF in Action</h2>
+                    <p>지구를 지키기 위한 실천에 함께하는 움직임입니다.</p>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li class="action01 active">
+                            <a href="#n">
+                                <h3>북극곰 보호</h3>
+                                <p>위기에 처한 북극곰을 마음으로 도와주세요!</p>
+                            </a>
+                        </li>
+                        <li class="action02">
+                            <a href="#n">
+                                <h3>기후위기</h3>
+                                <p>함께 환경 보전에 동참해 기후변화를 막아주세요!</p>
+                            </a>
+                        </li>
+                        <li class="action03">
+                            <a href="#n">
+                                <h3>멸종위기 동물 보호</h3>
+                                <p>멸종위기 동물들의 이야기에 귀 기울여주세요!</p>
+                            </a>
+                        </li>
+                        <li class="action04">
+                            <a href="#n">
+                                <h3>플라스틱오염 제로</h3>
+                                <p>플라스틱 줄이기 활동 지금 바로 동참해주세요!</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="more">
+                    <a href="#n"><span>view more</span></a>
+                </div>
+            </section>
             <section class="news"></section>
             <section class="letter"></section>
         </main>
