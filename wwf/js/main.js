@@ -51,7 +51,7 @@ $(document).ready(function () {
         swiper_paging.slideToLoop(activity_swiper.realIndex);
     });
 
-    
+
     let obj_area = $('.goal')
     let obj_wrap = $('.goal .photo_wrap')  // 움직일 요소를 감싸는 요소
     let obj_name = $('.goal .photo_wrap .photo_move')  // 실제 움직일 요소
@@ -60,7 +60,7 @@ $(document).ready(function () {
     let ani_percent = 1.5
 
     let scrolling
-    let win_h 
+    let win_h
     let win_w
     let ani_start
     let ani_end
@@ -94,11 +94,11 @@ $(document).ready(function () {
         obj_start_h = obj_wrap.height()
         //console.log(obj_start_w, obj_start_h)
         //console.log(obj_area.height(), ani_start, ani_end , scrolling)
-        if(scrolling < ani_start){
+        if (scrolling < ani_start) {
             //console.log('시작전')
             obj_name.removeAttr('style')
             obj_area.removeClass(end_class)
-        }else if(scrolling > ani_end){
+        } else if (scrolling > ani_end) {
             //console.log('종료')
             obj_x = -obj_start_x
             obj_y = ani_end - obj_start_y
@@ -109,11 +109,11 @@ $(document).ready(function () {
                 transform: `translate(${obj_x}px, ${obj_y}px)`,
                 width: win_w + 'px',
                 height: win_h + 'px',
-                borderRadius : 0
+                borderRadius: 0
             })
             obj_area.removeClass(end_class)
-        }else{
-            if(scrolling < ani_start + (obj_area.innerHeight() / ani_percent) - win_h){
+        } else {
+            if (scrolling < ani_start + (obj_area.innerHeight() / ani_percent) - win_h) {
                 //console.log('진행중')
                 ani_ratio = (scrolling - ani_start) / ((ani_start + (obj_area.innerHeight() / ani_percent) - win_h) - ani_start)
                 ani_ratio = Math.max(0, Math.min(1, ani_ratio))
@@ -121,7 +121,7 @@ $(document).ready(function () {
                 obj_w = obj_start_w + (win_w - obj_start_w) * ani_ratio
                 obj_h = obj_start_h + (win_h - obj_start_h) * ani_ratio
                 obj_x = - obj_start_x * ani_ratio
-                obj_y = - obj_start_y * ani_ratio + (scrolling - ani_start*(1-ani_ratio))
+                obj_y = - obj_start_y * ani_ratio + (scrolling - ani_start * (1 - ani_ratio))
                 obj_name.css({
                     position: 'absolute',
                     left: 0,
@@ -129,15 +129,15 @@ $(document).ready(function () {
                     transform: `translate(${obj_x}px, ${obj_y}px)`,
                     width: obj_w + 'px',
                     height: obj_h + 'px',
-                    borderRadius : brd_radius - (brd_radius * ani_ratio)
+                    borderRadius: brd_radius - (brd_radius * ani_ratio)
                 })
                 rgb_now = rgb_start + (rgb_end - rgb_start) * ani_ratio
                 rgb_now2 = rgb_start2 + (rgb_end - rgb_start2) * ani_ratio
-                rgb_obj.css('color', 'rgb('+ rgb_now +', '+ rgb_now +', '+ rgb_now +')')
-                rgb_obj2.css('color', 'rgb('+ rgb_now2 +', '+ rgb_now2 +', '+ rgb_now2 +')')
-                rgb_obj3.css('border-color', 'rgb('+ rgb_now2 +', '+ rgb_now2 +', '+ rgb_now2 +')')
+                rgb_obj.css('color', 'rgb(' + rgb_now + ', ' + rgb_now + ', ' + rgb_now + ')')
+                rgb_obj2.css('color', 'rgb(' + rgb_now2 + ', ' + rgb_now2 + ', ' + rgb_now2 + ')')
+                rgb_obj3.css('border-color', 'rgb(' + rgb_now2 + ', ' + rgb_now2 + ', ' + rgb_now2 + ')')
                 obj_area.removeClass(end_class)
-            }else{
+            } else {
                 //console.log('고정')
                 obj_name.css({
                     position: 'fixed',
@@ -146,7 +146,7 @@ $(document).ready(function () {
                     transform: 'translate(0, 0)',
                     width: win_w + 'px',
                     height: win_h + 'px',
-                    borderRadius : 0
+                    borderRadius: 0
                 })
                 obj_area.addClass(end_class)
             }
@@ -154,17 +154,42 @@ $(document).ready(function () {
         }
     }
     scale_img()
-    $(window).scroll(function(){
+    $(window).scroll(function () {
         scale_img()
     })
-    $(window).resize(function(){
+    $(window).resize(function () {
         scale_img()
     })
 
-    
-    
 
 
-    
+
+    // const items = $('.campaign .list ul li');
+
+    // items.on('mouseenter', function () {
+    //     items.removeClass('active');
+    //     $(this).addClass('active');
+    // });
+
+    // $('.campaign .list ul').on('mouseleave', function () {
+    //     items.removeClass('active'); 
+    // });
+
+
+
+    const news_swiper = new Swiper('.news .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            880: {    /* 640px 이상일때 적용 */
+                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 16,
+            },
+            1025: {    /* 640px 이상일때 적용 */
+                slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 16,
+            },
+        },
+    });
 
 });
