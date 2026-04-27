@@ -449,7 +449,7 @@
     height:100%;
     background-color:rgba(0, 0, 0, 0.2);
 }
-.goal .photo_wrap .photo_move video{
+.goal .photo_wrap .photo_move img{
     width:110%;
     height:110%;
     object-fit:cover; 
