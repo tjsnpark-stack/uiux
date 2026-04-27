@@ -4,12 +4,17 @@ $(document).ready(function(){
     let visual_item = $('.visual .area')
     let visual_item_leng = visual_item.length
     let scrolling
-    let win_h
+    let win_h = $(window).height()
     let visual_start// 시작점
     let visual_end //종료점
     let visual_one_step //햐나의 애니메이션 길이
     let visual_step //현재 몇번째 이미지가 슬라이드 되고 있는지
     let visual_percent
+
+    /************************* 모바일 대응용 **********************/
+    visual_wrap.height(win_h * 3);
+    $('.visual .visual_wrapper').height(win_h)
+    $('.visual .area .inner').innerHeight(win_h)
 
     function visual_scroll(){
         scrolling = $(window).scrollTop()
@@ -58,6 +63,10 @@ $(document).ready(function(){
     })
     $(window).resize(function(){
         visual_scroll()
+        /************************* 모바일 대응용 **********************/
+        visual_wrap.height(win_h * 3);
+        $('.visual .visual_wrapper').height(win_h)
+        $('.visual .area .inner').innerHeight(win_h)
     })
 
     

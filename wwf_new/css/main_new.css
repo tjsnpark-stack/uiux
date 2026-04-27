@@ -4,14 +4,12 @@
 
 .visual{
     position: relative;  /* scroll_down 정렬의 기준  */
-    height: 300dvh;
     color: #fff;
-    border: 2px solid red;
+    border: 2px solid yellow;
 }
 .visual .visual_wrapper{
     position: sticky;
     top: 0;
-    height: 100dvh;
 }
 .visual .area{
     overflow:hidden;
@@ -29,7 +27,6 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
