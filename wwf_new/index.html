@@ -17,9 +17,87 @@
 
 <body>
     <div id="wrap">
-        <header></header>
+        <header class="header">
+            <h1 class="logo"><a href="index.html"><span class="sr-only">WWF로고</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open">
+                    <span class="sr-only">메뉴열기</span>
+                    <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 1.61538V0H18V1.61538H0ZM0 14V12.3846H18V14H0ZM0 7.80769V6.19231H18V7.80769H0Z"
+                            fill="white" />
+                    </svg>
+                </button>
+                <div class="gnb_wrap">
+                    <div class="gnb_logo"><img src="images/logo.svg" alt="WWF로고"></div>
+                    <ul class="depth1">
+                        <li>
+                            <a href="#n"><span>About WWF</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>기관소개</span></a></li>
+                                <li><a href="#n"><span>연혁</span></a></li>
+                                <li><a href="#n"><span>투명경영</span></a></li>
+                                <li><a href="#n"><span>함께하는 이들</span></a></li>
+                                <li><a href="#n"><span>인재채용</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>Our Impact</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>기후행동</span></a></li>
+                                <li><a href="#n"><span>생물다양성</span></a></li>
+                                <li><a href="#n"><span>플라스틱</span></a></li>
+                                <li><a href="#n"><span>자연보전 교육</span></a></li>
+                                <li><a href="#n"><span>어스아워</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>Our Work</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>WWF 소식</span></a></li>
+                                <li><a href="#n"><span>언론보도</span></a></li>
+                                <li><a href="#n"><span>판다뉴스</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>Insights</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>보고서</span></a></li>
+                                <li><a href="#n"><span>영상자료</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>Support</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>후원안내</span></a></li>
+                                <li><a href="#n"><span>기업후원</span></a></li>
+                                <li><a href="#n"><span>자원봉사자 모집</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button class="gnb_close">
+                    <span class="sr-only">메뉴닫기</span>
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.42532 18L0 16.5747L7.57467 9L0 1.42532L1.42532 0L9 7.57467L16.5747 0L18 1.42532L10.4253 9L18 16.5747L16.5747 18L9 10.4253L1.42532 18Z" fill="white"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="gnb_bg"></div>
+            </nav>
+            <div class="util">
+                    <a href="#n" class="mypage">
+                        <span class="sr-only">마이페이지</span>
+                    </a>
+                    <a href="#n" class="search">
+                        <span class="sr-only">검색</span>
+                    </a>
+                    <div class="lang">
+                    <a href="#n"><span>KR</span></a>
+                    <a href="#n"><span>EN</span></a>
+                </div>
+                </div>
+        </header>
         <main class="container">
-            <section class="visual">
+            <section class="visual" data-staus="before">
                 <div class="visual_wrapper">
                     <div class="future area">
                         <div class="inner">
@@ -45,7 +123,9 @@
                             <p>행동 (Action) 참여 (Participation) 미래 (Future)</p>
                         </div>
                     </div>
-                    <div class="scroll_down"><div class="mouse_icon"></div></div>
+                    <div class="scroll_down">
+                        <div class="mouse_icon"></div>
+                    </div>
                 </div>
             </section>
             <section class="activity">
@@ -145,7 +225,7 @@
                         <div class="photo_move" data-staus=""> <!-- 이게 실제 움직임 position:absolute -->
                             <div class="photo_bg"></div> <!-- 스크롤되면서 이미지를 덮을 요소 (절대 before/after로 대체금지) -->
                             <img src="images/goal.jpg">
-                        </div>  
+                        </div>
                     </div>
                 </div>
             </section>
@@ -164,7 +244,7 @@
                         <div class="photo_move" data-staus="end"> <!-- 이게 실제 움직임 position:absolute -->
                             <div class="photo_bg"></div> <!-- 스크롤되면서 이미지를 덮을 요소 (절대 before/after로 대체금지) -->
                             <img src="images/support.jpg">
-                        </div>  
+                        </div>
                     </div>
                 </div>
             </section>
@@ -280,7 +360,7 @@
                                     <h3>설산의 수호자 눈표범</h3>
                                     <span>2025.12.25</span>
                                     <div class="photo">
-                                        <strong>판다뉴스</strong>   
+                                        <strong>판다뉴스</strong>
                                         <img src="images/news06.jpg">
                                     </div>
                                 </a>
@@ -312,19 +392,86 @@
                     <a href="#n"><span>view more</span></a>
                 </div>
             </section>
-            <section class="letter">
+            <section class="newsletter">
                 <div class="wrapper">
-                    <div class="tit">
-                        <h2>Newsletter</h2>
-                        <p>WWF의 최신 소식을 편하게 받아보실 수 있습니다.</p>
-                    </div>
-                    <div class="letterbox">
-                        
+                    <div class="inner">
+                        <div class="txt">
+                            <h2>Newsletter</h2>
+                            <p>WWF의 최신 소식을 편하게 받아보실 수 있습니다.</p>
+                        </div>
+                        <div class="subscript">
+                            <form>
+                                <fieldset>
+                                    <legend>뉴스레터 신청</legend>
+                                    <div class="regist">
+                                        <div class="name regist_box"><input type="text" placeholder="이름"></div>
+                                        <div class="email regist_box">
+                                            <div class="email_id"><input type="text" placeholder="이메일주소"></div>
+                                            <div class="at">@</div>
+                                            <div class="email_domain "><!-- 선택하기 누르면 open 클래스 추가됨-->
+                                                <div class="domain_open"><span>선택하기</span></div>
+                                                <div class="domain_wrap">
+                                                    <ul>
+                                                        <li data-value="gmail.com"><span>gmail.com</span></li>
+                                                        <li data-value="naver.com"><span>naver.com</span></li>
+                                                        <li data-value="daum.net"><span>daum.net</span></li>
+                                                        <li data-value="hanmail.net"><span>hanmail.net</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="regist_ok regist_box"><button><span>신청하기</span></button></div>
+                                    </div>
+                                    <div class="agree">
+                                        <input type="checkbox" id="agree" checked="checked">
+                                        <label for="agree">
+                                            <span class="pc">함께하는 WWF가 소식, 후원 정보를 전달 목적으로 이름, 이메일 정보를 수집하며 수신 거부 시까지 이용,
+                                                보유하는 데에 동의합니다.</span>
+                                            <span class="mo">소식 및 후원 정보 수신에 동의합니다.</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
-        <footer class="footer"></footer>
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="photo"><img src="images/f_logo.svg" alt="wwf로고"><span>KOREA WWF</span></div>
+                <div class="inner">
+                    <div class="f_nav">
+                        <ul>
+                            <li><a href="#n"><span>후원회원규정</span></a></li>
+                            <li><a href="#n"><span>개인정보처리방침</span></a></li>
+                            <li><a href="#n"><span>자주묻는질문</span></a></li>
+                            <li><a href="#n"><span>문의</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="f_info">
+                        <span>대표자 : 홍정욱</span><span>대표전화 : 02-722-1601 (운영시간 09-18시)</span><span>고유번호 :
+                            101-82-23485</span><br>
+                        <span>주소 : 서울특별시 종로구 종로 47 (공평동) SC제일은행본점빌딩 15층 WWF (세계자연기금)</span><br>
+                        <span>후원 문의 : members@wwfkorea.or.kr</span><span>기업 문의 : partnership@wwfkorea.or.kr</span><br>
+                        <span>홍보 및 마케팅 문의 : marketing@wwfkorea.or.kr </span>
+                    </div>
+                    <div class="copyright"><span>© 2021 WWF - World Wide Fund For Nature. Creative Commons
+                            licence.</span></div>
+                </div>
+                <div class="right_inner">
+                    <div class="now">
+                        <a href="#n"><span>지금, 함께하기</span></a>
+                    </div>
+                    <div class="f_sns">
+                        <a href="#n" class="instar"><span></span></a>
+                        <a href="#n" class="face"><span></span></a>
+                        <a href="#n" class="yootube"><span></span></a>
+                        <a href="#n" class="naver"><span></span></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 
