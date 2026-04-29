@@ -27,7 +27,7 @@
                 position: absolute;
                 left: 0;
                 top: 0;
-                z-index: -2;
+                z-index: -1;
                 width: 100%;
                 height: 500px;
                 background-color: var(--color-white);
@@ -296,7 +296,6 @@
     position: relative;
     /* scroll_down 정렬의 기준  */
     color: #fff;
-    border: 2px solid yellow;
     height: 300vh;
 }
 
@@ -306,7 +305,6 @@
     top: 0;
     width: 100%;
     height: 100vh;
-    border: 1px solid red;
 }
 
 .visual[data-staus="ing"] .visual_wrapper {
@@ -462,7 +460,6 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    border: 2px solid blue;
 }
 
 .activity .m_tit {
@@ -705,7 +702,6 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
     margin-bottom: 40px;
-    white-space: nowrap;
 }
 
 .goal .txt .sub_tit {
@@ -736,10 +732,13 @@
         color: var(--color-point);
         border-color: var(--font-color-default);
     }
+    .goal .txt .tit p br{
+        display: none;
+    }
 }
 
 .goal .list {
-    padding: 85px 0 108px 0;
+    padding: 85px 0 250px 0;
 }
 
 .goal .list ul {
@@ -884,7 +883,7 @@
     }
 
     .goal .list {
-        padding: 85px 0 108px 0;
+        padding: 85px 0 175px 0;
     }
 
     .goal .list ul {
@@ -910,12 +909,26 @@
         display: none;
     }
 }
+@media screen and (max-width:1024px) {
+    .goal .list {
+        padding: 0 0 140px 0;
+    }
+}
+@media screen and (max-width:768px) {
+    .goal .list {
+        padding: 0 0 200px 0;
+    }
+}
+@media screen and (max-width:425px) {
+    .goal .list {
+        padding: 0 0 250px 0;
+    }
+}
 
 
 .support {
     position: relative;
 }
-
 .support .wrapper {
     /* display: flex;
     flex-direction: column;
@@ -924,12 +937,12 @@
     padding-top: 164px;
 }
 
-.support .txt {
+.support .txt_wrap {
     text-align: center;
     z-index: 10;
     position: sticky;
     top: 45%;
-    padding-bottom: 100px;
+    padding-bottom: 266px;
 }
 
 .support .txt .tit h2 {
@@ -982,7 +995,21 @@
     object-fit: cover;
     vertical-align: top;
 }
-
+@media screen and (max-width:768px) {
+    .support .photo_wrap {
+        width: 76.11%;
+        height: 142px;
+        margin: 57px auto 0 auto;
+    }
+    .support .txt_wrap {
+    padding-bottom: 400px;
+}
+}
+@media screen and (max-width:425px) {
+    .support .txt_wrap {
+    padding-bottom: 230px;
+}
+}
 
 .campaign {
     margin-top: clamp(80px, 17.4vw, 174px);
@@ -1520,6 +1547,9 @@
 }
 
 @media screen and (max-width:1025px) {
+    .newsletter .inner{
+        width: 100%;
+    }
     .newsletter .txt {
         text-align: center;
     }
@@ -1534,6 +1564,7 @@
 
     .newsletter .subscript {
         margin: 46px 0 0 0;
+        width: 100%;
     }
 
     .newsletter .subscript .regist {

@@ -45,9 +45,11 @@ $(document).ready(function () {
         //console.log(obj_area.height(), ani_start, ani_end , scrolling)
         if(scrolling < ani_start){
             //console.log('시작전')
+            obj_area.removeClass(end_class)
             obj_name.removeAttr('style')
         }else if(scrolling > ani_end){
             //console.log('종료')
+            obj_area.addClass(end_class)
             obj_x = -obj_start_x
             obj_y = ani_end - obj_start_y
             obj_name.css({
@@ -64,7 +66,7 @@ $(document).ready(function () {
                 //console.log('진행중')
                 ani_ratio = (scrolling - ani_start) / ((ani_start + (obj_area.innerHeight() / ani_percent) - win_h) - ani_start)
                 ani_ratio = Math.max(0, Math.min(1, ani_ratio))
-                console.log(ani_ratio)
+                //console.log(ani_ratio)
                 obj_w = obj_start_w + (win_w - obj_start_w) * ani_ratio
                 obj_h = obj_start_h + (win_h - obj_start_h) * ani_ratio
                 obj_x = - obj_start_x * ani_ratio
@@ -78,6 +80,7 @@ $(document).ready(function () {
                     height: obj_h + 'px',
                     borderRadius : brd_radius - (brd_radius * ani_ratio)
                 })
+                console.log('진행중', obj_name.offset().left, obj_name.width(), $(window).width())
                 rgb_now = rgb_start + (rgb_end - rgb_start) * ani_ratio
                 rgb_now2 = rgb_start2 + (rgb_end - rgb_start2) * ani_ratio
                 rgb_obj.css('color', 'rgb('+ rgb_now +', '+ rgb_now +', '+ rgb_now +')')
@@ -86,6 +89,7 @@ $(document).ready(function () {
                 obj_area.removeClass(end_class)
             }else{
                 //console.log('고정')
+                obj_area.addClass(end_class)
                 obj_name.css({
                     position: 'fixed',
                     left: 0,
