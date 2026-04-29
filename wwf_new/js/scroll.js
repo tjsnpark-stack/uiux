@@ -1,9 +1,9 @@
 $(document).ready(function () {
 
     
-    let obj_area = $('.support') 
-    let obj_wrap = $('.support .photo_wrap')
-    let obj_name = $('.support .photo_wrap .photo_move')
+    let obj_area = $('.support_pc') 
+    let obj_wrap = $('.support_pc .photo_wrap')
+    let obj_name = $('.support_pc .photo_wrap .photo_move')
     let end_class = 'scroll'
     let brd_radius = 30
     let ani_percent = 1.5
@@ -27,9 +27,9 @@ $(document).ready(function () {
     let rgb_now
     let rgb_now2
     let rgb_start2 = 61
-    let rgb_obj = $('.support .txt .tit h2')
-    let rgb_obj2 = $('.support')
-    let rgb_obj3 = $('.support .txt .now a')
+    let rgb_obj = $('.support_pc .txt .tit h2')
+    let rgb_obj2 = $('.support_pc')
+    let rgb_obj3 = $('.support_pc .txt .now a')
 
     function scale_img() {
         scrolling = $(window).scrollTop()

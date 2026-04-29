@@ -134,9 +134,9 @@ $(document).ready(function(){
     });
 
 
-    let obj_area = $('.goal')
-    let obj_wrap = $('.goal .photo_wrap')  // 움직일 요소를 감싸는 요소
-    let obj_name = $('.goal .photo_wrap .photo_move')  // 실제 움직일 요소
+    let obj_area = $('.goal_pc')
+    let obj_wrap = $('.goal_pc .photo_wrap')  // 움직일 요소를 감싸는 요소
+    let obj_name = $('.goal_pc .photo_wrap .photo_move')  // 실제 움직일 요소
     let end_class = 'scroll'  // 애니메이션 종료 요소에 애니메이션 종료 시 추가될 class명
     let brd_radius = 30
     let ani_percent = 1.5
@@ -161,9 +161,9 @@ $(document).ready(function(){
     let rgb_now
     let rgb_now2
     let rgb_start2 = 61
-    let rgb_obj = $('.goal .txt .tit h2')
-    let rgb_obj2 = $('.goal')
-    let rgb_obj3 = $('.goal .txt .now a')
+    let rgb_obj = $('.goal_pc .txt .tit h2')
+    let rgb_obj2 = $('.goal_pc')
+    let rgb_obj3 = $('.goal_pc .txt .now a')
 
     function scale_img() {
         supprt_scrolling = $(window).scrollTop()
