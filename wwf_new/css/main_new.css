@@ -857,16 +857,13 @@
     .goal_mo {
         display: block;
         background: url(../images/goal.jpg) no-repeat center center / cover;
-        padding-top: 214px;
+        /* padding-top: 214px; */
         color: var(--color-white);
     }
     .goal_mo .wrapper {
-        position: relative;
+        display: flex;
+        align-items: center;
         height: 100dvh;
-    }
-
-    .goal_mo .txt {
-        top: 100px;
     }
 
     .goal_mo .txt h2 {
@@ -1777,7 +1774,7 @@
 }
 
 .footer .inner{
-    /* min-width: 0; */
+    min-width: 0;
 }
 
 .footer .inner .f_nav ul {
