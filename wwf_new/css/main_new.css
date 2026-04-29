@@ -847,6 +847,11 @@
     object-fit: cover;
     vertical-align: top;
 }
+@media screen and (max-width:2560px) {
+    .goal .list {
+        padding: 0 0 300px 0;
+    }
+}
 @media screen and (max-width:1250px) {
     .goal .txt .more a {
         position: relative;
@@ -882,7 +887,7 @@
     }
 
     .goal .list {
-        padding: 0 0 175px 0;
+        padding: 85px 0 175px 0;
     }
 
     .goal .list ul {
@@ -908,28 +913,19 @@
         display: none;
     }
 }
-@media screen and (max-width:1440px) {
-    .goal .txt{
-        padding-top: 0;
-    }
-    .goal .list {
-        padding: 85px 0 215px 0;
-    }
-}
-
 @media screen and (max-width:1024px) {
     .goal .list {
-        padding: 85px 0 135px 0;
+        padding: 0 0 140px 0;
     }
 }
 @media screen and (max-width:768px) {
     .goal .list {
-        padding: 85px 0 200px 0;
+        padding: 0 0 200px 0;
     }
 }
 @media screen and (max-width:425px) {
     .goal .list {
-        padding: 85px 0 172px 0;
+        padding: 0 0 250px 0;
     }
 }
 
@@ -1003,22 +999,20 @@
     object-fit: cover;
     vertical-align: top;
 }
-@media screen and (max-width:2560px) {
-    .support .txt_wrap {
-        padding-bottom: 650px;
-    }
-}
-@media screen and (max-width:1440px) {
-    .support .txt_wrap {
-        padding-bottom: 230px;
-    }
-}
 @media screen and (max-width:768px) {
     .support .photo_wrap {
         width: 76.11%;
         height: 142px;
         margin: 57px auto 0 auto;
     }
+    .support .txt_wrap {
+    padding-bottom: 400px;
+}
+}
+@media screen and (max-width:425px) {
+    .support .txt_wrap {
+    padding-bottom: 230px;
+}
 }
 
 .campaign {
