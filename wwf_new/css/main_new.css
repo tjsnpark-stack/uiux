@@ -847,14 +847,6 @@
     object-fit: cover;
     vertical-align: top;
 }
-@media screen and (max-width:2560px) {
-    .goal .txt{
-        padding-top: 400px;
-    }
-    .goal .list {
-        padding: 85px 0 540px 0;
-    }
-}
 @media screen and (max-width:1250px) {
     .goal .txt .more a {
         position: relative;
