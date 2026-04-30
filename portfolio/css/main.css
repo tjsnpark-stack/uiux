@@ -43,18 +43,22 @@
     background: url(../images/menu.png) no-repeat center center / cover;
     z-index: -1;
 }
+.main{
+    text-align: center;
+    background: url(../images/page01.jpg)no-repeat center center / cover;
+}
+.about{
+    background-color: #FFFAF0;
+    text-align: center;
+}
 
 .resort{
     background-color: #FFFAF0;
-    height: 1000px;
 }
 .resort .wrapper{
     display: flex;
     justify-content: space-between;
-    padding: 0 210px;
-}
-.resort .txt{
-    margin-top: 274px;
+    padding: 100px 210px 0 210px;
 }
 .resort .txt .project{
     position: relative;
@@ -104,21 +108,14 @@
     font-weight: 700;
     width: 90px;
 }
-.resort a{
-    margin-top: 364px;
-}
 
 .camera{
     background-color: #FFFAF0;
-    height: 1000px;
 }
 .camera .wrapper{
     display: flex;
     justify-content: space-between;
-    padding: 0 210px;
-}
-.camera .txt{
-    margin-top: 274px;
+    padding: 100px 210px 0 210px;
 }
 .camera .txt .project{
     position: relative;
@@ -168,21 +165,14 @@
     font-weight: 700;
     width: 90px;
 }
-.camera a{
-    margin-top: 364px;
-}
 
 .wwf{
     background-color: #FFFAF0;
-    height: 1000px;
 }
 .wwf .wrapper{
     display: flex;
     justify-content: space-between;
-    padding: 0 210px;
-}
-.wwf .txt{
-    margin-top: 274px;
+    padding: 100px 210px 0 210px;
 }
 .wwf .txt .project{
     position: relative;
@@ -232,6 +222,7 @@
     font-weight: 700;
     width: 90px;
 }
-.wwf a{
-    margin-top: 364px;
+.thankyou{
+    text-align: center;
+    background: url(../images/page01.jpg)no-repeat center center / cover;
 }
